@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI — Temper Summit 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="edit-mode.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="progress" style="width:0%"></div>
+<div id="keyhint">ARROW KEYS TO NAVIGATE</div>
+<div id="slidecount"></div>
+<div id="sidenav"></div>
+
+<div id="deck">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 1 — COVER                                    -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide active" data-bg="gradient" data-section="intro">
+  <div class="slide-photo-bg gradient-overlay" style="background-image:url('images/ai-brain.jpg')"></div>
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/hero-landing.svg" alt="" style="position:absolute;right:clamp(40px,5vw,80px);bottom:clamp(20px,4vh,60px);height:clamp(200px,35vh,380px);opacity:.35;pointer-events:none">
+  <div class="deco" style="width:600px;height:600px;top:-250px;left:-200px"></div>
+  <div class="deco" style="width:400px;height:400px;bottom:-150px;right:-100px"></div>
+  <div class="inner center">
+    <div class="t-label" style="color:var(--soft);margin-bottom:clamp(8px,1.5vh,16px)">Temper Summit 2026</div>
+    <h1 class="t-hero" style="color:#fff">Agentic AI</h1>
+    <p class="t-display" style="color:var(--green);margin-top:clamp(-4px,.5vh,0px)">What It Is, Why It Matters,<br>How We Use It</p>
+    <p class="t-note" style="color:rgba(255,255,255,.5);margin-top:clamp(24px,4vh,48px)">March 17, 2026</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 2 — AI IS EVERYWHERE                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="what">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">The Landscape</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">AI Is Already Everywhere</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8);margin:0 auto">
+      We use AI daily — search, recommendations, translations, spam filters.<br>
+      But something fundamentally new is happening.
+    </p>
+    <div class="grid-3">
+      <div class="photo-card">
+        <img src="images/person-laptop.jpg" alt="Person working">
+        <div class="photo-card-overlay">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Yesterday</div>
+          <div style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px)">AI answers questions</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="images/ai-workflow.jpg" alt="AI workflow">
+        <div class="photo-card-overlay">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Today</div>
+          <div style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px)">AI assists while you work</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="assets/photos/innovation-abstract.jpg" alt="Automation">
+        <div class="photo-card-overlay">
+          <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Tomorrow</div>
+          <div style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px)">AI takes action for you</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 3 — THE AI SPECTRUM                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-aurora" data-section="what">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Evolution</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">The AI Spectrum</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      AI has evolved from answering questions to <strong style="color:var(--green)">taking actions on your behalf</strong>.
+    </p>
+    <div class="grid-3">
+      <div class="card-light" style="text-align:center;border-top:4px solid rgba(255,255,255,.25);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/chat-bubbles.png" alt="" style="margin:0 auto clamp(8px,1vh,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Chatbot</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:8px">
+          You ask a question.<br>It gives an answer.<br>That's it.
+        </div>
+        <div class="pill pill-ghost" style="margin-top:clamp(10px,1.5vh,18px)">Reactive</div>
+      </div>
+      <div class="card-light" style="text-align:center;border-top:4px solid var(--green);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/connected-people.png" alt="" style="margin:0 auto clamp(8px,1vh,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Copilot</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:8px">
+          It works alongside you.<br>Suggests, drafts, helps.<br>You still drive.
+        </div>
+        <div class="pill pill-green" style="margin-top:clamp(10px,1.5vh,18px)">Assistive</div>
+      </div>
+      <div class="card-light" style="text-align:center;border-top:4px solid var(--soft);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/lightning.png" alt="" style="margin:0 auto clamp(8px,1vh,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Agent</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:8px">
+          You set a goal.<br>It plans, decides, and <strong style="color:var(--green)">acts<br>on your behalf</strong>.
+        </div>
+        <div class="pill pill-dark" style="margin-top:clamp(10px,1.5vh,18px)">Autonomous</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 4 — WHAT IS AGENTIC AI                       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="aurora" data-section="what">
+  <div class="slide-photo-bg darken" style="background-image:url('images/robot-hand.jpg')"></div>
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Definition</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">
+      So What Makes AI <span style="color:var(--green)">"Agentic"</span>?
+    </h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-top:clamp(4px,1vh,10px)">
+      A chatbot <em>tells</em> you how to book a flight. An agent <strong style="color:var(--green)">books the flight, picks the seat, and adds it to your calendar</strong>.
+    </p>
+    <div class="grid-4">
+      <div class="card" style="text-align:center">
+        <img class="icon icon-md icon-invert" src="assets/icons/telescope.png" alt="" style="margin:0 auto">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px);margin-top:clamp(8px,1vh,14px)">Perceive</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:4px">Reads data from your tools & systems</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <img class="icon icon-md icon-invert" src="assets/icons/lightbulb.png" alt="" style="margin:0 auto">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px);margin-top:clamp(8px,1vh,14px)">Reason</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:4px">Plans the steps to reach your goal</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <img class="icon icon-md icon-invert" src="assets/icons/gear.png" alt="" style="margin:0 auto">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px);margin-top:clamp(8px,1vh,14px)">Act</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:4px">Executes actions <strong style="color:var(--green)">on your behalf</strong></div>
+      </div>
+      <div class="card" style="text-align:center">
+        <img class="icon icon-md icon-invert" src="assets/icons/refresh-arrows.png" alt="" style="margin:0 auto">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px);margin-top:clamp(8px,1vh,14px)">Learn</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);margin-top:4px">Adapts from feedback & memory</div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:clamp(20px,3vh,36px);padding:clamp(18px,2vw,28px) clamp(24px,3vw,40px);font-size:clamp(18px,2.2vw,28px);font-weight:700;max-width:1000px">
+      The purpose: achieve results <em>much faster</em> by outsourcing repetitive labor to an agent — so you can focus on what matters.
+    </div>
+    <p class="t-note" style="margin-top:clamp(8px,1.2vh,14px);color:rgba(255,255,255,.5)">
+      Source: <em>"Agentic AI, explained"</em> — MIT Sloan, 2026
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 5 — A SIMPLE EXAMPLE                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-aurora" data-section="what">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">In Practice</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">Chatbot vs. Agent</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      This is the most important distinction in this entire talk.
+    </p>
+    <div class="diagram-compare" style="margin-top:clamp(12px,2vh,24px)">
+      <!-- CHATBOT side (left) -->
+      <div class="diagram-box diagram-box-chatbot">
+        <div class="t-title" style="color:rgba(255,255,255,.75);font-size:clamp(20px,2.4vw,28px)">Chatbot</div>
+        <div class="diagram-hub" style="width:clamp(140px,18vw,220px);height:clamp(140px,18vw,220px)">
+          <div class="diagram-hub-icon">
+            <img src="assets/icons/chat-bubbles.png" alt="" style="filter:brightness(0) invert(1);opacity:.5">
+          </div>
+          <!-- Dashed boundary -->
+          <div style="position:absolute;inset:15%;border:2px dashed rgba(255,255,255,.15);border-radius:16px"></div>
+          <!-- Red X marks -->
+          <div class="diagram-x" style="top:5%;left:10%">✕</div>
+          <div class="diagram-x" style="top:5%;right:10%">✕</div>
+          <div class="diagram-x" style="top:42%;left:0%">✕</div>
+          <div class="diagram-x" style="top:42%;right:0%">✕</div>
+          <div class="diagram-x" style="bottom:5%;left:10%">✕</div>
+          <div class="diagram-x" style="bottom:5%;right:10%">✕</div>
+          <div class="diagram-x" style="top:5%;left:48%">✕</div>
+          <div class="diagram-x" style="bottom:5%;left:48%">✕</div>
+        </div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);font-weight:600;max-width:320px;text-align:center;line-height:1.5">
+          A <strong>smart librarian</strong> — knows the recipe, tells you the steps. You still do the cooking.
+        </div>
+      </div>
+      <!-- AGENT side (right) -->
+      <div class="diagram-box diagram-box-agent">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Agent</div>
+        <div class="diagram-hub diagram-hub-agent" style="width:clamp(180px,22vw,280px);height:clamp(180px,22vw,280px)">
+          <div class="diagram-glow"></div>
+          <div class="diagram-hub-icon">
+            <img src="assets/icons/chat-bubbles.png" alt="" style="filter:brightness(0) invert(1)">
+          </div>
+          <svg class="diagram-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="42" y1="41" x2="21" y2="18" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+            <line x1="58" y1="41" x2="79" y2="18" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+            <line x1="38" y1="50" x2="10" y2="50" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+            <line x1="62" y1="50" x2="90" y2="50" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+            <line x1="42" y1="59" x2="21" y2="82" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+            <line x1="58" y1="59" x2="79" y2="82" stroke="#3DD76C" stroke-width="1.2" opacity=".7"/>
+          </svg>
+          <div class="diagram-node" style="top:12%;left:15%"><img src="assets/logos/atlassian-logo.png" alt="Jira"></div>
+          <div class="diagram-node" style="top:12%;left:85%"><img src="assets/logos/gmail-logo.png" alt="Gmail"></div>
+          <div class="diagram-node" style="top:50%;left:2%"><img src="assets/logos/notion-logo.png" alt="Notion"></div>
+          <div class="diagram-node" style="top:50%;left:98%"><img src="assets/logos/google-sheets-logo.png" alt="Sheets"></div>
+          <div class="diagram-node" style="top:88%;left:15%"><img src="images/logos/google-docs-logo.png" alt="Docs"></div>
+          <div class="diagram-node" style="top:88%;left:85%"><img src="assets/logos/slack-logo.png" alt="Slack"></div>
+        </div>
+        <div class="t-body" style="color:var(--green);font-size:clamp(17px,1.9vw,24px);font-weight:600;max-width:320px;text-align:center;line-height:1.5">
+          A <strong>head chef</strong> — checks the fridge, goes to the store, and actually bakes the cake.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — THE GLUE WORK PROBLEM                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="what">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">The Problem</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">You Are the Integration Layer</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8);margin:0 auto">
+      Every day, you copy, paste, reformat, summarize, and relay information between tools that don't talk to each other.
+    </p>
+    <div class="flow" style="margin-top:clamp(24px,3vh,40px)">
+      <span class="flow-step">Copy</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Paste</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Reformat</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Summarize</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Relay</span>
+    </div>
+    <div style="display:flex;justify-content:center;gap:clamp(10px,1.5vw,20px);margin-top:clamp(24px,3vh,36px);flex-wrap:wrap">
+      <div class="tool-item"><img src="assets/logos/slack-logo.png" alt="Slack"><span>Slack</span></div>
+      <div class="tool-item"><img src="assets/logos/atlassian-logo.png" alt="Jira"><span>Jira</span></div>
+      <div class="tool-item"><img src="assets/logos/notion-logo.png" alt="Notion"><span>Notion</span></div>
+      <div class="tool-item"><img src="assets/logos/gmail-logo.png" alt="Gmail"><span>Gmail</span></div>
+      <div class="tool-item"><img src="assets/logos/google-sheets-logo.png" alt="Sheets"><span>Sheets</span></div>
+      <div class="tool-item"><img src="assets/logos/google-calendar-logo.png" alt="Calendar"><span>Calendar</span></div>
+    </div>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      Each arrow = <strong style="color:var(--green)">your time</strong>. This is what agents can eliminate.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 6 — SECTION: THE IMPACT                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="wave" data-section="impact">
+  <div class="slide-photo-bg darken-heavy" style="background-image:url('assets/photos/rocket-launch.jpg')"></div>
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Part 2</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="deco" style="width:500px;height:500px;top:-200px;right:-150px"></div>
+  <img src="assets/illustrations/person-running-coins.svg" alt="" style="position:absolute;right:clamp(60px,8vw,140px);bottom:clamp(60px,10vh,140px);height:clamp(200px,35vh,380px);opacity:.7;pointer-events:none">
+  <div class="inner left" style="max-width:700px;margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;margin-top:clamp(8px,1.5vh,16px)">The Impact</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-top:clamp(8px,1vh,12px)">
+      Why this changes everything about how we work
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 7 — THE NUMBERS                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="impact">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Industry Data</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">The Numbers Speak</h2>
+    <div class="grid-3">
+      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
+        <div class="stat-fill" data-target="60"></div>
+        <img class="icon icon-md icon-invert" src="assets/icons/stopwatch.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
+        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">60%</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">of employee time could be<br>automated with current AI</div>
+        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">McKinsey Global Institute, 2023</div>
+      </div>
+      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
+        <div class="stat-fill" data-target="40"></div>
+        <img class="icon icon-md icon-invert" src="assets/icons/growth-chart.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
+        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">40%</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">higher quality output from<br>AI-augmented consultants</div>
+        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">Harvard Business School & BCG, 2023</div>
+      </div>
+      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
+        <div class="stat-fill" data-target="75"></div>
+        <img class="icon icon-md icon-invert" src="assets/icons/trophy.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
+        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">75%</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">of companies plan to deploy<br>agentic AI within 2 years</div>
+        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">Deloitte, State of AI in Enterprise, 2026</div>
+      </div>
+    </div>
+    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(16px,3vh,32px);text-align:left;font-size:clamp(18px,2vw,26px)">
+      "The question isn't <em>if</em> AI agents will change work — it's <em>how fast</em> you'll adapt."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 9 — BEFORE & AFTER                           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-aurora" data-section="impact">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Transformation</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff;margin-bottom:20px">Before & After Agents</h2>
+    <div class="split">
+      <div>
+        <div class="t-title" style="color:rgba(255,255,255,.75);font-size:32px;margin-bottom:14px">
+          <img class="icon icon-sm icon-invert" src="assets/icons/hourglass.png" alt="" style="vertical-align:middle;margin-right:8px">
+          Without Agents
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card-light" style="padding:22px 28px;display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.8)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/clock.png" alt="">
+            <div><strong>Status reports:</strong> <span style="color:#FB49AD;font-weight:800;font-size:1.25em">45 min</span> manually gathering data</div>
+          </div>
+          <div class="card-light" style="padding:22px 28px;display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.8)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/clock.png" alt="">
+            <div><strong>Meeting follow-ups:</strong> <span style="color:#FB49AD;font-weight:800;font-size:1.25em">20 min</span> per meeting</div>
+          </div>
+          <div class="card-light" style="padding:22px 28px;display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.8)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/clock.png" alt="">
+            <div><strong>Ticket triage:</strong> <span style="color:#FB49AD;font-weight:800;font-size:1.25em">Hours</span> of manual sorting</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="t-title" style="color:var(--green);font-size:32px;margin-bottom:14px">
+          <img class="icon icon-sm icon-invert" src="assets/icons/lightning.png" alt="" style="vertical-align:middle;margin-right:8px">
+          With Agents
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card-ghost" style="padding:22px 28px;border:2px solid var(--green);display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.85)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/stopwatch.png" alt="">
+            <div><strong>Status reports:</strong> <span style="color:var(--green);font-weight:800;font-size:1.25em">2 min</span> review of AI draft</div>
+          </div>
+          <div class="card-ghost" style="padding:22px 28px;border:2px solid var(--green);display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.85)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/stopwatch.png" alt="">
+            <div><strong>Meeting follow-ups:</strong> <span style="color:var(--green);font-weight:800;font-size:1.25em">Auto-created</span>, you approve</div>
+          </div>
+          <div class="card-ghost" style="padding:22px 28px;border:2px solid var(--green);display:flex;align-items:center;gap:14px;font-size:24px;color:rgba(255,255,255,.85)">
+            <img class="icon icon-sm icon-invert" src="assets/icons/stopwatch.png" alt="">
+            <div><strong>Ticket triage:</strong> <span style="color:var(--green);font-weight:800;font-size:1.25em">Instant</span> categorization & routing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 10 — SECTION: HOW IT WORKS                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-wave" data-section="how">
+  <div class="slide-photo-bg darken-heavy" style="background-image:url('images/network-connections.jpg')"></div>
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Part 3</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="deco" style="width:400px;height:400px;bottom:-100px;left:-80px"></div>
+  <div class="inner left" style="margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;margin-top:clamp(8px,1.5vh,16px)">How It Works</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-top:clamp(8px,1vh,12px)">
+      Three pillars of agentic AI
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — PILLAR 1 SECTION DIVIDER                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-wave" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 1</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/person-phone.svg" alt="" style="position:absolute;right:clamp(60px,8vw,140px);bottom:clamp(60px,10vh,140px);height:clamp(220px,38vh,420px);opacity:.8;pointer-events:none">
+  <div class="inner left" style="margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;margin-top:clamp(8px,1.5vh,16px)">Connections</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7);margin-top:clamp(8px,1vh,12px)">
+      AI needs access to your data to be useful beyond copy-paste.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 11 — WHY CONNECTIONS MATTER                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 1 — Connections</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">An Agent Is Only as Good<br>as What It Can Reach</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75)">
+      If AI can't see your Jira tickets, it can't write your sprint summary.<br>If it can't read your Sheets, it can't analyse your data.
+    </p>
+    <!-- Today vs Connected cards -->
+    <div class="grid-2">
+      <div class="card" style="border-color:rgba(255,255,255,.08);text-align:left">
+        <div class="t-title" style="color:rgba(255,255,255,.5);font-size:clamp(20px,2.4vw,28px);margin-bottom:8px">Without connections</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);line-height:1.6">
+          You copy-paste data into AI.<br>
+          AI gives a generic answer.<br>
+          You close the tab — gone.
+        </div>
+        <div style="margin-top:clamp(12px,1.5vh,20px);display:flex;gap:12px;flex-wrap:wrap">
+          <span style="background:rgba(255,255,255,.08);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.5)">Manual</span>
+          <span style="background:rgba(255,255,255,.08);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.5)">One-off</span>
+          <span style="background:rgba(255,255,255,.08);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.5)">No memory</span>
+        </div>
+      </div>
+      <div class="card" style="border-color:var(--green);border-width:1.5px;text-align:left">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px);margin-bottom:8px">With connections</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);line-height:1.6">
+          AI reads your tools directly.<br>
+          Output is grounded in real data.<br>
+          Workflows persist and improve.
+        </div>
+        <div style="margin-top:clamp(12px,1.5vh,20px);display:flex;gap:12px;flex-wrap:wrap">
+          <span style="background:rgba(61,215,108,.15);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:var(--green)">Automatic</span>
+          <span style="background:rgba(61,215,108,.15);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:var(--green)">Persistent</span>
+          <span style="background:rgba(61,215,108,.15);border-radius:8px;padding:6px 14px;font-size:clamp(13px,1.3vw,16px);color:var(--green)">Multi-tool</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-accent" style="padding:clamp(18px,2vw,28px) clamp(28px,3.5vw,48px);margin-top:clamp(12px,2vh,24px);border-radius:14px;text-align:center">
+      <div class="t-title" style="font-size:clamp(20px,2.4vw,28px);color:var(--teal-deep)">The question isn't "can we connect AI to our tools?" — the connections already exist.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 11b — WHAT IS MCP                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 1 — Connections</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">What Is MCP?</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75)">
+      <strong style="color:var(--green)">Model Context Protocol</strong> — the open standard that lets any AI talk to any tool.
+    </p>
+    <!-- USB-C analogy + features -->
+    <div class="split" style="grid-template-columns:2fr 3fr;align-items:stretch;gap:clamp(20px,2.5vw,40px)">
+      <!-- Left: analogy -->
+      <div class="card" style="text-align:left;display:flex;flex-direction:column;justify-content:center">
+        <img class="icon icon-md icon-invert" src="assets/icons/lightning.png" alt="" style="margin-bottom:clamp(8px,1vh,16px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px);margin-bottom:8px">Think USB-C for AI</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px);line-height:1.6">
+          Before USB-C, every device had its own cable.<br>
+          MCP is the same idea: <strong style="color:#fff">one protocol, every tool.</strong>
+        </div>
+      </div>
+      <!-- Right: what it means -->
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,16px)">
+        <div class="card" style="text-align:left;flex:1;display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);padding:clamp(16px,2vw,28px)">
+          <img class="icon icon-invert" src="assets/icons/globe.png" alt="" style="width:clamp(32px,3.5vw,44px);height:auto;flex-shrink:0">
+          <div>
+            <div class="t-title" style="color:#fff;font-size:clamp(18px,2vw,26px)">Open standard</div>
+            <div style="color:rgba(255,255,255,.6);font-size:clamp(15px,1.6vw,21px);margin-top:2px">Any AI model, any data source. Not locked to one vendor.</div>
+          </div>
+        </div>
+        <div class="card" style="text-align:left;flex:1;display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);padding:clamp(16px,2vw,28px)">
+          <img class="icon icon-invert" src="assets/icons/connected-people.png" alt="" style="width:clamp(32px,3.5vw,44px);height:auto;flex-shrink:0">
+          <div>
+            <div class="t-title" style="color:#fff;font-size:clamp(18px,2vw,26px)">One protocol, 100+ tools</div>
+            <div style="color:rgba(255,255,255,.6);font-size:clamp(15px,1.6vw,21px);margin-top:2px">Notion, Jira, Slack, Google Workspace, and growing.</div>
+          </div>
+        </div>
+        <div class="card" style="text-align:left;flex:1;display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);padding:clamp(16px,2vw,28px)">
+          <img class="icon icon-invert" src="assets/icons/document-check.png" alt="" style="width:clamp(32px,3.5vw,44px);height:auto;flex-shrink:0">
+          <div>
+            <div class="t-title" style="color:#fff;font-size:clamp(18px,2vw,26px)">Read &amp; write</div>
+            <div style="color:rgba(255,255,255,.6);font-size:clamp(15px,1.6vw,21px);margin-top:2px">Agents don't just pull data — they create, update, and act.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 11c — MCP IN ACTION (hub diagram)            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 1 — Connections</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner left">
+    <div class="split" style="grid-template-columns:1fr 2fr;align-items:center">
+      <!-- Left: text -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 class="t-display" style="color:#fff">What's Connected Today</h2>
+        <p class="t-desc" style="color:rgba(255,255,255,.75)">
+          These tools already have MCP servers — AI can read and write to them right now.
+        </p>
+        <p class="t-note" style="color:rgba(255,255,255,.5)">
+          You can also build your own MCP server for any internal API or data source.
+        </p>
+      </div>
+      <!-- Right: diagram rebuilt with SVG -->
+      <div style="position:relative;display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 560 560" width="100%" style="max-width:640px" xmlns="http://www.w3.org/2000/svg">
+          <!-- Glow -->
+          <defs>
+            <radialGradient id="mcpGlow"><stop offset="0%" stop-color="rgba(61,215,108,.3)"/><stop offset="70%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <circle cx="280" cy="280" r="200" fill="url(#mcpGlow)"/>
+          <!-- Spokes (8 directions) -->
+          <line x1="280" y1="225" x2="280" y2="68" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="319" y1="232" x2="418" y2="100" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="335" y1="280" x2="492" y2="280" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="319" y1="328" x2="418" y2="460" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="280" y1="335" x2="280" y2="492" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="241" y1="328" x2="142" y2="460" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="225" y1="280" x2="68" y2="280" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <line x1="241" y1="232" x2="142" y2="100" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
+          <!-- Center block -->
+          <rect x="225" y="225" width="110" height="110" rx="28" fill="#3DD76C"/>
+          <g transform="translate(252,240) scale(0.32)">
+            <path d="M25 97.8528L92.8823 29.9706C102.255 20.598 117.451 20.598 126.823 29.9706C136.196 39.3431 136.196 54.5391 126.823 63.9117L75.5581 115.177" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M76.2653 114.47L126.823 63.9117C136.196 54.5391 151.392 54.5391 160.765 63.9117L161.118 64.2652C170.491 73.6378 170.491 88.8338 161.118 98.2063L99.7248 159.6C96.6006 162.724 96.6006 167.789 99.7248 170.913L112.331 183.52" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M109.853 46.9411L59.6482 97.1457C50.2757 106.518 50.2757 121.714 59.6482 131.087C69.0208 140.459 84.2168 140.459 93.5894 131.087L143.794 80.8822" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
+          </g>
+          <text x="280" y="326" text-anchor="middle" fill="#0a2421" font-family="Poppins,sans-serif" font-weight="800" font-size="16">MCP</text>
+          <!-- 8 Nodes around the hub -->
+          <!-- Notion (top) -->
+          <rect x="248" y="28" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/notion-logo.png" x="258" y="38" width="44" height="44"/>
+          <circle cx="308" cy="32" r="10" fill="#3DD76C"/><text x="308" y="36" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Gmail (top-right) -->
+          <rect x="386" y="68" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/gmail-logo.png" x="396" y="78" width="44" height="44"/>
+          <circle cx="446" cy="72" r="10" fill="#3DD76C"/><text x="446" y="76" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Google Drive (right) -->
+          <rect x="460" y="248" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="images/logos/google-drive-logo.png" x="470" y="258" width="44" height="44"/>
+          <circle cx="520" cy="252" r="10" fill="#3DD76C"/><text x="520" y="256" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Sheets (bottom-right) -->
+          <rect x="386" y="428" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/google-sheets-logo.png" x="396" y="438" width="44" height="44"/>
+          <circle cx="446" cy="432" r="10" fill="#3DD76C"/><text x="446" y="436" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Slack (bottom) -->
+          <rect x="248" y="460" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/slack-logo.png" x="258" y="470" width="44" height="44"/>
+          <circle cx="308" cy="464" r="10" fill="#3DD76C"/><text x="308" y="468" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Jira (bottom-left) -->
+          <rect x="110" y="428" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/atlassian-logo.png" x="120" y="438" width="44" height="44"/>
+          <circle cx="170" cy="432" r="10" fill="#3DD76C"/><text x="170" y="436" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Google Calendar (left) -->
+          <rect x="36" y="248" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/google-calendar-logo.png" x="46" y="258" width="44" height="44"/>
+          <circle cx="96" cy="252" r="10" fill="#3DD76C"/><text x="96" y="256" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <!-- Mixpanel (top-left) -->
+          <rect x="110" y="68" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <image href="assets/logos/mixpanel-logo.png" x="120" y="78" width="44" height="44"/>
+          <circle cx="170" cy="72" r="10" fill="#3DD76C"/><text x="170" y="76" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — PILLAR 2 SECTION DIVIDER                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-wave" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 2</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/person-sitting-check.svg" alt="" style="position:absolute;right:clamp(60px,8vw,140px);bottom:clamp(60px,10vh,140px);height:clamp(220px,38vh,420px);opacity:.8;pointer-events:none">
+  <div class="inner left" style="margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;margin-top:clamp(8px,1.5vh,16px)">Human in the Loop</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7);margin-top:clamp(8px,1vh,12px)">
+      AI does the heavy lifting. You stay in control of what matters.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 12 — PILLAR 2: HUMAN IN THE LOOP             -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 2 — Control</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">Human in the Loop</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      Agentic doesn't mean uncontrolled. The best AI systems keep humans at the decision points that matter.
+    </p>
+    <div class="flow" style="margin-top:clamp(20px,3vh,36px)">
+      <span class="flow-step">AI Collects Data</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">AI Drafts Output</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step active" style="font-size:clamp(18px,2vw,26px);padding:clamp(18px,2vw,28px) clamp(18px,2.2vw,32px)"><img class="icon" src="assets/icons/shield-check.png" alt="" style="width:clamp(16px,1.8vw,24px);height:auto;vertical-align:middle;margin-right:6px"> Human Reviews</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Action Taken</span>
+    </div>
+    <div style="width:100%;max-width:900px;margin-top:clamp(20px,3vh,36px)">
+      <div style="position:relative;display:flex;justify-content:space-between;font-size:clamp(18px,2.2vw,28px);color:rgba(255,255,255,.7);margin-bottom:8px">
+        <span>Manual</span>
+        <span style="position:absolute;left:55%;transform:translateX(-50%);color:var(--green);font-weight:700">← Sweet Spot</span>
+        <span>Fully Autonomous</span>
+      </div>
+      <div class="spectrum-bar" style="position:relative">
+        <div class="spectrum-marker" style="position:absolute;top:-8px;width:4px;height:clamp(24px,3vh,32px);background:#fff;border-radius:3px;box-shadow:0 0 10px rgba(0,0,0,.25)"></div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:clamp(16px,2.5vh,28px);font-size:clamp(17px,1.9vw,24px);font-weight:700;max-width:900px;text-align:center">
+      Start supervised. Automate gradually as trust builds.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 13 — TRUST GRADIENT                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 2 — Trust Levels</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">The Trust Gradient</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      Not everything needs the same level of oversight. Match automation to risk.
+    </p>
+    <table class="tbl" style="margin-top:20px;font-size:clamp(22px,2.4vw,30px)">
+      <tr>
+        <th style="font-size:clamp(18px,1.8vw,24px);padding:20px 36px">Scenario</th>
+        <th style="font-size:clamp(18px,1.8vw,24px);padding:20px 36px">Automation Level</th>
+        <th style="font-size:clamp(18px,1.8vw,24px);padding:20px 36px">Why</th>
+      </tr>
+      <tr>
+        <td style="padding:22px 36px"><div style="display:flex;align-items:center;gap:16px"><img class="icon icon-invert" src="assets/icons/bar-chart.png" alt="" style="width:40px;height:40px"><b>Internal data summaries</b></div></td>
+        <td style="padding:22px 36px;color:var(--green);font-weight:700">Fully autonomous</td>
+        <td style="padding:22px 36px">Low risk, internal only</td>
+      </tr>
+      <tr>
+        <td style="padding:22px 36px"><div style="display:flex;align-items:center;gap:16px"><img class="icon icon-invert" src="assets/icons/speech-bubble.png" alt="" style="width:40px;height:40px"><b>Internal Slack updates</b></div></td>
+        <td style="padding:22px 36px;color:var(--green);font-weight:700">Mostly autonomous</td>
+        <td style="padding:22px 36px">Low stakes, quick review</td>
+      </tr>
+      <tr>
+        <td style="padding:22px 36px"><div style="display:flex;align-items:center;gap:16px"><img class="icon icon-invert" src="assets/icons/envelope.png" alt="" style="width:40px;height:40px"><b>Client-facing emails</b></div></td>
+        <td style="padding:22px 36px;color:#FFD7AA;font-weight:700">Human reviews</td>
+        <td style="padding:22px 36px">Reputation risk</td>
+      </tr>
+      <tr>
+        <td style="padding:22px 36px"><div style="display:flex;align-items:center;gap:16px"><img class="icon icon-invert" src="assets/icons/banknote.png" alt="" style="width:40px;height:40px"><b>Financial decisions</b></div></td>
+        <td style="padding:22px 36px;color:#FB49AD;font-weight:700">Human approves</td>
+        <td style="padding:22px 36px">Compliance & liability</td>
+      </tr>
+      <tr>
+        <td style="padding:22px 36px"><div style="display:flex;align-items:center;gap:16px"><img class="icon icon-invert" src="assets/icons/monitor.png" alt="" style="width:40px;height:40px"><b>Code deployment</b></div></td>
+        <td style="padding:22px 36px;color:#FB49AD;font-weight:700">Human approves</td>
+        <td style="padding:22px 36px">Production risk</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — PILLAR 3 SECTION DIVIDER                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-wave" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 3</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/flexpool-learning.svg" alt="" style="position:absolute;right:clamp(60px,8vw,140px);bottom:clamp(60px,10vh,140px);height:clamp(220px,38vh,420px);opacity:.8;pointer-events:none">
+  <div class="inner left" style="margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;margin-top:clamp(8px,1.5vh,16px)">Context Engineering</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7);margin-top:clamp(8px,1vh,12px)">
+      The quality of AI output depends entirely on the context you give it.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — PILLAR 3: WHAT IS CONTEXT?                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 3 — Context</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">What Is Context?</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      Context is <strong style="color:var(--green)">everything AI knows</strong> when it's working for you.
+    </p>
+    <div class="grid-2">
+      <div class="card-light" style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">You're already doing it</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          Every time you paste text into a chat, add instructions to a prompt, or explain background to AI — you're managing context manually.
+        </div>
+      </div>
+      <div class="card-light" style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">The goal: automate it</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          Instead of copy-pasting every time, set up AI so it already has access to the right information — automatically, persistently, efficiently.
+        </div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="text-align:center;padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/sliders.png" alt="" style="margin:0 auto clamp(4px,.6vh,8px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">It has a limit</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.8vw,24px);margin-top:4px">Context windows are finite — you can't dump everything in. Quality beats quantity.</div>
+      </div>
+      <div class="card" style="text-align:center;padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/search.png" alt="" style="margin:0 auto clamp(4px,.6vh,8px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">You can monitor it</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.8vw,24px);margin-top:4px">Most tools show how much context is being used. Keep it relevant — not maxed out.</div>
+      </div>
+      <div class="card" style="text-align:center;padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/lightbulb-arrows.png" alt="" style="margin:0 auto clamp(4px,.6vh,8px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Better context = better results</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.8vw,24px);margin-top:4px">Without enough context, AI hallucinates. With the right context, it's remarkably accurate.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 14 — CONTEXT ENGINEERING: BEFORE & AFTER     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Pillar 3 — Context</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">You're Already an Engineer</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      Every time you rewrite a ChatGPT prompt to get a better answer — that's <strong style="color:var(--green)">prompt engineering</strong>.<br>
+      You're already doing it. The next evolution is <strong style="color:var(--green)">context engineering</strong>.
+    </p>
+    <div class="split" style="align-items:stretch;gap:40px">
+      <!-- Left: Before -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="t-title" style="font-size:28px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:10px">
+          <img class="icon icon-invert" src="assets/icons/speech-bubble.png" alt="" style="width:28px;height:28px">
+          Where you are now
+        </div>
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:32px;border:1px dashed rgba(255,255,255,.15)">
+          <div style="color:rgba(255,255,255,.5);font-size:20px;font-style:italic;line-height:1.5;border-left:3px solid rgba(255,255,255,.15);padding-left:16px">
+            "Write me a summary of the meetings I had last week"
+          </div>
+          <div style="color:rgba(255,255,255,.7);font-size:24px;line-height:1.5">
+            You paste in notes, AI gives a generic summary. You tweak the prompt. Better. You close the tab — <strong style="color:rgba(255,255,255,.4)">gone.</strong>
+          </div>
+          <div class="pill pill-ghost" style="align-self:flex-start;font-size:18px">Prompt Engineering</div>
+        </div>
+      </div>
+      <!-- Right: After -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="t-title" style="font-size:28px;color:var(--green);display:flex;align-items:center;gap:10px">
+          <img class="icon icon-invert" src="assets/icons/lightning.png" alt="" style="width:28px;height:28px">
+          Where we're going
+        </div>
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:32px;border:2px solid var(--green);background:rgba(61,215,108,.06)">
+          <div style="color:var(--soft);font-size:20px;font-style:italic;line-height:1.5;border-left:3px solid var(--green);padding-left:16px">
+            "Summarize last week's meetings, extract action points, put them on Asana, and tag the relevant people based on your knowledge of my team and department."
+          </div>
+          <div style="color:rgba(255,255,255,.85);font-size:24px;line-height:1.5">
+            AI already knows your team, your tools, and your department setup. It reads the data, creates tasks, and identifies who to involve — <strong style="color:var(--green)">you review and approve.</strong>
+          </div>
+          <div class="pill pill-green" style="align-self:flex-start;font-size:18px">Context Engineering</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:16px;padding:20px 36px;font-size:22px;text-align:center;font-weight:700">
+      Don't be afraid of the word "engineering" — it just means setting things up so AI works better for you
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 15 — THE 4 LAYERS OF CONTEXT                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="dark" data-section="how">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">The 4 Layers of Context</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75)">
+      Context = everything AI knows when it works for you. You're already managing it manually every time you paste text into a chat. The goal is to make it <strong style="color:var(--green)">automatic, persistent, and richer</strong>.
+    </p>
+    <div class="layer-stack" style="margin-top:clamp(20px,3vh,36px);max-width:1200px">
+      <div class="layer-row" style="background:var(--teal-deep)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,18px)">
+          <img class="icon icon-sm icon-invert" src="assets/icons/globe.png" alt="">
+          <span>Tools</span>
+        </div>
+        <span class="layer-desc">Notion, Jira, Sheets, Asana, APIs — live connections to your systems</span>
+      </div>
+      <div class="layer-row" style="background:var(--green-dark)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,18px)">
+          <img class="icon icon-sm icon-invert" src="assets/icons/lightbulb.png" alt="">
+          <span>Memory</span>
+        </div>
+        <span class="layer-desc">Past decisions, preferences, history</span>
+      </div>
+      <div class="layer-row" style="background:var(--green);color:var(--teal-deep)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,18px)">
+          <img class="icon icon-sm" src="assets/icons/document.png" alt="">
+          <span>Knowledge</span>
+        </div>
+        <span class="layer-desc" style="color:var(--teal)">Processes, conventions, team structure, domain expertise</span>
+      </div>
+      <div class="layer-row" style="background:var(--soft);color:var(--teal-deep)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,18px)">
+          <img class="icon icon-sm" src="assets/icons/sliders.png" alt="">
+          <span>Instructions</span>
+        </div>
+        <span class="layer-desc" style="color:var(--teal)">Role, tone, format, rules, guardrails</span>
+      </div>
+    </div>
+    <div style="margin-top:clamp(12px,2vh,20px);display:flex;gap:clamp(12px,1.5vw,20px);max-width:1200px;width:100%">
+      <div class="card" style="flex:1;padding:clamp(18px,2vw,28px);text-align:center">
+        <div style="color:var(--green);font-weight:700;font-size:clamp(20px,2.4vw,28px);margin-bottom:4px">Tools vs Knowledge?</div>
+        <div style="color:rgba(255,255,255,.75);font-size:clamp(15px,1.5vw,19px)"><strong style="color:rgba(255,255,255,.7)">Tools</strong> = live data access (reads docs, tickets, sheets in real time).
+        <strong style="color:rgba(255,255,255,.7)">Knowledge</strong> = structured understanding (how your team works, your conventions, your priorities).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — THIS CHANGES YOUR WORK, NOT YOUR JOB       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="how">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/person-freedom.svg" alt="" style="position:absolute;left:clamp(20px,3vw,50px);bottom:clamp(20px,4vh,60px);height:clamp(140px,22vh,260px);opacity:.4;pointer-events:none">
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">
+      This Changes How You Work.<br><span style="color:var(--green)">Not Whether You Work.</span>
+    </h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      Let's address the elephant in the room.
+    </p>
+    <div class="grid-3">
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,14px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/hourglass.png" alt="">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Agents handle the busywork</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Data gathering, formatting, copy-pasting between tools — the work nobody enjoys doing.</div>
+      </div>
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,14px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/lightbulb.png" alt="">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">You focus on judgment</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Strategy, creativity, relationships, decisions — the work that actually needs a human brain.</div>
+      </div>
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,14px)">
+        <img class="icon icon-md icon-invert" src="assets/icons/growth-chart.png" alt="">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">The goal is leverage</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Same team, bigger impact. Not fewer people — more output per person.</div>
+      </div>
+    </div>
+    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(16px,2.5vh,28px);text-align:left;max-width:1000px">
+      "People who use AI will replace people who don't."<br>
+      <span style="font-size:clamp(15px,1.5vw,19px);color:rgba(255,255,255,.55)">— Karim Lakhani, Harvard Business School</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — EVERYONE CAN BUILD NOW                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="how">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">For Everyone</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">
+      You Already Have<br><span style="color:var(--green)">the Hardest Skill</span>
+    </h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      AI doesn't know your team, your processes, or your priorities. <strong style="color:#fff">You do.</strong><br>
+      That domain expertise is exactly what makes AI useful — and no one can replace it.
+    </p>
+
+    <div class="grid-3" style="margin-top:16px">
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px;text-align:center">
+        <img class="icon icon-invert" src="assets/icons/lightbulb.png" alt="" style="width:56px;height:56px">
+        <div class="t-title" style="color:#fff;font-size:32px">You know the problem</div>
+        <div style="color:rgba(255,255,255,.6);font-size:24px;line-height:1.5">Which report takes 3 hours. Which handoff always breaks. Where the bottleneck is.</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px;text-align:center">
+        <img class="icon icon-invert" src="assets/icons/speech-bubble.png" alt="" style="width:56px;height:56px">
+        <div class="t-title" style="color:#fff;font-size:32px">You describe the solution</div>
+        <div style="color:rgba(255,255,255,.6);font-size:24px;line-height:1.5">In the same words you'd use to explain it to a colleague. No syntax. No code. Just clarity.</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px;text-align:center;border:2px solid var(--green);background:rgba(61,215,108,.06)">
+        <img class="icon icon-invert" src="assets/icons/lightning.png" alt="" style="width:56px;height:56px">
+        <div class="t-title" style="color:var(--green);font-size:32px">AI handles the rest</div>
+        <div style="color:rgba(255,255,255,.7);font-size:24px;line-height:1.5">Connects the tools, moves the data, builds the workflow. You review. You approve. It runs.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;font-size:22px;color:rgba(255,255,255,.45);text-align:center;font-weight:500;line-height:1.5">
+      The technical barrier is shrinking. What remains is <strong style="color:var(--green)">knowing what to build</strong> — and that's always been your job.<br>
+      <span style="font-size:22px">For complex projects, developer experience is still essential — but the range of what you can do alone just got much wider.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — SECTION: AT TEMPER                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="subtle" data-section="temper">
+  <div class="slide-photo-bg darken-heavy" style="background-image:url('assets/photos/team-collaboration.jpg')"></div>
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Part 4</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="deco" style="width:500px;height:500px;bottom:-200px;right:-100px"></div>
+  <img src="assets/illustrations/workers-success.svg" alt="" style="position:absolute;right:clamp(60px,8vw,140px);bottom:clamp(60px,10vh,140px);height:clamp(200px,35vh,380px);opacity:.6;pointer-events:none">
+  <div class="inner left" style="max-width:700px;margin-left:clamp(0px,4vw,60px)">
+    <h2 class="t-hero" style="color:#fff;font-size:clamp(38px,6vw,64px);margin-top:clamp(8px,1.5vh,16px)">At Temper</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-top:clamp(8px,1vh,12px)">
+      Where agentic AI fits into our company
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 17 — OUR OPPORTUNITY                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Opportunity</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">Where We Can Start</h2>
+    <div class="grid-3">
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/clipboard.png" alt="" style="margin-bottom:4px">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Reporting</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          Auto-generate status reports from Jira data. AI drafts, you review and send in 2 minutes.
+        </div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">40 min</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75)">saved per report</div>
+      </div>
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/headset.png" alt="" style="margin-bottom:4px">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Support Triage</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          AI categorizes incoming tickets, suggests responses, routes to the right team. Humans approve.
+        </div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">70%</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75)">faster first response</div>
+      </div>
+      <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px);padding:clamp(24px,3vw,44px)">
+        <img class="icon icon-lg icon-invert" src="assets/icons/calendar.png" alt="" style="margin-bottom:4px">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Meeting Follow-ups</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          From meeting notes to action items, Jira tickets, and Slack updates — automatically.
+        </div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">20 min</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.75)">saved per meeting</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 18 — MORE USE CASES                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Use Cases</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">More Possibilities Across Teams</h2>
+    <div class="grid-2">
+      <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
+        <img class="icon icon-invert" src="assets/icons/search.png" alt="" style="width:64px;height:64px;flex-shrink:0">
+        <div>
+          <div class="t-title" style="color:var(--green);font-size:34px">Data Analysis</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">AI queries Mixpanel & Sheets, surfaces insights, generates weekly dashboards with narrative summaries.</div>
+        </div>
+      </div>
+      <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
+        <img class="icon icon-invert" src="assets/icons/document-check.png" alt="" style="width:64px;height:64px;flex-shrink:0">
+        <div>
+          <div class="t-title" style="color:var(--green);font-size:34px">Documentation</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">Keep Notion up to date automatically. Agent monitors changes in code/Jira and updates relevant docs.</div>
+        </div>
+      </div>
+      <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
+        <img class="icon icon-invert" src="assets/icons/graduation-cap.png" alt="" style="width:64px;height:64px;flex-shrink:0">
+        <div>
+          <div class="t-title" style="color:var(--green);font-size:34px">Onboarding</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">New team members get an AI buddy that knows our processes, tools, and conventions — answers contextual questions instantly.</div>
+        </div>
+      </div>
+      <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
+        <img class="icon icon-invert" src="assets/icons/growth-chart.png" alt="" style="width:64px;height:64px;flex-shrink:0">
+        <div>
+          <div class="t-title" style="color:var(--green);font-size:34px">Sprint Planning</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">AI analyzes velocity, backlog, and priorities — drafts sprint scope recommendations for the team to discuss.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 19 — THE AI TOOLS WE CAN USE                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="dark" data-section="temper">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">Agentic Tools at Temper</h2>
+    <p class="t-note" style="color:rgba(255,255,255,.7)">
+      From the Temper AI Tools Catalogue — approved for work use
+    </p>
+    <!-- Row 1: Broad access -->
+    <div class="grid-3">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+        <img src="images/logos/gemini-logo.png" alt="" style="width:clamp(48px,5.5vw,72px);height:clamp(48px,5.5vw,72px);object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Google Gemini</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.9vw,24px)">Create custom Gems with specific instructions. Reads your entire Google Workspace data directly.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:clamp(12px,1.2vw,15px)">Approved</div>
+          <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Everyone</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+        <img src="images/logos/gemini-logo.png" alt="" style="width:clamp(48px,5.5vw,72px);height:clamp(48px,5.5vw,72px);object-fit:contain;filter:grayscale(1) brightness(1.8)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Gemini CLI</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.9vw,24px)">Terminal agent. Plans and executes multi-step coding tasks autonomously.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:clamp(12px,1.2vw,15px)">Approved</div>
+          <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Developers</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+        <img src="images/logos/claude-logo.png" alt="" style="width:clamp(48px,5.5vw,72px);height:clamp(48px,5.5vw,72px);object-fit:contain;border-radius:clamp(10px,1.2vw,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Claude Code</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.9vw,24px)">Autonomous agent with MCP. Reads, writes, and tests across connected tools.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-ghost" style="font-size:clamp(12px,1.2vw,15px)">Approved Limited</div>
+          <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Developers</div>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Specialized -->
+    <div class="grid-2">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+        <img src="images/logos/cursor-logo.png" alt="" style="width:clamp(48px,5.5vw,72px);height:clamp(48px,5.5vw,72px);object-fit:contain;border-radius:clamp(10px,1.2vw,16px)">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Cursor</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.9vw,24px)">AI code editor. Agent mode plans and edits across your entire codebase.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-ghost" style="font-size:clamp(12px,1.2vw,15px)">Approved Limited</div>
+          <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Developers</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+        <img src="images/logos/firebender-icon.svg" alt="" style="width:clamp(48px,5.5vw,72px);height:clamp(48px,5.5vw,72px);object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Firebender</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.9vw,24px)">AI agent specialised for Android development workflows.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:clamp(12px,1.2vw,15px)">Approved</div>
+          <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Developers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — AI BUILT INTO YOUR TOOLS                    -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Already Active</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">AI Built Into Your Tools</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.65)">
+      These aren't agents — they're AI features already embedded in tools you use every day. No setup needed.
+    </p>
+    <div class="grid-3" style="margin-top:16px">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="images/logos/slack-ai-logo.png" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">Slack AI</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">Summarize channels, catch up on threads, search with natural language.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Everyone</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="images/logos/asana-logo.svg" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">Asana AI</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">Smart status updates, auto-generated subtasks, goal tracking summaries.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Everyone</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="images/logos/notebooklm-logo.png" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">NotebookLM</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">Upload documents, get instant Q&A, generate audio overviews of any content.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Everyone</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:12px">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="images/logos/salesloft-logo.svg" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">Salesloft</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">AI-powered email drafting, call analysis, and deal intelligence for sales.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Sales</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="images/logos/github-copilot-logo.png" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">GitHub Copilot</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">Inline code suggestions, chat-based debugging, PR summaries. Must use Temper org.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Developers</div>
+        </div>
+      </div>
+    </div>
+    <p class="t-note" style="color:rgba(255,255,255,.4);margin-top:12px">
+      These are copilot-style AI features — they assist while you work, but don't take autonomous actions like agents do.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 20 — GEMINI: START RIGHT NOW                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Start Today</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <div class="pill pill-green" style="margin-bottom:clamp(4px,1vh,10px)">Zero Setup</div>
+    <h2 class="t-display" style="color:#fff">Gemini Already Knows<br>Our Workspace</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      Log in with your Temper Google account and Gemini can instantly read, search, and work with your data — no configuration, no API keys, no setup.
+    </p>
+    <div class="grid-4" style="margin-top:16px">
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/google-docs-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Google Docs</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Read & draft documents</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/google-keep-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Google Keep</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Access & search notes</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/google-tasks-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Google Tasks</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Manage & create tasks</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="assets/logos/google-calendar-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Calendar</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Check schedule & availability</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:12px">
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/gmail-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Gmail</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Search & draft emails</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/google-meet-logo.svg" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Google Meet</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Read meeting summaries</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
+        <img src="images/logos/google-drive-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
+        <div style="text-align:left">
+          <div class="t-title" style="color:#fff;font-size:24px">Google Drive</div>
+          <div style="font-size:18px;color:rgba(255,255,255,.6)">Find & reference files</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:16px;padding:18px 32px;font-size:24px;text-align:center;font-weight:700">
+      Open gemini.google.com with your Temper account — that's it
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 21 — GOOGLE WORKSPACE STUDIO                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="dark" data-section="temper">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <!-- QR code top-left -->
+  <div style="position:absolute;top:clamp(30px,5vh,80px);left:clamp(30px,4vw,70px);display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 24px;z-index:2">
+    <div id="qr-workspace-studio" style="width:88px;height:88px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:5px"></div>
+    <div style="color:#fff;font-size:20px;font-weight:600;line-height:1.3">Scan to<br>try it now</div>
+  </div>
+  <div class="inner center" style="padding-top:clamp(20px,4vh,50px)">
+    <div class="pill pill-green" style="margin-bottom:8px">No Code Required</div>
+    <h2 class="t-display" style="color:#fff">Google Workspace Studio</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      Describe what you want automated — Gemini builds an AI agent that runs across your Workspace.
+    </p>
+
+    <div class="split" style="grid-template-columns:3fr 2fr;align-items:center;gap:40px;margin-top:16px">
+      <!-- Left: screenshot -->
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)">
+        <img src="images/workspace-studio-main-ui.png" alt="Workspace Studio" style="width:100%;display:block">
+      </div>
+      <!-- Right: triggers + CTA -->
+      <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
+        <div>
+          <div style="color:rgba(255,255,255,.4);font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Triggers from</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/gmail-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Email</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/google-meet-logo.svg" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Meeting transcript</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="assets/logos/google-sheets-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Sheet changes</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/google-drive-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Drive files</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <span style="color:rgba(255,255,255,.5);font-size:20px">+ schedule, forms, chat…</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-accent" style="padding:16px 28px;font-size:24px;text-align:center;font-weight:700">
+          Available on all Temper accounts
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — THE HIDDEN DANGERS                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-subtle" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Data Safety</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/insurance-shield.svg" alt="" style="position:absolute;right:clamp(30px,4vw,70px);top:clamp(30px,5vh,80px);height:clamp(120px,18vh,200px);opacity:.5;pointer-events:none">
+  <div class="inner center" style="flex:1;justify-content:center;gap:clamp(20px,3.5vh,40px)">
+    <h2 class="t-display" style="color:#fff">The Hidden Dangers</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.8)">
+      The same "agency" that makes these tools powerful also makes them dangerous.<br>
+      Because agents can browse, read, and write — they can accidentally become <strong style="color:#FB49AD">super-leakers</strong>.
+    </p>
+    <div class="grid-2">
+      <div class="card-light" style="border-top:4px solid #FB49AD;display:flex;flex-direction:column;gap:clamp(10px,1.5vh,18px);padding:clamp(24px,3vw,44px)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,16px)">
+          <img class="icon icon-sm icon-invert" src="assets/icons/document.png" alt="">
+          <div class="t-title" style="color:#FB49AD;font-size:clamp(20px,2.4vw,30px)">Proprietary Data "Sponge"</div>
+        </div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          If you upload a sensitive strategy doc to an agent to "summarise" it, that data may live in the agent's memory or be used to train a third-party model.
+        </div>
+      </div>
+      <div class="card-light" style="border-top:4px solid #FB49AD;display:flex;flex-direction:column;gap:clamp(10px,1.5vh,18px);padding:clamp(24px,3vw,44px)">
+        <div style="display:flex;align-items:center;gap:clamp(10px,1.2vw,16px)">
+          <img class="icon icon-sm icon-invert" src="assets/icons/connected-people.png" alt="">
+          <div class="t-title" style="color:#FB49AD;font-size:clamp(20px,2.4vw,30px)">PII Cascading</div>
+        </div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
+          Agents chain tasks. An agent might pull a worker's ID to verify a shift, then leak that ID into a log file or an unencrypted Slack notification.
+        </div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="text-align:center;padding:clamp(20px,2.5vw,36px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(19px,2.2vw,26px)">Least Privilege</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px);margin-top:6px">Never give an agent more access than the task requires</div>
+      </div>
+      <div class="card" style="text-align:center;padding:clamp(20px,2.5vw,36px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(19px,2.2vw,26px)">Human-in-the-Loop</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px);margin-top:6px">High-stakes actions (payments, data exports) must ask a human first</div>
+      </div>
+      <div class="card" style="text-align:center;padding:clamp(20px,2.5vw,36px)">
+        <div class="t-title" style="color:var(--green);font-size:clamp(19px,2.2vw,26px)">Audit Trails</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px);margin-top:6px">See not just the answer, but every step the agent took to get there</div>
+      </div>
+    </div>
+    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);text-align:left;font-size:clamp(18px,2vw,26px)">
+      "At Temper, we give people freedom. But if our AI agents are 'too free' with our data, we lose the trust that makes our marketplace work. Agentic AI isn't just a new tool — it's a new team member that needs a background check and clear boundaries."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — TEMPER AI DATA SAFETY CHECKLIST             -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Data Safety</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner left">
+    <div class="split" style="grid-template-columns:2fr 3fr;gap:clamp(32px,4vw,64px);align-items:center;flex:1">
+      <!-- Left: Title + takeaway -->
+      <div style="display:flex;flex-direction:column;gap:clamp(16px,2.5vh,28px)">
+        <h2 class="t-display" style="color:#fff;font-size:clamp(32px,4.5vw,56px);line-height:1.1">AI Data Safety Checklist</h2>
+        <p style="color:rgba(255,255,255,.5);font-size:clamp(15px,1.4vw,20px);line-height:1.6">
+          5 pillars to audit any agentic AI project before it goes live.
+        </p>
+        <div style="border-left:3px solid var(--green);padding-left:clamp(14px,1.5vw,22px);margin-top:auto">
+          <p style="color:rgba(255,255,255,.75);font-size:clamp(16px,1.5vw,22px);font-style:italic;line-height:1.5;font-family:'Poppins',sans-serif;font-weight:500">
+            "Does the agent actually need to see this specific piece of data to finish the task?"
+          </p>
+        </div>
+      </div>
+      <!-- Right: The actual checklist -->
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:clamp(20px,2.5vw,36px);display:flex;flex-direction:column;gap:0">
+        <!-- Checklist item 1 -->
+        <div style="display:flex;gap:clamp(12px,1.2vw,18px);align-items:flex-start;padding:clamp(14px,1.4vh,20px) 0">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="1" y="1" width="24" height="24" rx="6" stroke="var(--green)" stroke-width="2" fill="rgba(61,215,108,.1)"/><path d="M7 13.5L11 17.5L19 9" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(15px,1.4vw,20px)">PII Redaction Layer</div>
+            <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.1vw,16px);margin-top:3px;line-height:1.5">Sanitise all PII before it reaches the AI — replace "John Doe" with "[User_A]"</div>
+          </div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.06)"></div>
+        <!-- Checklist item 2 -->
+        <div style="display:flex;gap:clamp(12px,1.2vw,18px);align-items:flex-start;padding:clamp(14px,1.4vh,20px) 0">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="1" y="1" width="24" height="24" rx="6" stroke="var(--green)" stroke-width="2" fill="rgba(61,215,108,.1)"/><path d="M7 13.5L11 17.5L19 9" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(15px,1.4vw,20px)">Principle of Least Privilege</div>
+            <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.1vw,16px);margin-top:3px;line-height:1.5">Don't give agents admin keys if they only need read-only access</div>
+          </div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.06)"></div>
+        <!-- Checklist item 3 -->
+        <div style="display:flex;gap:clamp(12px,1.2vw,18px);align-items:flex-start;padding:clamp(14px,1.4vh,20px) 0">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="1" y="1" width="24" height="24" rx="6" stroke="var(--green)" stroke-width="2" fill="rgba(61,215,108,.1)"/><path d="M7 13.5L11 17.5L19 9" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(15px,1.4vw,20px)">Human-in-the-Loop (HITL)</div>
+            <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.1vw,16px);margin-top:3px;line-height:1.5">Financial transactions and data deletion always require manual approval</div>
+          </div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.06)"></div>
+        <!-- Checklist item 4 -->
+        <div style="display:flex;gap:clamp(12px,1.2vw,18px);align-items:flex-start;padding:clamp(14px,1.4vh,20px) 0">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="1" y="1" width="24" height="24" rx="6" stroke="var(--green)" stroke-width="2" fill="rgba(61,215,108,.1)"/><path d="M7 13.5L11 17.5L19 9" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(15px,1.4vw,20px)">Zero-Retention & Private Context</div>
+            <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.1vw,16px);margin-top:3px;line-height:1.5">Ensure every tool has "do not use for AI training" enabled</div>
+          </div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.06)"></div>
+        <!-- Checklist item 5 -->
+        <div style="display:flex;gap:clamp(12px,1.2vw,18px);align-items:flex-start;padding:clamp(14px,1.4vh,20px) 0">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="1" y="1" width="24" height="24" rx="6" stroke="var(--green)" stroke-width="2" fill="rgba(61,215,108,.1)"/><path d="M7 13.5L11 17.5L19 9" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(15px,1.4vw,20px)">Step-by-Step Audit Trails</div>
+            <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.1vw,16px);margin-top:3px;line-height:1.5">Log every tool call: "I accessed Table X, filtered by Y, output Z"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 23 — PLOT TWIST                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-aurora" data-section="temper">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="deco" style="width:550px;height:550px;top:-220px;right:-120px"></div>
+  <div class="deco" style="width:380px;height:380px;bottom:-160px;left:-100px"></div>
+  <img src="assets/illustrations/illustration-present.png" alt="" style="position:absolute;right:clamp(30px,4vw,60px);bottom:clamp(20px,4vh,50px);height:clamp(100px,14vh,160px);opacity:.4;pointer-events:none">
+  <div class="inner left">
+    <div class="split" style="grid-template-columns:4fr 5fr;align-items:center;gap:clamp(30px,4vw,60px);flex:1">
+      <!-- Left: Text content -->
+      <div style="display:flex;flex-direction:column;gap:clamp(12px,2vh,24px)">
+        <div class="t-label" style="color:rgba(255,255,255,.5);letter-spacing:6px">Wait For It...</div>
+        <h2 class="t-hero" style="color:#fff;font-size:clamp(44px,6vw,76px)">Plot Twist</h2>
+        <p class="t-display" style="color:var(--green);font-size:clamp(26px,3.5vw,44px)">
+          This Entire Presentation Was Built by an <span style="background:linear-gradient(135deg,#a855f7,#7c3aed,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI Agent</span>
+        </p>
+        <p class="t-body" style="color:rgba(255,255,255,.55)">
+          Not PowerPoint. Not hand-coded.<br>
+          Every slide, every animation, every line of HTML, CSS, and JavaScript — generated through natural language conversation with Claude Code.
+        </p>
+      </div>
+      <!-- Right: Terminal mockup -->
+      <div class="card" id="plot-terminal" style="text-align:left;padding:clamp(20px,2.5vw,36px);background:rgba(10,36,33,.85);border:1px solid rgba(255,255,255,.12)">
+        <div style="display:flex;gap:6px;margin-bottom:clamp(10px,1.2vh,16px)">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block"></span>
+        </div>
+        <div id="typewriter-output" style="font-family:'Courier New',monospace;font-size:clamp(15px,1.5vw,21px);color:rgba(255,255,255,.75);line-height:2;min-height:12em"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 23 — HOW THIS WAS MADE                       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Behind the Scenes</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff">The Same Three Pillars</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.5)">
+      This presentation was built using exactly what we just discussed
+    </p>
+    <!-- Three columns with large icons -->
+    <div class="grid-3" style="margin-top:clamp(12px,2vh,24px)">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+        <div style="width:clamp(64px,7vw,88px);height:clamp(64px,7vw,88px);border-radius:50%;background:rgba(61,215,108,.12);border:2px solid rgba(61,215,108,.25);display:flex;align-items:center;justify-content:center">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div style="color:var(--green);font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px)">Connections</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
+          Reads & writes files, controls the browser, runs commands — all via MCP
+        </div>
+      </div>
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+        <div style="width:clamp(64px,7vw,88px);height:clamp(64px,7vw,88px);border-radius:50%;background:rgba(61,215,108,.12);border:2px solid rgba(61,215,108,.25);display:flex;align-items:center;justify-content:center">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div style="color:var(--green);font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px)">Human Control</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
+          Every change guided by feedback — "make it darker", "add animations"
+        </div>
+      </div>
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+        <div style="width:clamp(64px,7vw,88px);height:clamp(64px,7vw,88px);border-radius:50%;background:rgba(61,215,108,.12);border:2px solid rgba(61,215,108,.25);display:flex;align-items:center;justify-content:center">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div style="color:var(--green);font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px)">Rich Context</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
+          Brand guidelines, color palettes, icon libraries, and design specs
+        </div>
+      </div>
+    </div>
+    <!-- Takeaway -->
+    <div class="card-accent" style="margin-top:clamp(16px,3vh,32px);padding:clamp(18px,2vw,28px) clamp(28px,3.5vw,48px);font-size:clamp(18px,2vw,26px);text-align:center;max-width:1000px;font-weight:700">
+      This presentation IS the proof — agentic AI isn't coming, it's already here
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 24 — THE FULL PICTURE                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="gradient" data-section="closing">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <h2 class="t-display" style="color:#fff;margin-bottom:clamp(16px,3vh,36px)">Bringing It All Together</h2>
+    <div class="grid-3">
+      <div class="card-teal" style="text-align:center;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px)">
+        <img class="icon icon-xl icon-invert" src="assets/icons/globe.png" alt="">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Connections</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">AI reads & writes to your tools via MCP — the universal connector</div>
+      </div>
+      <div class="card-teal" style="text-align:center;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px)">
+        <img class="icon icon-xl icon-invert" src="assets/icons/shield-check.png" alt="">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Human Control</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">You approve critical steps — start supervised, automate over time</div>
+      </div>
+      <div class="card-teal" style="text-align:center;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px)">
+        <img class="icon icon-xl icon-invert" src="assets/icons/lightbulb.png" alt="">
+        <div class="t-title" style="color:var(--green);font-size:clamp(20px,2.4vw,28px)">Rich Context</div>
+        <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">Instructions, memory, knowledge, tools — the richer, the better</div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:clamp(24px,4vh,40px);padding:clamp(16px,2vw,28px) clamp(28px,4vw,48px);font-size:clamp(18px,2.2vw,28px);text-align:center;max-width:1000px;font-weight:700">
+      Connected data + human oversight + rich context = automation you can trust
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 25 — START THIS WEEK                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="closing">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Action Items</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <img src="assets/illustrations/walkthrough-3.svg" alt="" style="position:absolute;right:clamp(30px,4vw,70px);bottom:clamp(30px,6vh,80px);height:clamp(160px,26vh,300px);opacity:.5;pointer-events:none">
+  <div class="inner left">
+    <h2 class="t-display" style="color:#fff">Start This Week</h2>
+    <div style="display:flex;flex-direction:column;gap:clamp(14px,2vh,24px)">
+      <div style="display:flex;gap:clamp(16px,2vw,28px);align-items:center">
+        <img class="num-badge" src="assets/numbers/badge-01.png" alt="1">
+        <div class="card-ghost" style="flex:1;padding:clamp(18px,2vw,28px) clamp(24px,3vw,40px)">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Try an AI Agent</div>
+          <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">Build a Gemini Gem or use Claude for one recurring task. Experience the shift from chatbot to agent.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(16px,2vw,28px);align-items:center">
+        <img class="num-badge" src="assets/numbers/badge-02.png" alt="2">
+        <div class="card-ghost" style="flex:1;padding:clamp(18px,2vw,28px) clamp(24px,3vw,40px)">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Write Down Your Context</div>
+          <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">Capture your team's conventions, formats, and processes. Feed them to AI — watch the quality jump.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(16px,2vw,28px);align-items:center">
+        <img class="num-badge" src="assets/numbers/badge-03.png" alt="3">
+        <div class="card-ghost" style="flex:1;padding:clamp(18px,2vw,28px) clamp(24px,3vw,40px)">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Design a Human Gate</div>
+          <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">Pick one workflow and decide where a human should review. Start supervised, expand as trust builds.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(16px,2vw,28px);align-items:center">
+        <img class="num-badge" src="assets/numbers/badge-04.png" alt="4">
+        <div class="card-ghost" style="flex:1;padding:clamp(18px,2vw,28px) clamp(24px,3vw,40px)">
+          <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Share What You Build</div>
+          <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">Post your workflow in #ai-workflows on Slack. One person's workflow can save the whole team hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 26 — Q&A                                     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="subtle" data-section="closing">
+  <div class="slide-photo-bg darken-heavy" style="background-image:url('images/digital-earth.jpg')"></div>
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="deco" style="width:600px;height:600px;bottom:-250px;left:-150px"></div>
+  <div class="deco" style="width:350px;height:350px;top:-100px;right:60px"></div>
+  <div class="inner center">
+    <img src="assets/illustrations/woman-relaxing-with-dog.png" alt="" style="height:clamp(140px,25vh,320px);margin-bottom:clamp(8px,2vh,20px);opacity:.9">
+    <div class="t-label" style="color:var(--soft);margin-bottom:clamp(8px,1.5vh,16px)">Temper Summit 2026</div>
+    <h1 class="t-hero" style="color:#fff;font-size:clamp(48px,8vw,80px)">Questions?</h1>
+    <p class="t-desc" style="color:rgba(255,255,255,.7);margin-top:clamp(24px,4vh,48px);font-weight:500">
+      Thank you for joining — let's build the future of work together
+    </p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+</div><!-- /deck -->
+
+<div id="em-badge">Edit Mode — press E to exit</div>
+<div id="em-overlays" style="display:none"></div>
+
+<div id="em-panel">
+  <div class="emp-head"><h3>Inspector</h3><button class="emp-close" id="emp-close">&times;</button></div>
+  <div class="emp-tabs">
+    <button class="emp-tab active" data-pane="element">Element</button>
+    <button class="emp-tab" data-pane="global">Global</button>
+  </div>
+  <div class="emp-pane active" id="emp-element">
+    <div class="emp-info" id="emp-el-info">Click an element to inspect</div>
+
+    <div class="emp-sec open"><div class="emp-sec-title">Typography</div><div class="emp-sec-body">
+      <div class="emp-row">
+        <label>font-size</label><input type="text" id="emp-fs">
+        <select id="emp-fs-unit"><option>px</option><option>vw</option><option>vh</option><option>em</option><option>rem</option></select>
+        <div class="emp-range-wrap"><input type="range" id="emp-fs-r" min="0" max="120" step="1"></div>
+      </div>
+      <div class="emp-row">
+        <label>font-family</label>
+        <select id="emp-ff" style="flex:1"><option value="'Poppins', sans-serif">Poppins</option><option value="'Inter', sans-serif">Inter</option><option value="monospace">Monospace</option><option value="system-ui">System UI</option></select>
+      </div>
+      <div class="emp-row">
+        <label>font-weight</label>
+        <select id="emp-fw"><option>100</option><option>200</option><option>300</option><option>400</option><option>500</option><option>600</option><option>700</option><option>800</option><option>900</option></select>
+      </div>
+      <div class="emp-row">
+        <label>line-height</label><input type="text" id="emp-lh">
+        <div class="emp-range-wrap"><input type="range" id="emp-lh-r" min="0" max="120" step="1"></div>
+      </div>
+      <div class="emp-row">
+        <label>letter-spacing</label><input type="text" id="emp-ls">
+        <div class="emp-range-wrap"><input type="range" id="emp-ls-r" min="-5" max="20" step="0.5"></div>
+      </div>
+      <div class="emp-row">
+        <label>text-align</label>
+        <select id="emp-ta"><option>left</option><option>center</option><option>right</option><option>justify</option></select>
+      </div>
+      <div class="emp-row">
+        <label>text-transform</label>
+        <select id="emp-tt"><option>none</option><option>uppercase</option><option>lowercase</option><option>capitalize</option></select>
+      </div>
+      <div class="emp-row">
+        <label>color</label><input type="text" id="emp-co"><input type="color" id="emp-co-pick" style="width:24px;height:22px;padding:0;border:1px solid rgba(255,255,255,.15);border-radius:4px;cursor:pointer;background:transparent;">
+      </div>
+      <div class="emp-row">
+        <label>opacity</label><input type="text" id="emp-op">
+        <div class="emp-range-wrap"><input type="range" id="emp-op-r" min="0" max="1" step="0.05"></div>
+      </div>
+    </div></div>
+
+    <div class="emp-sec open"><div class="emp-sec-title">Box Model</div><div class="emp-sec-body">
+      <div class="emp-row">
+        <label>padding</label><input type="text" id="emp-pad">
+        <div class="emp-range-wrap"><input type="range" id="emp-pad-r" min="0" max="100" step="1"></div>
+      </div>
+      <div class="emp-row">
+        <label>margin</label><input type="text" id="emp-mar">
+        <div class="emp-range-wrap"><input type="range" id="emp-mar-r" min="0" max="200" step="1"></div>
+      </div>
+      <div class="emp-row">
+        <label>width</label><input type="text" id="emp-w">
+        <div class="emp-range-wrap"><input type="range" id="emp-w-r" min="0" max="2000" step="10"></div>
+      </div>
+      <div class="emp-row">
+        <label>max-width</label><input type="text" id="emp-mw">
+        <div class="emp-range-wrap"><input type="range" id="emp-mw-r" min="100" max="2000" step="10"></div>
+      </div>
+      <div class="emp-row">
+        <label>gap</label><input type="text" id="emp-gap">
+        <div class="emp-range-wrap"><input type="range" id="emp-gap-r" min="0" max="80" step="1"></div>
+      </div>
+      <div class="emp-row">
+        <label>border-radius</label><input type="text" id="emp-br">
+        <div class="emp-range-wrap"><input type="range" id="emp-br-r" min="0" max="50" step="1"></div>
+      </div>
+    </div></div>
+
+    <div class="emp-sec"><div class="emp-sec-title">Layout</div><div class="emp-sec-body">
+      <div class="emp-row">
+        <label>display</label>
+        <select id="emp-disp"><option>block</option><option>flex</option><option>grid</option><option>inline</option><option>inline-flex</option><option>inline-block</option><option>none</option></select>
+      </div>
+      <div class="emp-row">
+        <label>flex-direction</label>
+        <select id="emp-fd"><option>row</option><option>column</option><option>row-reverse</option><option>column-reverse</option></select>
+      </div>
+      <div class="emp-row">
+        <label>align-items</label>
+        <select id="emp-ai"><option>stretch</option><option>flex-start</option><option>center</option><option>flex-end</option><option>baseline</option></select>
+      </div>
+      <div class="emp-row">
+        <label>justify-content</label>
+        <select id="emp-jc"><option>flex-start</option><option>center</option><option>flex-end</option><option>space-between</option><option>space-around</option><option>space-evenly</option></select>
+      </div>
+      <div class="emp-row">
+        <label>flex-wrap</label>
+        <select id="emp-fwrap"><option>nowrap</option><option>wrap</option><option>wrap-reverse</option></select>
+      </div>
+      <div class="emp-row">
+        <label>position</label>
+        <select id="emp-pos"><option>static</option><option>relative</option><option>absolute</option><option>fixed</option></select>
+      </div>
+      <div class="emp-row">
+        <label>overflow</label>
+        <select id="emp-ov"><option>visible</option><option>hidden</option><option>scroll</option><option>auto</option></select>
+      </div>
+    </div></div>
+
+    <div class="emp-sec"><div class="emp-sec-title">Background &amp; Border</div><div class="emp-sec-body">
+      <div class="emp-row">
+        <label>background</label><input type="text" id="emp-bg" style="flex:1"><input type="color" id="emp-bg-pick" style="width:24px;height:22px;padding:0;border:1px solid rgba(255,255,255,.15);border-radius:4px;cursor:pointer;background:transparent;">
+      </div>
+      <div class="emp-row">
+        <label>border</label><input type="text" id="emp-bor" style="flex:1">
+      </div>
+      <div class="emp-row">
+        <label>box-shadow</label><input type="text" id="emp-bs" style="flex:1">
+      </div>
+      <div class="emp-row">
+        <label>backdrop-filter</label><input type="text" id="emp-bf" style="flex:1">
+      </div>
+    </div></div>
+
+    <div class="emp-sec"><div class="emp-sec-title">Dimensions (read-only)</div><div class="emp-sec-body">
+      <div class="emp-row"><label>computed</label><input type="text" id="emp-sz" readonly style="opacity:.5"></div>
+    </div></div>
+  </div>
+  <div class="emp-pane" id="emp-global">
+    <div class="emp-sec"><div class="emp-sec-title">Typography Scale</div>
+      <div class="emp-slider"><label>Header</label><input type="range" min="30" max="120" step="2" value="60" data-gp="--hdr-px"><span class="emp-sval">60</span></div>
+      <div class="emp-slider"><label>Subtitle</label><input type="range" min="14" max="56" step="1" value="28" data-gp="--sub-px"><span class="emp-sval">28</span></div>
+      <div class="emp-slider"><label>Card Title</label><input type="range" min="14" max="48" step="1" value="24" data-gp="--card-title-px"><span class="emp-sval">24</span></div>
+      <div class="emp-slider"><label>Card Body</label><input type="range" min="12" max="36" step="1" value="20" data-gp="--card-body-px"><span class="emp-sval">20</span></div>
+    </div>
+    <div class="emp-sec"><div class="emp-sec-title">Spacing</div>
+      <div class="emp-slider"><label>Card Pad</label><input type="range" min="8" max="60" step="2" value="28" data-gp="--card-pad-px"><span class="emp-sval">28</span></div>
+      <div class="emp-slider"><label>Grid Gap</label><input type="range" min="6" max="40" step="2" value="20" data-gp="--grid-gap-px"><span class="emp-sval">20</span></div>
+      <div class="emp-slider"><label>Section Gap</label><input type="range" min="6" max="40" step="2" value="18" data-gp="--inner-gap-px"><span class="emp-sval">18</span></div>
+    </div>
+  </div>
+  <div class="emp-actions">
+    <button class="emp-btn-rst" id="emp-reset">Reset All</button>
+    <button class="emp-btn-exp" id="emp-export">Export CSS</button>
+  </div>
+</div>
+
+<script src="deck.js"></script>
+<script src="edit-mode.js"></script>
+</body>
+</html>
