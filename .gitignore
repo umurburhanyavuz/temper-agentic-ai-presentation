@@ -1,0 +1,12 @@
+.claude/
+.playwright-mcp/
+CLAUDE.md
+Makefile
+_export/
+_export_pptx.py
+_review_slides.mjs
+_venv/
+agentic ai slide/
+export-slides.mjs
+icon_rename_plan.json
+.DS_Store
