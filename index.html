@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="edit-mode.css">
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="utilities/glow-pulse.js"></script>
 </head>
 <body>
 
@@ -289,46 +290,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- SLIDE 7 — THE NUMBERS                              -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-subtle" data-section="impact">
-  <div class="slide-header">
-    <span class="section-tag t-label" style="color:var(--soft)">Industry Data</span>
-    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
-  </div>
-  <div class="inner center">
-    <h2 class="t-display" style="color:#fff">The Numbers Speak</h2>
-    <div class="grid-3">
-      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
-        <div class="stat-fill" data-target="60"></div>
-        <img class="icon icon-md icon-invert" src="assets/icons/stopwatch.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
-        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">60%</div>
-        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">of employee time could be<br>automated with current AI</div>
-        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">McKinsey Global Institute, 2023</div>
-      </div>
-      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
-        <div class="stat-fill" data-target="40"></div>
-        <img class="icon icon-md icon-invert" src="assets/icons/growth-chart.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
-        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">40%</div>
-        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">higher quality output from<br>AI-augmented consultants</div>
-        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">Harvard Business School & BCG, 2023</div>
-      </div>
-      <div class="card-light stat-card" style="text-align:center;padding:clamp(24px,3vw,44px);position:relative;overflow:hidden">
-        <div class="stat-fill" data-target="75"></div>
-        <img class="icon icon-md icon-invert" src="assets/icons/trophy.png" alt="" style="margin:0 auto clamp(8px,1vh,16px);position:relative;z-index:1">
-        <div class="stat-big" data-a="stat" style="position:relative;z-index:1">75%</div>
-        <div class="stat-label" style="color:rgba(255,255,255,.75);position:relative;z-index:1">of companies plan to deploy<br>agentic AI within 2 years</div>
-        <div style="font-size:clamp(9px,.9vw,12px);color:rgba(255,255,255,.25);margin-top:6px;position:relative;z-index:1">Deloitte, State of AI in Enterprise, 2026</div>
-      </div>
-    </div>
-    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(16px,3vh,32px);text-align:left;font-size:clamp(18px,2vw,26px)">
-      "The question isn't <em>if</em> AI agents will change work — it's <em>how fast</em> you'll adapt."
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- SLIDE 9 — BEFORE & AFTER                           -->
+<!-- SLIDE 7 — BEFORE & AFTER                           -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="slide" data-bg="brand-aurora" data-section="impact">
   <div class="slide-header">
@@ -392,48 +354,67 @@
   </div>
   <div class="inner center">
     <h2 class="t-display" style="color:#fff">It's Already Happening</h2>
-    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(12px,2vh,24px)">Real companies, real numbers</p>
-    <div style="width:100%;overflow:hidden;border-radius:16px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px)">
-      <table style="width:100%;border-collapse:collapse;font-family:'Inter',system-ui,sans-serif">
-        <thead>
-          <tr style="border-bottom:2px solid rgba(255,255,255,.12)">
-            <th style="padding:14px 18px;text-align:left;color:var(--soft);font-size:clamp(12px,1.2vw,15px);font-weight:600;letter-spacing:.5px;text-transform:uppercase" colspan="2">Company</th>
-            <th style="padding:14px 18px;text-align:left;color:var(--soft);font-size:clamp(12px,1.2vw,15px);font-weight:600;letter-spacing:.5px;text-transform:uppercase">What Happened</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(255,255,255,.07)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/klarna.com" alt="Klarna" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">Klarna</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">Halved workforce, doubled revenue. AI replaced 700–853 employees. Customer resolution time: 11 min → 2 min. $40M profit improvement.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,.07)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/google.com" alt="Google" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">Google</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">AI now writes 50% of all new code internally — up from 25% just one year ago. Engineering velocity up 10%.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,.07)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">Microsoft</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">AI writes 20–30% of code. $13B annual AI revenue with 175% YoY growth. 85% of employees use Copilot daily.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,.07)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/reddit.com" alt="Reddit" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">Reddit</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">46% of support cases fully automated. Response time cut by 84% — from 8.9 minutes to 1.4 minutes.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,.07);background:rgba(61,215,108,.06)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/ing.com" alt="ING" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">ING 🇳🇱</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">Customer due diligence now takes seconds vs. days or weeks. 90% of AI pilots move to production vs. 30% industry average. Full agentic mortgage applications launching 2026.</td>
-          </tr>
-          <tr style="background:rgba(61,215,108,.06)">
-            <td style="padding:12px 10px 12px 18px;width:44px"><img src="https://logo.clearbit.com/booking.com" alt="Booking.com" style="width:32px;height:32px;border-radius:8px;object-fit:contain;display:block" onerror="this.style.display='none'"></td>
-            <td style="padding:12px 10px;color:#fff;font-weight:700;font-size:clamp(15px,1.6vw,20px);white-space:nowrap">Booking.com 🇳🇱</td>
-            <td style="padding:12px 18px 12px 10px;color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,18px);line-height:1.45">Customer service cost per booking dropped 10% in 2025 while bookings grew. 73% increase in partner satisfaction after agentic AI launch. Reinvesting $700M of AI savings into growth in 2026.</td>
-          </tr>
-        </tbody>
-      </table>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(12px,2vh,20px)">Real companies, real numbers</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px);width:100%">
+      <!-- Klarna -->
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/klarna-logo.png" alt="Klarna" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">Klarna</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">2x revenue<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">half the workforce</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">Resolution: 11 min → 2 min. +$40M profit.</div>
+      </div>
+      <!-- Google -->
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/google-logo.png" alt="Google" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">Google</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">50% of code<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">written by AI</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">Up from 25% last year. Engineering velocity +10%.</div>
+      </div>
+      <!-- Microsoft -->
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/microsoft-logo.png" alt="Microsoft" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">Microsoft</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">$13B AI revenue<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">175% year-over-year growth</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">85% of employees use Copilot daily.</div>
+      </div>
+      <!-- Reddit -->
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/reddit-logo.png" alt="Reddit" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">Reddit</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">84% faster<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">response time</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">46% of support fully automated. 8.9 → 1.4 min.</div>
+      </div>
+      <!-- ING -->
+      <div style="background:rgba(61,215,108,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(61,215,108,.2);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/ing-logo.png" alt="ING" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">ING</span>
+          <span style="font-size:clamp(10px,1vw,12px);color:rgba(61,215,108,.5);font-weight:600;letter-spacing:.5px">NL</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">90% to production<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">vs 30% industry average</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">Due diligence: days → seconds. Agentic mortgages in 2026.</div>
+      </div>
+      <!-- Booking.com -->
+      <div style="background:rgba(61,215,108,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(61,215,108,.2);display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/logos/booking-logo.png" alt="Booking.com" style="width:38px;height:38px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,.12);padding:5px">
+          <span style="color:#fff;font-weight:700;font-size:clamp(16px,1.6vw,22px);font-family:'Poppins',sans-serif">Booking.com</span>
+          <span style="font-size:clamp(10px,1vw,12px);color:rgba(61,215,108,.5);font-weight:600;letter-spacing:.5px">NL</span>
+        </div>
+        <div style="color:var(--green);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1;font-family:'Poppins',sans-serif">$700M saved<br><span style="font-size:.6em;color:rgba(255,255,255,.5);font-weight:500">reinvested in growth</span></div>
+        <div style="color:rgba(255,255,255,.6);font-size:clamp(12px,1.1vw,15px);line-height:1.45;margin-top:auto">+73% partner satisfaction. -10% cost per booking.</div>
+      </div>
+    </div>
+    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(12px,2vh,20px);text-align:left;font-size:clamp(16px,1.8vw,24px)">
+      "The question isn't <em>if</em> AI agents will change work — it's <em>how fast</em> you'll adapt."
     </div>
   </div>
 </div>
@@ -447,30 +428,42 @@
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
   </div>
   <div class="inner center">
-    <h2 class="t-display" style="color:#fff">The Tipping Point</h2>
-    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(16px,2.5vh,28px)">Where the industry stands right now</p>
-    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.5vh,16px);max-width:1100px;width:100%">
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">79%</span> of companies have already adopted AI agents in some form <span style="color:rgba(255,255,255,.35);font-size:.7em">(PwC, 2025)</span>
+    <h2 class="t-display" style="color:#fff;margin-bottom:clamp(4px,1vh,8px)">The Tipping Point</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(12px,2vh,20px)">Where the industry stands right now</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px);width:100%">
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">79%</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of companies adopted AI agents</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">PwC, 2025</div>
       </div>
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">$380B</span> Big Tech — Google, Microsoft, Meta, Amazon — spending on AI infrastructure in 2025 alone
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">$700B</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">Big Tech AI infrastructure spend in 2026</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">CNBC, 2026</div>
       </div>
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">+62%</span> Google stock in 2025. Amazon +1%. The gap tracks almost perfectly with AI strategy execution.
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">40%</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of enterprise apps will have AI agents by end of 2026</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">up from &lt;5% in 2025 — Gartner</div>
       </div>
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">$5B → $199B</span> Agentic AI market by 2034 <span style="color:rgba(255,255,255,.35);font-size:.7em">(43.84% CAGR)</span>
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(24px,2.6vw,36px);font-family:'Poppins',sans-serif;line-height:1">$5B → $199B</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">Agentic AI market by 2034</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">43.84% CAGR</div>
       </div>
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">33%</span> of enterprise software will include agentic AI by 2028 — up from &lt;1% in 2024 <span style="color:rgba(255,255,255,.35);font-size:.7em">(Gartner)</span>
+      <div style="background:rgba(61,215,108,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(61,215,108,.15);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">-40%</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">time-to-hire with AI in recruitment</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">78% of companies report — Second Talent</div>
       </div>
-      <div class="card-light" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px);font-size:clamp(16px,1.7vw,22px);color:rgba(255,255,255,.85);line-height:1.5;display:flex;align-items:baseline;gap:14px">
-        <span style="color:var(--green);font-weight:700;font-size:1.2em;flex-shrink:0">15%</span> of all daily work decisions will be made autonomously by AI agents by 2028 — up from 0% today <span style="color:rgba(255,255,255,.35);font-size:.7em">(Gartner)</span>
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">15%</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of daily decisions by AI agents by 2028</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">up from 0% today — Gartner</div>
       </div>
     </div>
-    <div style="margin-top:clamp(20px,3vh,36px);padding:clamp(18px,2.5vw,28px) clamp(24px,3vw,40px);background:rgba(61,215,108,.12);border:2px solid var(--green);border-radius:14px;text-align:center">
-      <p style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(22px,2.6vw,34px);line-height:1.3">"This isn't the future. It's <span style="color:var(--green)">last quarter</span>."</p>
+    <div style="margin-top:clamp(12px,2vh,20px);padding:clamp(14px,1.8vw,22px) clamp(24px,3vw,40px);background:rgba(61,215,108,.12);border:2px solid var(--green);border-radius:14px;text-align:center">
+      <p style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.3">"This isn't the future. It's <span style="color:var(--green)">last quarter</span>."</p>
     </div>
   </div>
 </div>
@@ -595,7 +588,7 @@
           <img class="icon icon-invert" src="assets/icons/connected-people.png" alt="" style="width:clamp(32px,3.5vw,44px);height:auto;flex-shrink:0">
           <div>
             <div class="t-title" style="color:#fff;font-size:clamp(18px,2vw,26px)">One protocol, 100+ tools</div>
-            <div style="color:rgba(255,255,255,.6);font-size:clamp(15px,1.6vw,21px);margin-top:2px">Notion, Jira, Slack, Google Workspace, and growing.</div>
+            <div style="color:rgba(255,255,255,.6);font-size:clamp(15px,1.6vw,21px);margin-top:2px">100+ tools already supported, and growing.</div>
           </div>
         </div>
         <div class="card" style="text-align:left;flex:1;display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);padding:clamp(16px,2vw,28px)">
@@ -630,65 +623,219 @@
           You can also build your own MCP server for any internal API or data source.
         </p>
       </div>
-      <!-- Right: diagram rebuilt with SVG -->
+      <!-- Right: diagram — dynamically positioned MCP tool nodes -->
       <div style="position:relative;display:flex;align-items:center;justify-content:center">
-        <svg viewBox="0 0 560 560" width="100%" style="max-width:640px" xmlns="http://www.w3.org/2000/svg">
-          <!-- Glow -->
+        <svg id="mcp-diagram" viewBox="0 0 560 560" width="100%" style="max-width:900px" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="mcpGlow"><stop offset="0%" stop-color="rgba(61,215,108,.3)"/><stop offset="70%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="mcpGlow2"><stop offset="0%" stop-color="rgba(61,215,108,.25)"/><stop offset="40%" stop-color="rgba(61,215,108,.08)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="hubGrad"><stop offset="0%" stop-color="#4AE87A"/><stop offset="100%" stop-color="#2BBF5B"/></radialGradient>
+            <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b1"/><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b2"/><feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="nodeGlow"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#3DD76C" flood-opacity=".3"/></filter>
+            <clipPath id="iconClip"><rect width="44" height="44" rx="10"/></clipPath>
+            <clipPath id="iconClip48"><rect width="48" height="48" rx="11"/></clipPath>
           </defs>
-          <circle cx="280" cy="280" r="200" fill="url(#mcpGlow)"/>
-          <!-- Spokes (8 directions) -->
-          <line x1="280" y1="225" x2="280" y2="68" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="319" y1="232" x2="418" y2="100" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="335" y1="280" x2="492" y2="280" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="319" y1="328" x2="418" y2="460" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="280" y1="335" x2="280" y2="492" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="241" y1="328" x2="142" y2="460" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="225" y1="280" x2="68" y2="280" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <line x1="241" y1="232" x2="142" y2="100" stroke="#3DD76C" stroke-width="2" opacity=".5"/>
-          <!-- Center block -->
-          <rect x="225" y="225" width="110" height="110" rx="28" fill="#3DD76C"/>
-          <g transform="translate(252,240) scale(0.32)">
+          <!-- Background glow -->
+          <circle cx="280" cy="280" r="240" fill="url(#mcpGlow2)"/>
+          <!-- Orbit ring -->
+          <circle cx="280" cy="280" r="175" fill="none" stroke="rgba(61,215,108,.35)" stroke-width="2" stroke-dasharray="8 8"/>
+          <circle cx="280" cy="280" r="175" fill="none" stroke="rgba(61,215,108,.12)" stroke-width="8" stroke-dasharray="8 8"/>
+          <!-- Center hub -->
+          <!-- Glow pulse waves (JS-driven random frequency) -->
+          <circle id="pulse-wave-1" cx="280" cy="280" r="58" fill="rgba(61,215,108,.3)" filter="url(#softGlow)" opacity="0"/>
+          <circle id="pulse-wave-2" cx="280" cy="280" r="58" fill="rgba(61,215,108,.3)" filter="url(#softGlow)" opacity="0"/>
+          <!-- Solid hub -->
+          <circle cx="280" cy="280" r="58" fill="url(#hubGrad)"/>
+          <g transform="translate(250,236) scale(0.32)">
             <path d="M25 97.8528L92.8823 29.9706C102.255 20.598 117.451 20.598 126.823 29.9706C136.196 39.3431 136.196 54.5391 126.823 63.9117L75.5581 115.177" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
             <path d="M76.2653 114.47L126.823 63.9117C136.196 54.5391 151.392 54.5391 160.765 63.9117L161.118 64.2652C170.491 73.6378 170.491 88.8338 161.118 98.2063L99.7248 159.6C96.6006 162.724 96.6006 167.789 99.7248 170.913L112.331 183.52" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
             <path d="M109.853 46.9411L59.6482 97.1457C50.2757 106.518 50.2757 121.714 59.6482 131.087C69.0208 140.459 84.2168 140.459 93.5894 131.087L143.794 80.8822" stroke="#0a2421" stroke-width="14" stroke-linecap="round" fill="none"/>
           </g>
-          <text x="280" y="326" text-anchor="middle" fill="#0a2421" font-family="Poppins,sans-serif" font-weight="800" font-size="16">MCP</text>
-          <!-- 8 Nodes around the hub -->
-          <!-- Notion (top) -->
-          <rect x="248" y="28" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/notion-logo.png" x="258" y="38" width="44" height="44"/>
-          <circle cx="308" cy="32" r="10" fill="#3DD76C"/><text x="308" y="36" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Gmail (top-right) -->
-          <rect x="386" y="68" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/gmail-logo.png" x="396" y="78" width="44" height="44"/>
-          <circle cx="446" cy="72" r="10" fill="#3DD76C"/><text x="446" y="76" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Google Drive (right) -->
-          <rect x="460" y="248" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="images/logos/google-drive-logo.png" x="470" y="258" width="44" height="44"/>
-          <circle cx="520" cy="252" r="10" fill="#3DD76C"/><text x="520" y="256" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Sheets (bottom-right) -->
-          <rect x="386" y="428" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/google-sheets-logo.png" x="396" y="438" width="44" height="44"/>
-          <circle cx="446" cy="432" r="10" fill="#3DD76C"/><text x="446" y="436" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Slack (bottom) -->
-          <rect x="248" y="460" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/slack-logo.png" x="258" y="470" width="44" height="44"/>
-          <circle cx="308" cy="464" r="10" fill="#3DD76C"/><text x="308" y="468" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Jira (bottom-left) -->
-          <rect x="110" y="428" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/atlassian-logo.png" x="120" y="438" width="44" height="44"/>
-          <circle cx="170" cy="432" r="10" fill="#3DD76C"/><text x="170" y="436" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Google Calendar (left) -->
-          <rect x="36" y="248" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/google-calendar-logo.png" x="46" y="258" width="44" height="44"/>
-          <circle cx="96" cy="252" r="10" fill="#3DD76C"/><text x="96" y="256" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
-          <!-- Mixpanel (top-left) -->
-          <rect x="110" y="68" width="64" height="64" rx="14" fill="rgba(18,54,51,.95)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-          <image href="assets/logos/mixpanel-logo.png" x="120" y="78" width="44" height="44"/>
-          <circle cx="170" cy="72" r="10" fill="#3DD76C"/><text x="170" y="76" text-anchor="middle" fill="#0a2421" font-size="11" font-weight="800">✓</text>
+          <text x="280" y="312" text-anchor="middle" fill="#0a2421" font-family="Poppins,sans-serif" font-weight="800" font-size="15">MCP</text>
+          <!-- Nodes injected by JS -->
+          <g id="mcp-nodes"></g>
         </svg>
+        <script>
+        (function(){
+          const ns = 'http://www.w3.org/2000/svg';
+          const container = document.getElementById('mcp-nodes');
+          const cx = 280, cy = 280, r = 175;
+          const cardW = 88, cardH = 82, iconSize = 44, borderR = 22, padTop = 12, labelGap = 8;
+          const originAngle = -Math.PI / 2; // top of circle
+          const addInterval = 200;   // ms between each node addition (faster than animation)
+          const moveDuration = 1400; // ms for redistribution animation (slow, smooth)
+          const startDelay = 0;      // no initial wait
+
+          const tools = [
+            { name: 'Notion',    icon: 'assets/logos/notion-logo.png', size: 44 },
+            { name: 'GitHub',    icon: 'images/logos/github-logo.png', size: 44 },
+            { name: 'Asana',     icon: 'images/logos/asana-logo.svg', size: 44 },
+            { name: 'Atlassian', icon: 'assets/logos/atlassian-logo.png', size: 44 },
+            { name: 'Slack',     icon: 'assets/logos/slack-logo.png', size: 48 },
+          ];
+
+          const activeNodes = []; // { g, rect, img, label, currentAngle }
+
+          function posAt(a) {
+            return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+          }
+
+          function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+          function setNodePos(node, angle) {
+            const p = posAt(angle);
+            const s = node.iconSize;
+            const imgX = p.x - s / 2;
+            const imgY = p.y - cardH / 2 + padTop;
+            node.currentAngle = angle;
+            node.rect.setAttribute('x', p.x - cardW / 2);
+            node.rect.setAttribute('y', p.y - cardH / 2);
+            node.img.setAttribute('x', imgX);
+            node.img.setAttribute('y', imgY);
+            node.imgClipRect.setAttribute('x', imgX);
+            node.imgClipRect.setAttribute('y', imgY);
+            node.label.setAttribute('x', p.x);
+            node.label.setAttribute('y', p.y - cardH / 2 + padTop + s + labelGap + 12);
+          }
+
+          function createNodeEl(tool) {
+            const g = document.createElementNS(ns, 'g');
+            g.setAttribute('filter', 'url(#nodeGlow)');
+            g.style.opacity = '0';
+            g.style.filter = 'url(#nodeGlow) blur(12px)';
+
+            const rect = document.createElementNS(ns, 'rect');
+            rect.setAttribute('width', cardW);
+            rect.setAttribute('height', cardH);
+            rect.setAttribute('rx', borderR);
+            rect.setAttribute('fill', 'rgba(12,38,36,.95)');
+            rect.setAttribute('stroke', 'rgba(61,215,108,.25)');
+            rect.setAttribute('stroke-width', '1.5');
+
+            const s = tool.size || iconSize;
+            const imgGroup = document.createElementNS(ns, 'g');
+            const clipRect = document.createElementNS(ns, 'clipPath');
+            const clipId = 'clip-' + tool.name.toLowerCase();
+            clipRect.setAttribute('id', clipId);
+            const cr = document.createElementNS(ns, 'rect');
+            cr.setAttribute('width', s);
+            cr.setAttribute('height', s);
+            cr.setAttribute('rx', Math.round(s * 0.22));
+            clipRect.appendChild(cr);
+            imgGroup.appendChild(clipRect);
+            const img = document.createElementNS(ns, 'image');
+            img.setAttribute('href', tool.icon);
+            img.setAttribute('width', s);
+            img.setAttribute('height', s);
+            img.setAttribute('clip-path', 'url(#' + clipId + ')');
+
+            const label = document.createElementNS(ns, 'text');
+            label.setAttribute('text-anchor', 'middle');
+            label.setAttribute('fill', 'rgba(255,255,255,.85)');
+            label.setAttribute('font-family', 'Inter,sans-serif');
+            label.setAttribute('font-weight', '600');
+            label.setAttribute('font-size', '12');
+            label.textContent = tool.name;
+
+            g.appendChild(rect);
+            g.appendChild(imgGroup);
+            g.appendChild(img);
+            g.appendChild(label);
+            return { g, rect, img, imgClipRect: cr, label, iconSize: s, currentAngle: originAngle };
+          }
+
+          function getTargetAngles(count) {
+            // Newest node (last index) claims origin; older nodes spread clockwise
+            const angles = [];
+            for (let i = 0; i < count; i++) {
+              angles.push(originAngle + (2 * Math.PI * (count - 1 - i) / count));
+            }
+            return angles;
+          }
+
+          // Shortest arc direction between two angles
+          function shortestArc(from, to) {
+            let d = to - from;
+            while (d > Math.PI) d -= 2 * Math.PI;
+            while (d < -Math.PI) d += 2 * Math.PI;
+            return d;
+          }
+
+          function addNode(tool) {
+            const node = createNodeEl(tool);
+            setNodePos(node, originAngle);
+            container.appendChild(node.g);
+            activeNodes.push(node);
+
+            const count = activeNodes.length;
+            const targets = getTargetAngles(count);
+
+            // Snapshot starting angles for all nodes
+            const starts = activeNodes.map(n => n.currentAngle);
+
+            const t0 = performance.now();
+            function frame(now) {
+              const elapsed = now - t0;
+              const progress = Math.min(elapsed / moveDuration, 1);
+              const eased = easeOutQuart(progress);
+
+              activeNodes.forEach((n, idx) => {
+                const from = starts[idx];
+                const delta = shortestArc(from, targets[idx]);
+                const current = from + delta * eased;
+                setNodePos(n, current);
+
+                // Fade in the new node (last one)
+                if (idx === count - 1) {
+                  const fadeP = Math.min(progress / 0.5, 1);
+                  const blur = 12 * (1 - fadeP);
+                  n.g.style.opacity = String(fadeP);
+                  n.g.style.filter = 'url(#nodeGlow) blur(' + blur.toFixed(1) + 'px)';
+                }
+              });
+
+              if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+          }
+
+          // Glow pulse via centralized utility
+          GlowPulse.attachPair('pulse-wave-1', 'pulse-wave-2', { baseR: 58 });
+
+          let pendingTimers = [];
+
+          function runAnimation() {
+            pendingTimers.forEach(t => clearTimeout(t));
+            pendingTimers = [];
+            activeNodes.length = 0;
+            container.innerHTML = '';
+            tools.forEach((tool, i) => {
+              pendingTimers.push(setTimeout(() => addNode(tool), startDelay + i * addInterval));
+            });
+          }
+
+          function resetNodes() {
+            pendingTimers.forEach(t => clearTimeout(t));
+            pendingTimers = [];
+            activeNodes.length = 0;
+            container.innerHTML = '';
+          }
+
+          // Watch for .active class on slide
+          const slide = document.getElementById('mcp-diagram').closest('.slide');
+          if (slide) {
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach(m => {
+                if (m.attributeName === 'class') {
+                  if (slide.classList.contains('active')) runAnimation();
+                  else resetNodes();
+                }
+              });
+            });
+            observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
+            if (slide.classList.contains('active')) runAnimation();
+          }
+        })();
+        </script>
       </div>
     </div>
   </div>
@@ -1260,7 +1407,16 @@
         </div>
       </div>
     </div>
-    <div class="grid-2" style="margin-top:12px">
+    <div class="grid-3" style="margin-top:12px">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
+        <img src="assets/logos/notion-logo.png" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
+        <div class="t-title" style="color:#fff;font-size:28px">Notion AI</div>
+        <div style="color:rgba(255,255,255,.65);font-size:22px;line-height:1.4">AI writing, autofill databases, Q&A across your workspace pages.</div>
+        <div style="display:flex;gap:6px;margin-top:auto">
+          <div class="pill pill-green" style="font-size:15px">Approved</div>
+          <div class="pill pill-dark" style="font-size:15px">Everyone</div>
+        </div>
+      </div>
       <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px">
         <img src="images/logos/salesloft-logo.svg" alt="" style="width:60px;height:60px;object-fit:contain;border-radius:14px">
         <div class="t-title" style="color:#fff;font-size:28px">Salesloft</div>
