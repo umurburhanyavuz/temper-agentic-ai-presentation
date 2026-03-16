@@ -427,4 +427,14 @@
     if (active) fitSlide(active);
   });
   document.querySelectorAll('.slide').forEach(s => obs.observe(s, {attributes:true, attributeFilter:['class']}));
+
+  // ── REMOTE CONTROL (Supabase Realtime) ──
+  // Must be after all goTo patches so the closure captures the final version
+  window.addEventListener('remote-goto', function(e) {
+    var n = e.detail.slide;
+    if (n >= 0 && n < total && n !== current) goTo(n);
+  });
+  window.deckGoTo = function(n) { goTo(n); };
+  window.deckGetCurrent = function() { return current; };
+  window.deckGetTotal = function() { return total; };
 })();
