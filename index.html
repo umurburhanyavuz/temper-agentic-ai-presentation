@@ -647,9 +647,8 @@
           const cx = 280, cy = 280, r = 175;
           const cardW = 88, cardH = 82, iconSize = 44, borderR = 22, padTop = 12, labelGap = 8;
           const originAngle = -Math.PI / 2; // top of circle
-          const addInterval = 200;   // ms between each node addition (faster than animation)
-          const moveDuration = 1400; // ms for redistribution animation (slow, smooth)
-          const startDelay = 0;      // no initial wait
+          const addInterval = 150;
+          const moveDuration = 2000;
 
           const tools = [
             { name: 'Notion',    icon: 'assets/logos/notion-logo.png', size: 44 },
@@ -659,7 +658,7 @@
             { name: 'Slack',     icon: 'assets/logos/slack-logo.png', size: 48 },
           ];
 
-          const activeNodes = []; // { g, rect, img, label, currentAngle }
+          const activeNodes = [];
 
           function posAt(a) {
             return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
@@ -667,54 +666,39 @@
 
           function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
-          function setNodePos(node, angle) {
-            const p = posAt(angle);
-            const s = node.iconSize;
-            const imgX = p.x - s / 2;
-            const imgY = p.y - cardH / 2 + padTop;
-            node.currentAngle = angle;
-            node.rect.setAttribute('x', p.x - cardW / 2);
-            node.rect.setAttribute('y', p.y - cardH / 2);
-            node.img.setAttribute('x', imgX);
-            node.img.setAttribute('y', imgY);
-            node.imgClipRect.setAttribute('x', imgX);
-            node.imgClipRect.setAttribute('y', imgY);
-            node.label.setAttribute('x', p.x);
-            node.label.setAttribute('y', p.y - cardH / 2 + padTop + s + labelGap + 12);
-          }
-
           function createNodeEl(tool) {
             const g = document.createElementNS(ns, 'g');
-            g.setAttribute('filter', 'url(#nodeGlow)');
             g.style.opacity = '0';
-            g.style.filter = 'url(#nodeGlow) blur(12px)';
 
+            const s = tool.size || iconSize;
+            const clipId = 'clip-' + tool.name.toLowerCase() + '-' + Date.now();
+
+            // All children positioned relative to (0,0) center
             const rect = document.createElementNS(ns, 'rect');
-            rect.setAttribute('width', cardW);
-            rect.setAttribute('height', cardH);
+            rect.setAttribute('x', -cardW / 2); rect.setAttribute('y', -cardH / 2);
+            rect.setAttribute('width', cardW); rect.setAttribute('height', cardH);
             rect.setAttribute('rx', borderR);
             rect.setAttribute('fill', 'rgba(12,38,36,.95)');
             rect.setAttribute('stroke', 'rgba(61,215,108,.25)');
             rect.setAttribute('stroke-width', '1.5');
 
-            const s = tool.size || iconSize;
-            const imgGroup = document.createElementNS(ns, 'g');
-            const clipRect = document.createElementNS(ns, 'clipPath');
-            const clipId = 'clip-' + tool.name.toLowerCase();
-            clipRect.setAttribute('id', clipId);
+            const clipPath = document.createElementNS(ns, 'clipPath');
+            clipPath.setAttribute('id', clipId);
             const cr = document.createElementNS(ns, 'rect');
-            cr.setAttribute('width', s);
-            cr.setAttribute('height', s);
+            cr.setAttribute('x', -s / 2); cr.setAttribute('y', -cardH / 2 + padTop);
+            cr.setAttribute('width', s); cr.setAttribute('height', s);
             cr.setAttribute('rx', Math.round(s * 0.22));
-            clipRect.appendChild(cr);
-            imgGroup.appendChild(clipRect);
+            clipPath.appendChild(cr);
+
             const img = document.createElementNS(ns, 'image');
             img.setAttribute('href', tool.icon);
-            img.setAttribute('width', s);
-            img.setAttribute('height', s);
+            img.setAttribute('x', -s / 2); img.setAttribute('y', -cardH / 2 + padTop);
+            img.setAttribute('width', s); img.setAttribute('height', s);
             img.setAttribute('clip-path', 'url(#' + clipId + ')');
 
             const label = document.createElementNS(ns, 'text');
+            label.setAttribute('x', 0);
+            label.setAttribute('y', -cardH / 2 + padTop + s + labelGap + 12);
             label.setAttribute('text-anchor', 'middle');
             label.setAttribute('fill', 'rgba(255,255,255,.85)');
             label.setAttribute('font-family', 'Inter,sans-serif');
@@ -722,15 +706,14 @@
             label.setAttribute('font-size', '12');
             label.textContent = tool.name;
 
+            g.appendChild(clipPath);
             g.appendChild(rect);
-            g.appendChild(imgGroup);
             g.appendChild(img);
             g.appendChild(label);
-            return { g, rect, img, imgClipRect: cr, label, iconSize: s, currentAngle: originAngle };
+            return { g, currentAngle: originAngle };
           }
 
           function getTargetAngles(count) {
-            // Newest node (last index) claims origin; older nodes spread clockwise
             const angles = [];
             for (let i = 0; i < count; i++) {
               angles.push(originAngle + (2 * Math.PI * (count - 1 - i) / count));
@@ -738,46 +721,41 @@
             return angles;
           }
 
-          // Shortest arc direction between two angles
-          function shortestArc(from, to) {
+          // Always move clockwise (positive direction)
+          function clockwiseArc(from, to) {
             let d = to - from;
-            while (d > Math.PI) d -= 2 * Math.PI;
-            while (d < -Math.PI) d += 2 * Math.PI;
+            while (d < 0) d += 2 * Math.PI;
             return d;
           }
 
           function addNode(tool) {
             const node = createNodeEl(tool);
-            setNodePos(node, originAngle);
+            const p0 = posAt(originAngle);
+            node.g.setAttribute('transform', 'translate(' + p0.x + ',' + p0.y + ') scale(0.1)');
+            node.birthTime = performance.now();
+            node.scaleDuration = moveDuration * 0.7 + (activeNodes.length - 1) * 150;
             container.appendChild(node.g);
             activeNodes.push(node);
 
             const count = activeNodes.length;
             const targets = getTargetAngles(count);
-
-            // Snapshot starting angles for all nodes
             const starts = activeNodes.map(n => n.currentAngle);
-
             const t0 = performance.now();
+
             function frame(now) {
-              const elapsed = now - t0;
-              const progress = Math.min(elapsed / moveDuration, 1);
+              const progress = Math.min((now - t0) / moveDuration, 1);
               const eased = easeOutQuart(progress);
 
-              activeNodes.forEach((n, idx) => {
-                const from = starts[idx];
-                const delta = shortestArc(from, targets[idx]);
-                const current = from + delta * eased;
-                setNodePos(n, current);
-
-                // Fade in the new node (last one)
-                if (idx === count - 1) {
-                  const fadeP = Math.min(progress / 0.5, 1);
-                  const blur = 12 * (1 - fadeP);
-                  n.g.style.opacity = String(fadeP);
-                  n.g.style.filter = 'url(#nodeGlow) blur(' + blur.toFixed(1) + 'px)';
-                }
-              });
+              for (let i = 0; i < count; i++) {
+                const n = activeNodes[i];
+                const angle = starts[i] + clockwiseArc(starts[i], targets[i]) * eased;
+                const p = posAt(angle);
+                var age = Math.min((now - n.birthTime) / n.scaleDuration, 1);
+                var s = 0.1 + 0.9 * easeOutQuart(age);
+                n.g.style.opacity = String(Math.min(age / 0.5, 1));
+                n.g.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ') scale(' + s.toFixed(2) + ')');
+                n.currentAngle = angle;
+              }
 
               if (progress < 1) requestAnimationFrame(frame);
             }
@@ -795,7 +773,7 @@
             activeNodes.length = 0;
             container.innerHTML = '';
             tools.forEach((tool, i) => {
-              pendingTimers.push(setTimeout(() => addNode(tool), startDelay + i * addInterval));
+              pendingTimers.push(setTimeout(() => addNode(tool), i * addInterval));
             });
           }
 

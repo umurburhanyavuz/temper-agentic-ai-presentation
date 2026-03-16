@@ -644,6 +644,8 @@ html, body {
 .mcp-hub-diagram {
   position: relative; width: 360px; height: 360px;
   margin: 0 auto; isolation: isolate;
+  will-change: transform;
+  transform: translateZ(0);
 }
 .mcp-center {
   position: absolute; top: 50%; left: 50%;
@@ -678,9 +680,11 @@ html, body {
   width: 56px; height: 56px;
   background: rgba(18,54,51,.95); border: 1px solid rgba(255,255,255,.15);
   border-radius: 14px; display: flex; align-items: center; justify-content: center;
-  backdrop-filter: blur(8px);
   transform: translate(-50%, -50%);
+  will-change: opacity, transform;
 }
+.mcp-node[data-a] { --a-from: translate(-50%, -50%) scale(.7); }
+.slide.active .mcp-node[data-a].anim-in { transform: translate(-50%, -50%) scale(1); }
 .mcp-node img { width: 60%; height: 60%; object-fit: contain; }
 .mcp-callout {
   background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);

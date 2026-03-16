@@ -343,7 +343,7 @@
       0
     ],
     "step": 1,
-    "label": "reveal-visible #1 (79% of compa)"
+    "label": "div (79% of compa)"
   },
   {
     "slide": 10,
@@ -353,7 +353,7 @@
       1
     ],
     "step": 2,
-    "label": "reveal-visible #2 ($5B → $199B )"
+    "label": "div ($5B → $199B )"
   },
   {
     "slide": 10,
@@ -363,7 +363,7 @@
       2
     ],
     "step": 3,
-    "label": "reveal-visible #3 (40% of enter)"
+    "label": "div (40% of enter)"
   },
   {
     "slide": 10,
@@ -372,6 +372,274 @@
       3
     ],
     "step": 4,
-    "label": "reveal-visible (\"This isn't the futu)"
+    "label": "div (\"This isn't the futu)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "flow > flow-step #1 (AI Collects Data)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "flow > flow-arrow #1 (→)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 2,
+    "label": "flow > flow-step #2 (AI Drafts Output)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      3
+    ],
+    "step": 3,
+    "label": "flow > flow-arrow #2 (→)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      4
+    ],
+    "step": 3,
+    "label": "flow > flow-step #3 (Human Reviews)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      5
+    ],
+    "step": 4,
+    "label": "flow > flow-arrow #3 (→)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      2,
+      6
+    ],
+    "step": 4,
+    "label": "flow > flow-step #4 (Action Taken)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      3
+    ],
+    "step": 5,
+    "label": "reveal-visible #1 (Manual ← Swe)"
+  },
+  {
+    "slide": 17,
+    "path": [
+      1,
+      4
+    ],
+    "step": 5,
+    "label": "card-accent (Start supervised. Au)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      1,
+      0
+    ],
+    "step": 1,
+    "label": "td (Internal data summar)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      1,
+      1
+    ],
+    "step": 1,
+    "label": "td (Fully autonomous1)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      1,
+      2
+    ],
+    "step": 1,
+    "label": "td (Low risk, internal o)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      2,
+      0
+    ],
+    "step": 2,
+    "label": "td (Internal Slack updat)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "td (Mostly autonomous2)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      2,
+      2
+    ],
+    "step": 2,
+    "label": "td (Low stakes, quick re)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      3,
+      0
+    ],
+    "step": 3,
+    "label": "td (Client-facing emails)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      3,
+      1
+    ],
+    "step": 3,
+    "label": "td (Human reviews3)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      3,
+      2
+    ],
+    "step": 3,
+    "label": "td (Reputation risk3)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      4,
+      0
+    ],
+    "step": 4,
+    "label": "td (Financial decisions4)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      4,
+      1
+    ],
+    "step": 4,
+    "label": "td (Human approves4)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      4,
+      2
+    ],
+    "step": 4,
+    "label": "td (Compliance & liabili)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      5,
+      0
+    ],
+    "step": 4,
+    "label": "td (Code deployment5)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      5,
+      1
+    ],
+    "step": 4,
+    "label": "td (Human approves4)"
+  },
+  {
+    "slide": 18,
+    "path": [
+      1,
+      2,
+      0,
+      5,
+      2
+    ],
+    "step": 4,
+    "label": "td (Production risk4)"
   }
 ]
