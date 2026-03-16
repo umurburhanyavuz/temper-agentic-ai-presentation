@@ -84,6 +84,17 @@
   .timer-btn:active { color: var(--green); }
   .timer-btn svg { width: 14px; height: 14px; }
 
+  .topbar-room {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--green);
+    background: rgba(61,215,108,.1);
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+
   /* ── PROGRESS ── */
   .progress-track {
     height: 3px;
@@ -268,6 +279,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
     </button>
   </div>
+  <div class="topbar-room" id="room-badge"></div>
   <div class="topbar-slide" id="slide-counter">1 / 39</div>
   <div class="topbar-status" id="status-dot" title="Disconnected"></div>
 </div>
@@ -575,6 +587,15 @@ var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 var sb = null;
 var channel = null;
 
+// Room code: from ?room= param, or generate a random 4-digit one
+var urlParams = new URLSearchParams(window.location.search);
+var ROOM = urlParams.get('room') || (Math.floor(1000 + Math.random() * 9000).toString());
+// Persist room in URL so refresh keeps it
+if (!urlParams.get('room')) {
+  history.replaceState(null, '', '?room=' + ROOM + window.location.hash);
+}
+document.getElementById('room-badge').textContent = ROOM;
+
 function sendCommand(direction) {
   if (!channel) return;
   channel.send({ type: 'broadcast', event: 'command', payload: { direction: direction } });
@@ -585,7 +606,7 @@ function initSupabase() {
   script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
   script.onload = function() {
     sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    channel = sb.channel('presenter-remote');
+    channel = sb.channel('room-' + ROOM);
 
     // Listen for slide updates from the audience page
     channel.on('broadcast', { event: 'slide-update' }, function(payload) {
