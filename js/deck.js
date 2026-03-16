@@ -298,6 +298,18 @@
     });
   }
 
+  var qrPolicy = document.getElementById('qr-ai-policy');
+  if (qrPolicy && typeof QRCode !== 'undefined') {
+    new QRCode(qrPolicy, {
+      text: 'https://www.notion.so/temper/Temper-AI-Policy-2be42960c8038092bc37d022975ddf23',
+      width: 88,
+      height: 88,
+      colorDark: '#0a2421',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }
+
   // ── TYPEWRITER EFFECT FOR PLOT TWIST TERMINAL ──
   var twEl = document.getElementById('typewriter-output');
   var twLines = [
