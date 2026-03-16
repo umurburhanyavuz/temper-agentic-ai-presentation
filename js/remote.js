@@ -48,7 +48,7 @@
         channel.track({ role: 'audience', room: room });
 
         // On connect: read current slide from DB and jump there
-        sb.from('presentation_state').select('slide').eq('id', 1).single().then(function (res) {
+        sb.from('presentation_state').select('slide').eq('room', room).single().then(function (res) {
           if (res.data && res.data.slide >= 1) {
             var target = res.data.slide - 1;
             var current = typeof window.deckGetCurrent === 'function' ? window.deckGetCurrent() : 0;
