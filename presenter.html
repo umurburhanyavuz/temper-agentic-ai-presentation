@@ -604,17 +604,17 @@ function writeSlideToDb() {
 }
 
 function sendCommand(direction) {
-  // Always advance locally
-  var next = direction === 'next' ? current + 1 : current - 1;
-  if (next >= 0 && next < TOTAL) {
-    current = next;
-    render();
-  }
-  // Write to DB so audience can pick up on connect/reconnect
-  writeSlideToDb();
-  // Send broadcast command to audience
-  if (channel) {
+  if (audienceConnected && channel) {
+    // Audience is live — let it handle reveals/slides, wait for slide-update
     channel.send({ type: 'broadcast', event: 'command', payload: { direction: direction } });
+  } else {
+    // No audience — advance locally + persist to DB
+    var next = direction === 'next' ? current + 1 : current - 1;
+    if (next >= 0 && next < TOTAL) {
+      current = next;
+      render();
+      writeSlideToDb();
+    }
   }
 }
 
