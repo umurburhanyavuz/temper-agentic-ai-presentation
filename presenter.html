@@ -130,7 +130,7 @@
   .note-key {
     font-size: 20px;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.55;
     color: #fff;
     padding: 14px 16px;
     background: rgba(61,215,108,.08);
@@ -194,35 +194,33 @@
     margin-bottom: 14px;
   }
 
-  /* Transition line */
+
+  /* ── BOTTOM BAR (transition + controls) ── */
+  .bottom-bar {
+    flex-shrink: 0;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+  }
   .note-transition {
-    padding: 12px 16px;
-    background: rgba(61,215,108,.06);
-    border: 1px solid rgba(61,215,108,.15);
-    border-radius: 10px;
-    font-size: 17px;
+    padding: 10px 16px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--green);
-    line-height: 1.5;
+    line-height: 1.4;
+    border-bottom: 1px solid rgba(61,215,108,.1);
   }
   .note-transition::before {
     content: 'SAY: ';
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     opacity: .5;
-    display: block;
-    margin-bottom: 4px;
   }
-
-  /* ── CONTROLS ── */
+  .note-transition:empty { display: none; }
   .controls {
     display: flex;
     gap: 10px;
-    padding: 12px 16px;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
-    background: var(--card);
-    border-top: 1px solid var(--border);
-    flex-shrink: 0;
+    padding: 10px 16px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
   }
   .btn {
     flex: 1;
@@ -284,14 +282,17 @@
   <div id="notes-content"></div>
 </div>
 
-<div class="controls">
-  <button class="btn btn-prev" id="btn-prev" disabled>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button class="btn btn-next" id="btn-next">
-    Next
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
+<div class="bottom-bar">
+  <div class="note-transition" id="transition-line"></div>
+  <div class="controls">
+    <button class="btn btn-prev" id="btn-prev" disabled>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="btn btn-next" id="btn-next">
+      Next
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
 </div>
 
 <script>
@@ -552,12 +553,12 @@ function render() {
     html += '</ul>';
   }
 
-  // Transition
-  if (s.transition) {
-    html += '<div class="note-transition">' + s.transition + '</div>';
-  }
-
   elNotes.innerHTML = html;
+
+  // Transition — pinned to bottom bar
+  var elTransition = document.getElementById('transition-line');
+  elTransition.textContent = s.transition || '';
+  elTransition.style.display = s.transition ? '' : 'none';
   elNotes.parentElement.scrollTop = 0;
 
   btnPrev.disabled = current === 0;
