@@ -1,0 +1,27 @@
+/* Sequential reveal system */
+
+[data-reveal] {
+  will-change: opacity, transform;
+}
+
+/* Hidden state */
+[data-reveal].reveal-hidden {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition: none !important;
+}
+
+/* Revealed state — animates in */
+[data-reveal].reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s cubic-bezier(.22,1,.36,1) var(--a-delay, 0s),
+              transform 0.5s cubic-bezier(.22,1,.36,1) var(--a-delay, 0s) !important;
+}
+
+/* Revealed instantly (backward arrival) */
+[data-reveal].reveal-visible-instant {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}

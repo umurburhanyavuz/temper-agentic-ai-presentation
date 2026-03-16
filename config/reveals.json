@@ -1,0 +1,377 @@
+[
+  {
+    "slide": 3,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-3 > card-light #1 (Chatbot )"
+  },
+  {
+    "slide": 3,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-3 > card-light #2 (Copilot )"
+  },
+  {
+    "slide": 3,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "grid-3 > card-light #3 (Agent )"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-4 > card #1 (Perceive Rea)"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-4 > card #2 (Reason Plans)"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "grid-4 > card #3 (Act Executes)"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      2,
+      3
+    ],
+    "step": 4,
+    "label": "grid-4 > card #4 (Learn Adapts)"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      3
+    ],
+    "step": 4,
+    "label": "card-accent (The purpose: achieve)"
+  },
+  {
+    "slide": 4,
+    "path": [
+      2,
+      4
+    ],
+    "step": 4,
+    "label": "t-note (Source: \"Agentic AI,)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      0
+    ],
+    "step": 1,
+    "label": "flow > flow-step #1 (Copy)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      1
+    ],
+    "step": 2,
+    "label": "flow > flow-arrow #1 (→)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      2
+    ],
+    "step": 2,
+    "label": "flow > flow-step #2 (Paste)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      3
+    ],
+    "step": 3,
+    "label": "flow > flow-arrow #2 (→)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      4
+    ],
+    "step": 3,
+    "label": "flow > flow-step #3 (Reformat)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      5
+    ],
+    "step": 4,
+    "label": "flow > flow-arrow #3 (→)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      6
+    ],
+    "step": 4,
+    "label": "flow > flow-step #4 (Summarize)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      7
+    ],
+    "step": 5,
+    "label": "flow > flow-arrow #4 (→)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      3,
+      8
+    ],
+    "step": 5,
+    "label": "flow > flow-step #5 (Relay)"
+  },
+  {
+    "slide": 6,
+    "path": [
+      1,
+      4
+    ],
+    "step": 6,
+    "label": "t-desc #2 (Each arrow = your ti)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "step": 1,
+    "label": "t-title (With Agents)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "step": 1,
+    "label": "card-ghost #1 (Status reports: 2 mi)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "step": 2,
+    "label": "span (2 min)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "step": 3,
+    "label": "card-ghost #2 (Meeting follow-ups: )"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "step": 4,
+    "label": "span (Auto-created)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "step": 5,
+    "label": "card-ghost #3 (Ticket triage: Insta)"
+  },
+  {
+    "slide": 8,
+    "path": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "step": 6,
+    "label": "span (Instant)"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "div (Klarna )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "div (Google )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "div (Microsoft )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      3
+    ],
+    "step": 4,
+    "label": "div (Reddit )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      4
+    ],
+    "step": 5,
+    "label": "div (ING NL )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      5
+    ],
+    "step": 6,
+    "label": "div (Booking.com )"
+  },
+  {
+    "slide": 10,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "reveal-visible #1 (79% of compa)"
+  },
+  {
+    "slide": 10,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "reveal-visible #2 ($5B → $199B )"
+  },
+  {
+    "slide": 10,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "reveal-visible #3 (40% of enter)"
+  },
+  {
+    "slide": 10,
+    "path": [
+      1,
+      3
+    ],
+    "step": 4,
+    "label": "reveal-visible (\"This isn't the futu)"
+  }
+]

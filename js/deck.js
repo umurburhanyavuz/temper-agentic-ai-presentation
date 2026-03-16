@@ -113,7 +113,7 @@
           cl.contains('flow') || cl.contains('tool-grid') || cl.contains('layer-stack')) return true;
       // Bare div wrapping flex rows (like the numbered action items)
       const style = el.getAttribute('style') || '';
-      if (style.includes('flex-direction:column') || style.includes('display:flex')) {
+      if (style.includes('flex-direction:column') || style.includes('display:flex') || style.includes('display:grid')) {
         // Only treat as layout if it has multiple child divs
         const childDivs = el.querySelectorAll(':scope > div, :scope > .tool-item, :scope > span');
         if (childDivs.length > 1) return true;

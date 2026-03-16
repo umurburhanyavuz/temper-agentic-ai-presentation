@@ -1,0 +1,49 @@
+/* ── Badge ── */
+#em-badge { position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:10001;padding:5px 14px;border-radius:20px;background:#FB49AD;color:#fff;font:700 11px/1 'Inter',sans-serif;letter-spacing:1.5px;text-transform:uppercase;opacity:0;pointer-events:none;transition:opacity .3s; }
+body.edit-mode #em-badge { opacity:1; }
+
+/* ── Scaffolding ── */
+body.edit-mode .slide.active .inner { outline:2px dashed rgba(66,133,244,.45);outline-offset:-2px; }
+body.edit-mode .slide.active .grid-2,body.edit-mode .slide.active .grid-3,body.edit-mode .slide.active .grid-4,body.edit-mode .slide.active .split { outline:1px dashed rgba(0,210,210,.4);outline-offset:-1px; }
+body.edit-mode .slide.active .card,body.edit-mode .slide.active .card-light,body.edit-mode .slide.active .card-ghost,body.edit-mode .slide.active .card-accent,body.edit-mode .slide.active .card-teal { outline:1px dashed rgba(255,160,0,.4);outline-offset:-1px; }
+body.edit-mode .slide.active .quote-block { outline:1px dashed rgba(164,237,193,.35);outline-offset:-1px; }
+body.edit-mode .slide.active .t-display,body.edit-mode .slide.active .t-hero { outline:1px dashed rgba(255,255,255,.25);outline-offset:2px; }
+body.edit-mode .slide.active .t-body,body.edit-mode .slide.active .t-title { outline:1px dotted rgba(255,255,255,.12);outline-offset:1px; }
+body.edit-mode .slide.active * { cursor:crosshair !important; }
+body.edit-mode .em-hover { outline:2px solid rgba(61,215,108,.8) !important;outline-offset:2px; }
+body.edit-mode .em-selected { outline:2px solid #FB49AD !important;outline-offset:3px; }
+
+/* ── Scaffolding labels ── */
+.em-tag { position:absolute;z-index:60;pointer-events:none;font:700 8px/1 'Inter',sans-serif;padding:2px 5px;border-radius:0 0 3px 3px;white-space:nowrap;letter-spacing:.5px; }
+.em-tag-blue { background:rgba(66,133,244,.75);color:#fff; }
+.em-tag-cyan { background:rgba(0,200,200,.75);color:#fff; }
+.em-tag-orange { background:rgba(255,160,0,.8);color:#fff; }
+.em-tag-green { background:rgba(61,215,108,.75);color:#fff; }
+
+/* ── Panel ── */
+#em-panel { position:fixed;top:50%;right:-260px;transform:translateY(-50%);z-index:10000;width:240px;background:rgba(10,36,33,.97);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-right:none;border-radius:14px 0 0 14px;font-family:'Inter',sans-serif;box-shadow:-8px 0 40px rgba(0,0,0,.4);transition:right .3s cubic-bezier(.22,1,.36,1); }
+#em-panel.open { right:0; }
+.emp-head { padding:10px 14px 8px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between; }
+.emp-head h3 { color:#FB49AD;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0; }
+.emp-close { background:none;border:none;color:rgba(255,255,255,.35);font-size:16px;cursor:pointer; }
+.emp-close:hover { color:#fff; }
+.emp-info { padding:6px 14px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.4);font:500 9px/1.4 monospace;border-bottom:1px solid rgba(255,255,255,.04);word-break:break-all; }
+
+/* ── Reveal row ── */
+.emp-reveal-wrap { display:flex;align-items:center;gap:5px;padding:8px 14px;background:rgba(61,215,108,.03); }
+.emp-rlbl { color:rgba(255,255,255,.55);font:600 10px/1 'Inter',sans-serif;min-width:30px; }
+#em-panel #emp-reveal { width:40px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:3px 4px;color:var(--green);font:700 11px/1.4 'Inter',sans-serif;outline:none;text-align:center;-moz-appearance:textfield; }
+#em-panel #emp-reveal::-webkit-inner-spin-button,#em-panel #emp-reveal::-webkit-outer-spin-button { -webkit-appearance:none;margin:0; }
+#em-panel #emp-reveal:focus { border-color:var(--green);background:rgba(61,215,108,.06); }
+#em-panel #emp-reveal::placeholder { color:rgba(255,255,255,.2); }
+#em-panel .emp-rbtn { padding:4px 8px;border-radius:5px;border:none;font:600 9px/1 'Inter',sans-serif;cursor:pointer;background:rgba(61,215,108,.15);color:var(--green);white-space:nowrap; }
+#em-panel .emp-rbtn:hover { background:rgba(61,215,108,.3); }
+#em-panel .emp-rbtn-x { background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);font-size:12px;padding:3px 7px; }
+#em-panel .emp-rbtn-x:hover { background:rgba(255,80,80,.15);color:#ff5050; }
+
+/* ── Reveal badges (edit mode) ── */
+.em-reveal-badge { position:absolute;top:6px;right:6px;z-index:61;min-width:20px;height:20px;border-radius:10px;background:var(--green);color:var(--teal-deep);font:700 10px/20px 'Inter',sans-serif;text-align:center;padding:0 5px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.35); }
+
+/* In edit mode, show reveal elements even if hidden */
+body.edit-mode .reveal-hidden { opacity:1 !important;transform:none !important; }
+body.edit-mode [data-reveal] { opacity:1 !important;transform:none !important;filter:none !important; }

@@ -46,19 +46,19 @@ html, body {
 }
 
 /* Backgrounds */
-.slide[data-bg="gradient"] { background: url('assets/backgrounds/bg-dark-green-gradient.png') center/cover no-repeat; }
-.slide[data-bg="aurora"]   { background: url('assets/backgrounds/bg-dark-green-aurora.png') center/cover no-repeat; }
-.slide[data-bg="wave"]     { background: url('assets/backgrounds/bg-green-wave.png') center/cover no-repeat; }
-.slide[data-bg="subtle"]   { background: url('assets/backgrounds/bg-dark-green-subtle.png') center/cover no-repeat; }
+.slide[data-bg="gradient"] { background: url('../assets/backgrounds/bg-dark-green-gradient.png') center/cover no-repeat; }
+.slide[data-bg="aurora"]   { background: url('../assets/backgrounds/bg-dark-green-aurora.png') center/cover no-repeat; }
+.slide[data-bg="wave"]     { background: url('../assets/backgrounds/bg-green-wave.png') center/cover no-repeat; }
+.slide[data-bg="subtle"]   { background: url('../assets/backgrounds/bg-dark-green-subtle.png') center/cover no-repeat; }
 .slide[data-bg="white"]    { background: var(--off-white); }
 .slide[data-bg="dark"]     { background: var(--teal); }
 .slide[data-bg="green"]    { background: var(--green-dark); }
 
 /* Branded dark backgrounds — direct Temper bg, no overlay */
-.slide[data-bg="brand-gradient"] { background: url('assets/backgrounds/bg-dark-green-gradient.png') center/cover no-repeat; }
-.slide[data-bg="brand-aurora"]   { background: url('assets/backgrounds/bg-dark-green-aurora.png') center/cover no-repeat; }
-.slide[data-bg="brand-wave"]     { background: url('assets/backgrounds/bg-green-wave.png') center/cover no-repeat; }
-.slide[data-bg="brand-subtle"]   { background: url('assets/backgrounds/bg-dark-green-subtle.png') center/cover no-repeat; }
+.slide[data-bg="brand-gradient"] { background: url('../assets/backgrounds/bg-dark-green-gradient.png') center/cover no-repeat; }
+.slide[data-bg="brand-aurora"]   { background: url('../assets/backgrounds/bg-dark-green-aurora.png') center/cover no-repeat; }
+.slide[data-bg="brand-wave"]     { background: url('../assets/backgrounds/bg-green-wave.png') center/cover no-repeat; }
+.slide[data-bg="brand-subtle"]   { background: url('../assets/backgrounds/bg-dark-green-subtle.png') center/cover no-repeat; }
 
 /* Photo overlays */
 .slide-photo-bg {

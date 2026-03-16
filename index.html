@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agentic AI — Temper Summit 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="edit-mode.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/edit-mode.css">
+<link rel="stylesheet" href="css/reveal.css">
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<script src="utilities/glow-pulse.js"></script>
+<script src="js/glow-pulse.js"></script>
 </head>
 <body>
 
@@ -247,15 +248,8 @@
   <div class="inner center">
     <h2 class="t-display" style="color:#fff">You Are the Integration Layer</h2>
     <p class="t-desc" style="color:rgba(255,255,255,.8);margin:0 auto">
-      Every day, you copy, paste, reformat, summarize, and relay information between tools that don't talk to each other.
+      Every day, you move information between tools that don't talk to each other.
     </p>
-    <div class="flow" style="margin-top:clamp(24px,3vh,40px)">
-      <span class="flow-step">Copy</span><span class="flow-arrow">&rarr;</span>
-      <span class="flow-step">Paste</span><span class="flow-arrow">&rarr;</span>
-      <span class="flow-step">Reformat</span><span class="flow-arrow">&rarr;</span>
-      <span class="flow-step">Summarize</span><span class="flow-arrow">&rarr;</span>
-      <span class="flow-step">Relay</span>
-    </div>
     <div style="display:flex;justify-content:center;gap:clamp(10px,1.5vw,20px);margin-top:clamp(24px,3vh,36px);flex-wrap:wrap">
       <div class="tool-item"><img src="assets/logos/slack-logo.png" alt="Slack"><span>Slack</span></div>
       <div class="tool-item"><img src="assets/logos/atlassian-logo.png" alt="Jira"><span>Jira</span></div>
@@ -263,6 +257,13 @@
       <div class="tool-item"><img src="assets/logos/gmail-logo.png" alt="Gmail"><span>Gmail</span></div>
       <div class="tool-item"><img src="assets/logos/google-sheets-logo.png" alt="Sheets"><span>Sheets</span></div>
       <div class="tool-item"><img src="assets/logos/google-calendar-logo.png" alt="Calendar"><span>Calendar</span></div>
+    </div>
+    <div class="flow" style="margin-top:clamp(24px,3vh,40px)">
+      <span class="flow-step">Copy</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Paste</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Reformat</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Summarize</span><span class="flow-arrow">&rarr;</span>
+      <span class="flow-step">Relay</span>
     </div>
     <p class="t-desc" style="color:rgba(255,255,255,.7)">
       Each arrow = <strong style="color:var(--green)">your time</strong>. This is what agents can eliminate.
@@ -292,7 +293,7 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE 7 — BEFORE & AFTER                           -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-aurora" data-section="impact">
+<div class="slide" data-bg="brand-gradient" data-section="impact">
   <div class="slide-header">
     <span class="section-tag t-label" style="color:var(--soft)">Transformation</span>
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
@@ -422,7 +423,7 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE 9c — THE TIPPING POINT                        -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-aurora" data-section="impact">
+<div class="slide" data-bg="brand-gradient" data-section="impact">
   <div class="slide-header">
     <span class="section-tag t-label" style="color:var(--soft)">Market Shift</span>
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
@@ -431,39 +432,24 @@
     <h2 class="t-display" style="color:#fff;margin-bottom:clamp(4px,1vh,8px)">The Tipping Point</h2>
     <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(12px,2vh,20px)">Where the industry stands right now</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px);width:100%">
-      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(28px,3vw,44px) clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
         <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">79%</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of companies adopted AI agents</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">PwC, 2025</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:12px">of companies adopted AI agents</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:8px;font-weight:600">PwC, 2025</div>
       </div>
-      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
-        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">$700B</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">Big Tech AI infrastructure spend in 2026</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">CNBC, 2026</div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
-        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">40%</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of enterprise apps will have AI agents by end of 2026</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">up from &lt;5% in 2025 — Gartner</div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(28px,3vw,44px) clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
         <div style="color:var(--green);font-weight:800;font-size:clamp(24px,2.6vw,36px);font-family:'Poppins',sans-serif;line-height:1">$5B → $199B</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">Agentic AI market by 2034</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">43.84% CAGR</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:12px">Agentic AI market by 2034</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:8px;font-weight:600">43.84% annual growth rate</div>
       </div>
-      <div style="background:rgba(61,215,108,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(61,215,108,.15);text-align:center">
-        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">-40%</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">time-to-hire with AI in recruitment</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">78% of companies report — Second Talent</div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
-        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">15%</div>
-        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:8px">of daily decisions by AI agents by 2028</div>
-        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:6px;font-weight:600">up from 0% today — Gartner</div>
+      <div style="background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border-radius:14px;padding:clamp(28px,3vw,44px) clamp(16px,1.8vw,24px);border:1px solid rgba(255,255,255,.08);text-align:center">
+        <div style="color:var(--green);font-weight:800;font-size:clamp(28px,3vw,42px);font-family:'Poppins',sans-serif;line-height:1">40%</div>
+        <div style="color:rgba(255,255,255,.8);font-size:clamp(13px,1.2vw,17px);line-height:1.4;margin-top:12px">of enterprise apps will have AI agents by end of 2026</div>
+        <div style="color:rgba(255,255,255,.55);font-size:clamp(11px,1vw,14px);margin-top:8px;font-weight:600">up from &lt;5% in 2025 — Gartner</div>
       </div>
     </div>
     <div style="margin-top:clamp(12px,2vh,20px);padding:clamp(14px,1.8vw,22px) clamp(24px,3vw,40px);background:rgba(61,215,108,.12);border:2px solid var(--green);border-radius:14px;text-align:center">
-      <p style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.3">"This isn't the future. It's <span style="color:var(--green)">last quarter</span>."</p>
+      <p style="color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.3">"This isn't the future. It's <span style="color:var(--green)">already happening</span>."</p>
     </div>
   </div>
 </div>
@@ -1896,150 +1882,18 @@
 <div id="em-overlays" style="display:none"></div>
 
 <div id="em-panel">
-  <div class="emp-head"><h3>Inspector</h3><button class="emp-close" id="emp-close">&times;</button></div>
-  <div class="emp-tabs">
-    <button class="emp-tab active" data-pane="element">Element</button>
-    <button class="emp-tab" data-pane="global">Global</button>
-  </div>
-  <div class="emp-pane active" id="emp-element">
-    <div class="emp-info" id="emp-el-info">Click an element to inspect</div>
-
-    <div class="emp-sec open"><div class="emp-sec-title">Typography</div><div class="emp-sec-body">
-      <div class="emp-row">
-        <label>font-size</label><input type="text" id="emp-fs">
-        <select id="emp-fs-unit"><option>px</option><option>vw</option><option>vh</option><option>em</option><option>rem</option></select>
-        <div class="emp-range-wrap"><input type="range" id="emp-fs-r" min="0" max="120" step="1"></div>
-      </div>
-      <div class="emp-row">
-        <label>font-family</label>
-        <select id="emp-ff" style="flex:1"><option value="'Poppins', sans-serif">Poppins</option><option value="'Inter', sans-serif">Inter</option><option value="monospace">Monospace</option><option value="system-ui">System UI</option></select>
-      </div>
-      <div class="emp-row">
-        <label>font-weight</label>
-        <select id="emp-fw"><option>100</option><option>200</option><option>300</option><option>400</option><option>500</option><option>600</option><option>700</option><option>800</option><option>900</option></select>
-      </div>
-      <div class="emp-row">
-        <label>line-height</label><input type="text" id="emp-lh">
-        <div class="emp-range-wrap"><input type="range" id="emp-lh-r" min="0" max="120" step="1"></div>
-      </div>
-      <div class="emp-row">
-        <label>letter-spacing</label><input type="text" id="emp-ls">
-        <div class="emp-range-wrap"><input type="range" id="emp-ls-r" min="-5" max="20" step="0.5"></div>
-      </div>
-      <div class="emp-row">
-        <label>text-align</label>
-        <select id="emp-ta"><option>left</option><option>center</option><option>right</option><option>justify</option></select>
-      </div>
-      <div class="emp-row">
-        <label>text-transform</label>
-        <select id="emp-tt"><option>none</option><option>uppercase</option><option>lowercase</option><option>capitalize</option></select>
-      </div>
-      <div class="emp-row">
-        <label>color</label><input type="text" id="emp-co"><input type="color" id="emp-co-pick" style="width:24px;height:22px;padding:0;border:1px solid rgba(255,255,255,.15);border-radius:4px;cursor:pointer;background:transparent;">
-      </div>
-      <div class="emp-row">
-        <label>opacity</label><input type="text" id="emp-op">
-        <div class="emp-range-wrap"><input type="range" id="emp-op-r" min="0" max="1" step="0.05"></div>
-      </div>
-    </div></div>
-
-    <div class="emp-sec open"><div class="emp-sec-title">Box Model</div><div class="emp-sec-body">
-      <div class="emp-row">
-        <label>padding</label><input type="text" id="emp-pad">
-        <div class="emp-range-wrap"><input type="range" id="emp-pad-r" min="0" max="100" step="1"></div>
-      </div>
-      <div class="emp-row">
-        <label>margin</label><input type="text" id="emp-mar">
-        <div class="emp-range-wrap"><input type="range" id="emp-mar-r" min="0" max="200" step="1"></div>
-      </div>
-      <div class="emp-row">
-        <label>width</label><input type="text" id="emp-w">
-        <div class="emp-range-wrap"><input type="range" id="emp-w-r" min="0" max="2000" step="10"></div>
-      </div>
-      <div class="emp-row">
-        <label>max-width</label><input type="text" id="emp-mw">
-        <div class="emp-range-wrap"><input type="range" id="emp-mw-r" min="100" max="2000" step="10"></div>
-      </div>
-      <div class="emp-row">
-        <label>gap</label><input type="text" id="emp-gap">
-        <div class="emp-range-wrap"><input type="range" id="emp-gap-r" min="0" max="80" step="1"></div>
-      </div>
-      <div class="emp-row">
-        <label>border-radius</label><input type="text" id="emp-br">
-        <div class="emp-range-wrap"><input type="range" id="emp-br-r" min="0" max="50" step="1"></div>
-      </div>
-    </div></div>
-
-    <div class="emp-sec"><div class="emp-sec-title">Layout</div><div class="emp-sec-body">
-      <div class="emp-row">
-        <label>display</label>
-        <select id="emp-disp"><option>block</option><option>flex</option><option>grid</option><option>inline</option><option>inline-flex</option><option>inline-block</option><option>none</option></select>
-      </div>
-      <div class="emp-row">
-        <label>flex-direction</label>
-        <select id="emp-fd"><option>row</option><option>column</option><option>row-reverse</option><option>column-reverse</option></select>
-      </div>
-      <div class="emp-row">
-        <label>align-items</label>
-        <select id="emp-ai"><option>stretch</option><option>flex-start</option><option>center</option><option>flex-end</option><option>baseline</option></select>
-      </div>
-      <div class="emp-row">
-        <label>justify-content</label>
-        <select id="emp-jc"><option>flex-start</option><option>center</option><option>flex-end</option><option>space-between</option><option>space-around</option><option>space-evenly</option></select>
-      </div>
-      <div class="emp-row">
-        <label>flex-wrap</label>
-        <select id="emp-fwrap"><option>nowrap</option><option>wrap</option><option>wrap-reverse</option></select>
-      </div>
-      <div class="emp-row">
-        <label>position</label>
-        <select id="emp-pos"><option>static</option><option>relative</option><option>absolute</option><option>fixed</option></select>
-      </div>
-      <div class="emp-row">
-        <label>overflow</label>
-        <select id="emp-ov"><option>visible</option><option>hidden</option><option>scroll</option><option>auto</option></select>
-      </div>
-    </div></div>
-
-    <div class="emp-sec"><div class="emp-sec-title">Background &amp; Border</div><div class="emp-sec-body">
-      <div class="emp-row">
-        <label>background</label><input type="text" id="emp-bg" style="flex:1"><input type="color" id="emp-bg-pick" style="width:24px;height:22px;padding:0;border:1px solid rgba(255,255,255,.15);border-radius:4px;cursor:pointer;background:transparent;">
-      </div>
-      <div class="emp-row">
-        <label>border</label><input type="text" id="emp-bor" style="flex:1">
-      </div>
-      <div class="emp-row">
-        <label>box-shadow</label><input type="text" id="emp-bs" style="flex:1">
-      </div>
-      <div class="emp-row">
-        <label>backdrop-filter</label><input type="text" id="emp-bf" style="flex:1">
-      </div>
-    </div></div>
-
-    <div class="emp-sec"><div class="emp-sec-title">Dimensions (read-only)</div><div class="emp-sec-body">
-      <div class="emp-row"><label>computed</label><input type="text" id="emp-sz" readonly style="opacity:.5"></div>
-    </div></div>
-  </div>
-  <div class="emp-pane" id="emp-global">
-    <div class="emp-sec"><div class="emp-sec-title">Typography Scale</div>
-      <div class="emp-slider"><label>Header</label><input type="range" min="30" max="120" step="2" value="60" data-gp="--hdr-px"><span class="emp-sval">60</span></div>
-      <div class="emp-slider"><label>Subtitle</label><input type="range" min="14" max="56" step="1" value="28" data-gp="--sub-px"><span class="emp-sval">28</span></div>
-      <div class="emp-slider"><label>Card Title</label><input type="range" min="14" max="48" step="1" value="24" data-gp="--card-title-px"><span class="emp-sval">24</span></div>
-      <div class="emp-slider"><label>Card Body</label><input type="range" min="12" max="36" step="1" value="20" data-gp="--card-body-px"><span class="emp-sval">20</span></div>
-    </div>
-    <div class="emp-sec"><div class="emp-sec-title">Spacing</div>
-      <div class="emp-slider"><label>Card Pad</label><input type="range" min="8" max="60" step="2" value="28" data-gp="--card-pad-px"><span class="emp-sval">28</span></div>
-      <div class="emp-slider"><label>Grid Gap</label><input type="range" min="6" max="40" step="2" value="20" data-gp="--grid-gap-px"><span class="emp-sval">20</span></div>
-      <div class="emp-slider"><label>Section Gap</label><input type="range" min="6" max="40" step="2" value="18" data-gp="--inner-gap-px"><span class="emp-sval">18</span></div>
-    </div>
-  </div>
-  <div class="emp-actions">
-    <button class="emp-btn-rst" id="emp-reset">Reset All</button>
-    <button class="emp-btn-exp" id="emp-export">Export CSS</button>
+  <div class="emp-head"><h3>Reveal Order</h3><button class="emp-close" id="emp-close">&times;</button></div>
+  <div class="emp-info" id="emp-el-info">Click an element</div>
+  <div class="emp-reveal-wrap">
+    <span class="emp-rlbl">Step</span>
+    <input type="number" id="emp-reveal" min="1" max="99" placeholder="--">
+    <button id="emp-reveal-next" class="emp-rbtn" title="Assign next available step">+Next</button>
+    <button id="emp-reveal-clear" class="emp-rbtn emp-rbtn-x" title="Remove reveal">&times;</button>
   </div>
 </div>
 
-<script src="deck.js"></script>
-<script src="edit-mode.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/edit-mode.js"></script>
 </body>
 </html>
