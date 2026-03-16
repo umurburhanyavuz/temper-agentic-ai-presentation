@@ -437,4 +437,6 @@
   window.deckGoTo = function(n) { goTo(n); };
   window.deckGetCurrent = function() { return current; };
   window.deckGetTotal = function() { return total; };
+  window.deckGetCurrentKey = function() { return slides[current] ? slides[current].dataset.key || '' : ''; };
+  window.deckGetSlideKeys = function() { return Array.from(slides).map(function(s) { return s.dataset.key || ''; }); };
 })();

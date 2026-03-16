@@ -308,227 +308,26 @@
 </div>
 
 <script>
-// ── SLIDE DATA ──
-// key: The main message (shown large, highlighted)
-// points: Supporting talking points
-// cue: Stage direction (shown dimmed italic)
-// transition: What to say to bridge to next slide
-var SLIDES = [
-  { title: "Agentic AI", section: "intro",
-    key: "Welcome everyone. Today I want to talk about something that's reshaping how companies work — and how it's going to reshape how <em>we</em> work at Temper.",
-    points: ["This is not a technical talk. Whatever your role — sales, operations, finance, product, engineering — this applies to you.", "By the end, you'll understand what agentic AI is, why it matters right now, and what you can do with it starting this week."],
-    transition: "Let's start with something we all already know..." },
+// ── NOTES SYSTEM ──
+// Notes loaded from config/notes.json, keyed by data-key attributes on slides.
+// Slide order comes from the audience page (via broadcast) or falls back to key order from JSON.
+var NOTES = {};       // key → note object
+var SLIDE_ORDER = []; // ordered array of keys
+var TOTAL = 0;
+var currentIdx = 0;   // index into SLIDE_ORDER
 
-  { title: "AI Is Already Everywhere", section: "what",
-    key: "We've been using AI for years without thinking about it — Google search, spam filters, Netflix recommendations. But what's happening <em>right now</em> is a different kind of shift.",
-    points: ["The slide shows three stages. We've been living in the first two for a while.", "What's new is the third column — AI that doesn't just suggest or answer, but actually <em>goes and does things</em> for you.", "That's what this entire talk is about: that third column."],
-    transition: "So what does that evolution actually look like?" },
-
-  { title: "The AI Spectrum", section: "what",
-    key: "Think of it as three levels. Most of you have used the first two already.",
-    points: ["ChatGPT when it first launched? That's a chatbot. You ask, it answers, you close the tab.", "Gemini inside Google Docs, or Copilot suggesting code? That's a copilot. Helpful, but you're still driving.", "An agent is something different. You say \"handle this\" — and it actually handles it. It plans, decides, and takes action.", "That jump from copilot to agent — that's what everyone is racing toward right now."],
-    transition: "Let's make that concrete. What actually makes AI 'agentic'?" },
-
-  { title: "So What Makes AI \"Agentic\"?", section: "what",
-    key: "Here's a way to think about it: these four capabilities are things <em>we already do as humans every day</em>. Agentic AI just does the same thing.",
-    points: ["When you start a task, you first <em>look around</em> — check your email, read the ticket, open the doc. That's <strong>Perceive</strong>.", "Then you <em>think about it</em> — what's the best approach, what steps do I take? That's <strong>Reason</strong>.", "Then you <em>do the work</em> — write the email, update the sheet, move the card. That's <strong>Act</strong>.", "And next time, you do it faster because you remember what worked. That's <strong>Learn</strong>.", "An agentic AI does this exact same loop — but it can do it in seconds instead of hours."],
-    transition: "Let me show you a side-by-side to make this really clear." },
-
-  { title: "Chatbot vs. Agent", section: "what",
-    key: "If you take one thing from this talk, let it be <em>this slide</em>. This is the core difference.",
-    points: ["Look at the left side — the chatbot is completely isolated. Those red X marks mean it can't reach anything. It's smart, but it's stuck in a box.", "Now look at the right — the agent is connected to your actual tools. Jira, Gmail, Notion, Sheets, Slack. It can read from them, and it can write to them.", "I like the analogy on screen. A chatbot is like a brilliant librarian — knows everything, but you still have to do the work yourself. An agent is a chef that actually cooks the meal."],
-    transition: "Now think about your own day. Where does this matter most?" },
-
-  { title: "You Are the Integration Layer", section: "what",
-    key: "Here's something I think everyone in this room will recognise. Look at these tools — you probably use most of them every day.",
-    points: ["The problem isn't the tools. The tools are great. The problem is that <em>they don't talk to each other</em>.", "So who connects them? You do. You are the human integration layer. You copy from Slack, paste into Jira, reformat it for a Google Doc, summarise it in an email.", "Every arrow you see on screen represents your time — time you spend being a copy-paste machine instead of doing your actual job.", "This is exactly the kind of work agents are built to eliminate."],
-    transition: "So what happens when we actually remove those arrows? Let's look at the impact." },
-
-  { title: "The Impact", section: "impact",
-    key: "So that's <em>what</em> agentic AI is. Now let's talk about <em>why</em> it matters — what the actual impact looks like.",
-    points: [],
-    cue: "Brief pause. Section divider — let the image breathe.",
-    transition: null },
-
-  { title: "Before & After Agents", section: "impact",
-    key: "I picked three examples that I think everyone here deals with, regardless of your team.",
-    points: ["Status reports — we all write them. You spend 45 minutes gathering data from five different tools. With an agent, it pulls the data and drafts the report. You spend 2 minutes reviewing it.", "Meeting follow-ups — after every meeting, someone needs to write the notes, assign the actions. An agent does that instantly. You just approve before it goes out.", "Ticket triage — whether it's support tickets, bug reports, or requests. Sorting them manually takes hours. An agent categorises and routes them in seconds.", "These aren't science fiction. These are workflows we can build <em>today</em>."],
-    transition: "And we're not the only ones doing this..." },
-
-  { title: "It's Already Happening", section: "impact",
-    key: "I want to show you what real companies are doing with this. These are not pilot programs — these are production results.",
-    points: ["Klarna cut their customer support resolution time from 11 minutes to 2 minutes. They doubled revenue while shrinking their workforce.", "At Google, half of all code is now written by AI. Half. And engineering velocity went up 10%.", "Microsoft makes $13 billion a year from AI products, and 85% of their own employees use Copilot daily.", "Reddit automated 46% of their support. Response time went from 9 minutes to 1.4.", "And closer to home — <em>ING</em>, right here in the Netherlands, pushes 90% of their AI projects to production. They're building agentic mortgage processing for 2026.", "<em>Booking.com</em> saved $700 million and partner satisfaction went up 73%."],
-    transition: "And the market numbers are just as striking..." },
-
-  { title: "The Tipping Point", section: "impact",
-    key: "If those company examples weren't convincing enough, look at the market data. We're past the tipping point.",
-    points: ["79% of companies have already adopted some form of AI agents. Not experimenting — adopted.", "The market is growing at 43% per year. From 5 billion today to nearly 200 billion by 2034.", "Gartner says 40% of enterprise apps will have built-in AI agents by end of next year. Right now it's less than 5%.", "The message here is simple: this isn't something that's coming. It's something that's <em>already here</em>, and the speed is only increasing."],
-    transition: "OK, so it's big. But how does it actually work? I'll break it down into three pillars." },
-
-  { title: "How It Works", section: "how",
-    key: "Now that we know <em>what</em> it is and <em>why</em> it matters — let's get into the <em>how</em>. I'm going to break this into three pillars.",
-    points: [],
-    cue: "Section divider. Quick breath.",
-    transition: null },
-
-  { title: "Connections", section: "how",
-    key: "The first pillar is <em>Connections</em>. Without connections, AI is just a fancy chatbot.",
-    points: ["Think about it — if AI can't see your data, it can only work with what you manually paste in. That's not an agent, that's a chatbot with extra steps."],
-    cue: "Pillar divider. Keep it short.",
-    transition: null },
-
-  { title: "Why Connections Matter", section: "how",
-    key: "This slide shows the fundamental difference. On the left is what most people do today. On the right is where we're going.",
-    points: ["Without connections, every interaction is a one-off. You paste data in, get an answer, and close the tab. Nothing persists, nothing improves.", "With connections, the AI reads your tools directly. The output is based on your actual data — not your copy-paste summary of it.", "And here's the thing — these connections <em>already exist</em>. The infrastructure is there. The question is just whether we start using it."],
-    transition: "So how do these connections actually work? There's a new standard called MCP." },
-
-  { title: "What Is MCP?", section: "how",
-    key: "MCP stands for Model Context Protocol. The easiest way to think about it is: <em>USB-C, but for AI</em>.",
-    points: ["Remember when every phone had a different charger? USB-C solved that — one cable, every device. MCP does the same for AI and tools.", "It's an open standard — so it's not locked to Google, or Microsoft, or anyone. Any AI can connect to any tool through MCP.", "There are already over 100 tools with MCP support, and it's growing every week.", "And it's not just reading data — agents can create documents, update tickets, send messages, move files. Full read-write access."],
-    transition: "Let me show you what's already connected..." },
-
-  { title: "MCP In Action", section: "how",
-    key: "These are tools you already use — and they already have MCP connectors. AI can read and write to all of them right now.",
-    points: ["The animation shows you how it works — the AI sits in the center, and each tool plugs in through MCP.", "And this is just the beginning. If we have an internal API or a custom data source, we can build our own MCP server for it."],
-    cue: "Let the animation play. Tools appear one by one on the orbit.",
-    transition: "But connections alone aren't enough. You need control. That brings us to pillar two." },
-
-  { title: "Human in the Loop", section: "how",
-    key: "Pillar two is about <em>control</em>. Because giving AI access to your tools is powerful — but it also needs guardrails.",
-    points: [],
-    cue: "Pillar divider.",
-    transition: null },
-
-  { title: "Human in the Loop", section: "how",
-    key: "I want to be very clear about something: agentic does not mean autonomous. The best AI systems keep humans at the <em>decision points that matter</em>.",
-    points: ["Look at the flow: AI does the data gathering, AI drafts the output — but before anything goes out, a human reviews it.", "The spectrum on screen shows where the sweet spot is. Not fully manual, not fully autonomous — somewhere in the middle.", "The key principle is: start supervised, and automate gradually as you build trust with the system."],
-    transition: "But not everything needs the same level of oversight..." },
-
-  { title: "The Trust Gradient", section: "how",
-    key: "This is one of the most practical slides in the whole talk. Not every task needs the same level of human involvement.",
-    points: ["Summarising internal data? Let the agent run. Low risk, internal only.", "Posting a team update to Slack? Mostly autonomous — maybe a quick glance before it goes out.", "But a client-facing email? That needs a human review. Your reputation is on the line.", "Financial decisions, code deployments — those need a human to explicitly approve. The stakes are too high.", "The point is: think about risk level first, then match the automation to it."],
-    transition: "Now pillar three — this is the one that makes everything else work." },
-
-  { title: "Context Engineering", section: "how",
-    key: "The third pillar is <em>Context</em>. And this is honestly the most important one — because connections and control mean nothing if the AI doesn't understand <em>what you need</em>.",
-    points: [],
-    cue: "Pillar divider.",
-    transition: null },
-
-  { title: "What Is Context?", section: "how",
-    key: "Context is everything the AI knows when it starts working for you. And here's the thing — you're already managing context, you just don't call it that.",
-    points: ["Every time you paste background info into ChatGPT, or add \"write in a professional tone\" to your prompt — that's context management.", "The difference is: right now you do it manually, every single time. The goal is to set it up once so the AI <em>always</em> has the right information.", "One important thing: context has a limit. You can't dump everything in. The skill is giving AI the <em>right</em> context, not <em>all</em> the context."],
-    transition: "You're actually already doing a version of this..." },
-
-  { title: "Context Engineering: Before & After", section: "how",
-    key: "I bet everyone here has rewritten a ChatGPT prompt to get a better answer. That's prompt engineering. You're already doing it.",
-    points: ["The left side is where most people are today. You type a generic prompt, paste in some notes, get an OK result, and close the tab. Next time you start from scratch.", "The right side is where we're headed. You give AI a rich instruction — and it already knows your team, your tools, your conventions. You review and approve.", "The word \"engineering\" sounds intimidating, but don't let it scare you. It just means: setting things up so AI gives you better results without you having to repeat yourself."],
-    transition: "Let me show you the layers of what makes up good context." },
-
-  { title: "The 4 Layers of Context", section: "how",
-    key: "There are four layers that make up the context an agent works with. Think of it as a stack — each layer adds richness.",
-    points: ["At the base: <strong>Instructions</strong> — who are you, what tone should you use, what rules should you follow.", "Then: <strong>Knowledge</strong> — how our team works, what our conventions are, our domain expertise.", "Then: <strong>Memory</strong> — what happened before, what decisions were made, what your preferences are.", "At the top: <strong>Tools</strong> — live connections to your actual data in Notion, Jira, Sheets, calendars.", "The more layers you give an agent, the better its output. The difference between a generic answer and an eerily accurate one is usually just context."],
-    transition: "Now, let's address the elephant in the room." },
-
-  { title: "This Changes How You Work. Not Whether You Work.", section: "how",
-    key: "I know what some of you might be thinking. \"Is this going to replace my job?\" Let me be direct: <em>no</em>.",
-    points: ["The quote on screen says it perfectly. AI amplifies what you can do — it doesn't replace the need for you to do it.", "The three cards show the split: agents handle the busywork that nobody enjoys. You focus on the judgment calls that actually need a human brain.", "And the result? You ship faster. Same quality, less time. What took a day takes an hour. What took a week ships in two days.", "This is about doing <em>more</em> with the same team — not doing the same with fewer people."],
-    cue: "Quote appears as hero first. Press to reveal the full slide.",
-    transition: "And here's the exciting part — you don't need to be a developer to build with AI." },
-
-  { title: "You Already Have the Hardest Skill", section: "how",
-    key: "Here's something I want everyone to hear: the hardest part of AI isn't the technology. It's <em>knowing what problem to solve</em>. And that's something you already have.",
-    points: ["You know which report takes three hours. You know where the handoffs break. You know where the bottleneck is in your process.", "Describing a solution to AI is like explaining it to a new colleague — use the same words, the same logic.", "The technical barrier is getting smaller every month. What remains is domain expertise — understanding <em>your</em> work, <em>your</em> team, <em>your</em> processes. No AI can replace that."],
-    transition: "Now let's bring this home. How does this fit at Temper?" },
-
-  { title: "At Temper", section: "temper",
-    key: "OK, so that's the big picture. Now let's talk about <em>us</em> — where does this fit at Temper?",
-    points: [],
-    cue: "Section divider.",
-    transition: null },
-
-  { title: "Where We Can Start", section: "temper",
-    key: "I picked three areas where I think we can see immediate impact. These are things <em>every team</em> deals with.",
-    points: ["Reporting — think about how long you spend pulling numbers together for a status update. An agent drafts it from your tools in minutes. You just review.", "Support triage — incoming requests get categorised, a draft response gets written, and it routes to the right person. The team just approves.", "Meeting follow-ups — how many times have action items gotten lost after a meeting? An agent pulls them from the transcript and creates the tasks automatically."],
-    transition: "And there are even more possibilities across the company..." },
-
-  { title: "More Use Cases", section: "temper",
-    key: "These are just four more examples, but honestly the list is endless. Think about what <em>your</em> version of this might be.",
-    points: ["Data analysis — instead of building dashboards manually, an agent pulls the data and gives you the story.", "Documentation — we all know how fast docs go stale. An agent can watch for decisions and keep things updated.", "Onboarding — imagine every new joiner having an AI buddy that knows our processes and can answer questions instantly.", "Project kickoffs — AI reviews what we did last time, gathers the context, and drafts a starting plan for your team to refine."],
-    transition: "Let's talk about the tools we already have access to." },
-
-  { title: "Agentic Tools at Temper", section: "temper",
-    key: "These are the agentic tools we've approved for use at Temper. You can see the access level for each one.",
-    points: ["Gemini is the big one — everyone has access, and it connects to your entire Google Workspace.", "For developers, we also have Gemini CLI, Claude Code, Cursor, and Firebender.", "The important thing: all of these are approved and in our AI tools catalogue. You don't need to ask permission to start using them."],
-    transition: "But you don't need any of these to start. Gemini is already set up." },
-
-  { title: "Gemini: Start Right Now", section: "temper",
-    key: "If you take out your phone right now and go to gemini.google.com with your Temper account, you'll see it can <em>already</em> read all your Google Workspace data.",
-    points: ["No setup, no API keys, no configuration. It's already connected to your Docs, Calendar, Gmail, Drive, Keep, Tasks, and Meet summaries.", "You can ask it things like: \"What meetings do I have tomorrow and what should I prepare?\" or \"Summarise the last 5 emails from this client.\"", "This is the lowest-effort, highest-impact thing you can try today."],
-    transition: "And for automations — there's something even more powerful." },
-
-  { title: "Google Workspace Studio", section: "temper",
-    key: "This is brand new. You describe what you want to automate <em>in plain English</em>, and Gemini builds an agent that runs across your Workspace.",
-    points: ["It can trigger from emails, meeting transcripts, spreadsheet changes, Drive uploads, calendar events, forms — basically anything in Google Workspace.", "You don't write code. You describe the workflow, and it builds it.", "This is available on all Temper accounts. You can scan the QR code to try it right now."],
-    cue: "Point to QR code on screen.",
-    transition: "And beyond agents — there's AI already built into the tools you use every day." },
-
-  { title: "AI Built Into Your Tools", section: "temper",
-    key: "Before we even get to agents — there's AI <em>already running</em> inside tools you use every day. You might not even realise it.",
-    points: ["Slack AI can summarise an entire channel for you — catch up on 200 messages in 30 seconds.", "Asana generates status updates and subtasks automatically.", "NotebookLM lets you upload any document and have a conversation with it.", "These aren't agents — they don't take autonomous actions. But they're a great starting point to get comfortable with AI in your workflow."],
-    transition: "Now, with all this power comes responsibility. Let's talk about the risks." },
-
-  { title: "The Hidden Dangers", section: "temper",
-    key: "I want to be honest about the risks. The same capability that makes agents useful also makes them <em>dangerous</em> if used carelessly.",
-    points: ["First danger: data absorption. If you upload a confidential strategy doc to a third-party AI to \"summarise it\", that data might end up in their training set or stay in their system.", "Second danger: PII cascading. An agent chains tasks together — it might pull a worker's personal ID for one step, then accidentally include it in a Slack message or a log file.", "The good news: there are clear mitigations. Give agents minimum access, require human approval for high-stakes actions, and always have audit trails so you can see what happened."],
-    transition: "This brings us to a core Temper value..." },
-
-  { title: "Data Safety Quote", section: "temper",
-    key: "This is something I feel strongly about. At Temper, our whole business is built on <em>trust</em> — trust from workers, trust from businesses. We can't afford to be careless with AI.",
-    points: ["The quote on screen puts it simply: agents need the same vetting as any team member. Background check, clear boundaries, limited access.", "Freedom is a core Temper value. But freedom without guardrails isn't freedom — it's chaos."],
-    cue: "Let the reveals land one by one. This is the emotional core of the safety message.",
-    transition: "So what does that look like in practice?" },
-
-  { title: "AI Data Safety Checklist", section: "temper",
-    key: "We've put together a simple checklist. Before any agentic project goes live, run through these five questions.",
-    points: ["The guiding principle is on the left: <em>\"Does the agent actually need to see this data to do its job?\"</em> If not, don't give it access.", "I won't read every item — you can see them on screen. But the key ones: always redact PII before it reaches AI, never give more access than the task requires, and make sure training data opt-out is enabled on every tool."],
-    transition: "And when you find new tools — here's the process." },
-
-  { title: "Discovering New Tools", section: "temper",
-    key: "We're in a discovery phase. New AI tools pop up every week. Here's how we handle that <em>together</em>.",
-    points: ["First: try it on your own projects. No company data. Get a feel for what it can and can't do.", "Second: write a short note — what is it, what problem does it solve, how would you use it at Temper?", "Third: before you connect it to any company data, send a quick Slack to Radu, William, or Annabel. This isn't a gate or an approval process — it's a conversation to make sure we stay safe.", "Our policies grow as we discover. Every tool you explore makes the next decision easier for the whole company."],
-    cue: "Point to QR code — Temper AI Policy on Notion.",
-    transition: "Now... I have a confession to make." },
-
-  { title: "Plot Twist", section: "temper",
-    key: "Everything you've seen in this presentation — every slide, every animation, every line of code — was built by an <em>AI agent</em>.",
-    points: ["I didn't open PowerPoint. I didn't write CSS. I had a conversation with an AI called Claude Code, and it built this entire deck through natural language instructions.", "The terminal on screen is showing you the actual commands that were used."],
-    cue: "Let \"Wait For It...\" land big. Pause. Then press to reveal. Let the typewriter animation run.",
-    transition: "And here's what's interesting — it used exactly the same three pillars we just talked about." },
-
-  { title: "How This Was Made", section: "temper",
-    key: "This presentation is the proof of everything I just told you. It was built with the <em>exact same three pillars</em>.",
-    points: ["<strong>Connections</strong>: The agent could read and write files, control a browser, run commands — all through MCP.", "<strong>Human Control</strong>: I guided every step. \"Make the background darker.\" \"Add an animation here.\" \"Fix that spacing.\" The AI executed, I directed.", "<strong>Rich Context</strong>: I gave it our brand guidelines, color palette, icon library, and design specs. That context is why it looks like a Temper presentation, not a generic AI output."],
-    transition: "Let's bring it all together." },
-
-  { title: "Bringing It All Together", section: "closing",
-    key: "Here's the formula. Three ingredients, one outcome: <em>automation you can actually trust</em>.",
-    points: ["Give AI access to the right tools. Keep humans in control of the important decisions. And feed it rich context so it understands what you actually need.", "Get those three things right, and you go from copy-pasting between tools to reviewing outputs that are already 90% done."],
-    transition: "And here's what you can do starting this week." },
-
-  { title: "Start This Week", section: "closing",
-    key: "I don't want this to be a talk you forget by tomorrow. Here are four things you can do <em>this week</em>.",
-    points: ["One: try an agent. Open Gemini, build a Gem for something you do every week. Experience the difference between chatbot and agent firsthand.", "Two: write down your context. What are your team's conventions? Your processes? Your formats? Put that in a doc — it becomes fuel for any AI tool.", "Three: pick one workflow and design a human gate. Where should a person review before the output goes out?", "Four: share what you build. Post it in #ai-workflows on Slack. One person's experiment can save the whole team hours."],
-    transition: "And with that — I'd love to hear your questions." },
-
-  { title: "Questions?", section: "closing",
-    key: "Thank you all. I'm genuinely excited about what we can build with this. Let's figure it out <em>together</em>.",
-    points: ["Open the floor.", "If silence: \"While you think about questions — pull out your phone, go to gemini.google.com, log in with your Temper account. You can start right now.\""],
-    transition: null }
+// Fallback order — used standalone when no audience sends slide-order
+var FALLBACK_ORDER = [
+  "cover","ai-everywhere","spectrum","what-is-agentic","chatbot-vs-agent",
+  "integration-layer","impact-divider","before-after","already-happening",
+  "tipping-point","how-divider","connections-divider","why-connections",
+  "what-is-mcp","mcp-in-action","human-control-divider","human-in-loop",
+  "trust-gradient","context-divider","what-is-context","context-before-after",
+  "four-layers","changes-your-work","everyone-can-build","temper-divider",
+  "our-opportunity","more-use-cases","agentic-tools","gemini","workspace-studio",
+  "ai-built-in","hidden-dangers","safety-quote","safety-checklist",
+  "discovering-tools","plot-twist","how-made","full-picture","start-this-week","qa"
 ];
-
-var TOTAL = SLIDES.length;
-var current = 0;
 
 var elTitle = document.getElementById('slide-title');
 var elSection = document.getElementById('slide-section');
@@ -539,45 +338,69 @@ var elStatus = document.getElementById('status-dot');
 var btnPrev = document.getElementById('btn-prev');
 var btnNext = document.getElementById('btn-next');
 
+// Load notes from JSON
+fetch('config/notes.json').then(function(r) { return r.json(); }).then(function(data) {
+  NOTES = data;
+  SLIDE_ORDER = FALLBACK_ORDER;
+  TOTAL = SLIDE_ORDER.length;
+  render();
+}).catch(function() {
+  elNotes.innerHTML = '<div class="note-cue">Failed to load notes.json</div>';
+});
+
+function currentKey() {
+  return SLIDE_ORDER[currentIdx] || '';
+}
+
+function getNotes(key) {
+  return NOTES[key] || { title: key, section: '', key: '', points: [], transition: null };
+}
+
 function render() {
-  var s = SLIDES[current];
-  elTitle.textContent = s.title;
-  elSection.textContent = s.section;
-  elCounter.textContent = (current + 1) + ' / ' + TOTAL;
-  elProgress.style.width = ((current + 1) / TOTAL * 100) + '%';
+  if (!TOTAL) return;
+  var s = getNotes(currentKey());
+  elTitle.textContent = s.title || currentKey();
+  elSection.textContent = s.section || '';
+  elCounter.textContent = (currentIdx + 1) + ' / ' + TOTAL;
+  elProgress.style.width = ((currentIdx + 1) / TOTAL * 100) + '%';
 
   var html = '';
-
-  // Key message
-  if (s.key) {
-    html += '<div class="note-key">' + s.key + '</div>';
-  }
-
-  // Stage cue
-  if (s.cue) {
-    html += '<div class="note-cue">' + s.cue + '</div>';
-  }
-
-  // Talking points
+  if (s.key) html += '<div class="note-key">' + s.key + '</div>';
+  if (s.cue) html += '<div class="note-cue">' + s.cue + '</div>';
   if (s.points && s.points.length) {
     html += '<ul class="note-points">';
     s.points.forEach(function(p) { html += '<li class="note-point">' + p + '</li>'; });
     html += '</ul>';
   }
-
   elNotes.innerHTML = html;
 
-  // Transition — pinned to bottom bar
   var elTransition = document.getElementById('transition-line');
   elTransition.textContent = s.transition || '';
   elTransition.style.display = s.transition ? '' : 'none';
   elNotes.parentElement.scrollTop = 0;
 
-  btnPrev.disabled = current === 0;
-  btnNext.disabled = current === TOTAL - 1;
-  btnNext.innerHTML = current === TOTAL - 1
+  btnPrev.disabled = currentIdx === 0;
+  btnNext.disabled = currentIdx === TOTAL - 1;
+  btnNext.innerHTML = currentIdx === TOTAL - 1
     ? 'End'
     : 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>';
+}
+
+// Go to a slide by its key
+function goToKey(key) {
+  var idx = SLIDE_ORDER.indexOf(key);
+  if (idx >= 0 && idx !== currentIdx) {
+    currentIdx = idx;
+    render();
+  }
+}
+
+// Go to a slide by its index
+function goToIdx(idx) {
+  if (idx >= 0 && idx < TOTAL && idx !== currentIdx) {
+    currentIdx = idx;
+    render();
+  }
 }
 
 // ── SUPABASE SYNC ──
@@ -587,10 +410,8 @@ var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 var sb = null;
 var channel = null;
 
-// Room code: from ?room= param, or generate a random 4-digit one
 var urlParams = new URLSearchParams(window.location.search);
 var ROOM = urlParams.get('room') || (Math.floor(1000 + Math.random() * 9000).toString());
-// Persist room in URL so refresh keeps it
 if (!urlParams.get('room')) {
   history.replaceState(null, '', '?room=' + ROOM + window.location.hash);
 }
@@ -600,18 +421,16 @@ var audienceConnected = false;
 
 function writeSlideToDb() {
   if (!sb) return;
-  sb.from('presentation_state').upsert({ room: ROOM, slide: current + 1, reveal: 0, updated_at: new Date().toISOString() }).then(function () {});
+  sb.from('presentation_state').upsert({ room: ROOM, slide: currentIdx + 1, reveal: 0, updated_at: new Date().toISOString() }).then(function () {});
 }
 
 function sendCommand(direction) {
   if (audienceConnected && channel) {
-    // Audience is live — let it handle reveals/slides, wait for slide-update
     channel.send({ type: 'broadcast', event: 'command', payload: { direction: direction } });
   } else {
-    // No audience — advance locally + persist to DB
-    var next = direction === 'next' ? current + 1 : current - 1;
+    var next = direction === 'next' ? currentIdx + 1 : currentIdx - 1;
     if (next >= 0 && next < TOTAL) {
-      current = next;
+      currentIdx = next;
       render();
       writeSlideToDb();
     }
@@ -645,31 +464,41 @@ function initSupabase() {
     sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     channel = sb.channel('room-' + ROOM);
 
-    // Listen for slide updates from the audience page (corrects after reveals)
+    // Audience sends slide-update with key — use key for lookup
     channel.on('broadcast', { event: 'slide-update' }, function(payload) {
-      var slide = payload.payload.slide;
-      if (slide >= 0 && slide < TOTAL) {
-        current = slide;
+      var key = payload.payload.key;
+      if (key && NOTES[key]) {
+        goToKey(key);
+      } else {
+        // Fallback to index
+        var slide = payload.payload.slide;
+        if (slide >= 0 && slide < TOTAL) goToIdx(slide);
+      }
+    });
+
+    // Audience sends slide order on connect — use it as the real order
+    channel.on('broadcast', { event: 'slide-order' }, function(payload) {
+      var keys = payload.payload.keys;
+      if (keys && keys.length) {
+        SLIDE_ORDER = keys;
+        TOTAL = keys.length;
         render();
       }
     });
 
-    // Watch audience presence
     channel.on('presence', { event: 'sync' }, function() {
       updatePresence(channel.presenceState());
     });
 
     channel.subscribe(function(status) {
       if (status === 'SUBSCRIBED') {
-        // Track presenter presence too
         channel.track({ role: 'presenter', room: ROOM });
       }
     });
 
-    // Fetch current slide from DB for initial state
     sb.from('presentation_state').select('slide').eq('room', ROOM).single().then(function(res) {
       if (res.data && res.data.slide >= 1 && res.data.slide <= TOTAL) {
-        current = res.data.slide - 1;
+        currentIdx = res.data.slide - 1;
         render();
       }
     });

@@ -27,7 +27,8 @@
 
     function broadcastSlide() {
       var current = typeof window.deckGetCurrent === 'function' ? window.deckGetCurrent() : 0;
-      channel.send({ type: 'broadcast', event: 'slide-update', payload: { slide: current } });
+      var key = typeof window.deckGetCurrentKey === 'function' ? window.deckGetCurrentKey() : '';
+      channel.send({ type: 'broadcast', event: 'slide-update', payload: { slide: current, key: key } });
     }
 
     // Listen for commands from presenter
@@ -46,6 +47,10 @@
     channel.subscribe(function (status) {
       if (status === 'SUBSCRIBED') {
         channel.track({ role: 'audience', room: room });
+
+        // Send full slide order so presenter can build its list
+        var keys = typeof window.deckGetSlideKeys === 'function' ? window.deckGetSlideKeys() : [];
+        channel.send({ type: 'broadcast', event: 'slide-order', payload: { keys: keys } });
 
         // On connect: read current slide from DB and jump there
         sb.from('presentation_state').select('slide').eq('room', room).single().then(function (res) {
