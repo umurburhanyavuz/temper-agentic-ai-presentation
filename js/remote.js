@@ -1,8 +1,9 @@
 /**
- * Remote slide sync via Supabase Realtime Broadcast.
+ * Remote slide sync via Supabase Realtime.
  *
- * Room-based: only audience pages with ?room=XXXX respond to the presenter
- * with the matching room code. Pages without ?room ignore remote commands.
+ * Room-based: audience pages with ?room=XXXX pair with the presenter.
+ * DB is source of truth — presenter writes, audience reads on connect.
+ * Presence tracks whether an audience page is live in the room.
  */
 (function () {
   var SUPABASE_URL = 'https://nubrmjgjmmsktnpbkmlh.supabase.co';
@@ -11,27 +12,22 @@
   window.__SUPABASE_URL = SUPABASE_URL;
   window.__SUPABASE_KEY = SUPABASE_KEY;
 
-  // Only run on the audience (deck) page
   if (!document.getElementById('deck')) return;
 
-  // Room code from URL param — no room = no remote
   var params = new URLSearchParams(window.location.search);
   var room = params.get('room');
   if (!room) return;
-
   window.__REMOTE_ROOM = room;
 
   var script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
   script.onload = function () {
     var sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    var channelName = 'room-' + room;
-    var channel = sb.channel(channelName);
+    var channel = sb.channel('room-' + room);
 
     function broadcastSlide() {
       var current = typeof window.deckGetCurrent === 'function' ? window.deckGetCurrent() : 0;
       channel.send({ type: 'broadcast', event: 'slide-update', payload: { slide: current } });
-      sb.from('presentation_state').update({ slide: current + 1, updated_at: new Date().toISOString() }).eq('id', 1).then(function () {});
     }
 
     // Listen for commands from presenter
@@ -44,9 +40,27 @@
       setTimeout(broadcastSlide, 100);
     });
 
-    channel.subscribe();
+    // Track presence so presenter knows we're here
+    channel.on('presence', { event: 'sync' }, function () {});
 
-    // Watch for ANY slide change (local keyboard, click, sidenav, etc.)
+    channel.subscribe(function (status) {
+      if (status === 'SUBSCRIBED') {
+        channel.track({ role: 'audience', room: room });
+
+        // On connect: read current slide from DB and jump there
+        sb.from('presentation_state').select('slide').eq('id', 1).single().then(function (res) {
+          if (res.data && res.data.slide >= 1) {
+            var target = res.data.slide - 1;
+            var current = typeof window.deckGetCurrent === 'function' ? window.deckGetCurrent() : 0;
+            if (target !== current) {
+              window.dispatchEvent(new CustomEvent('remote-goto', { detail: { slide: target } }));
+            }
+          }
+        });
+      }
+    });
+
+    // Watch for ANY slide change and broadcast back
     var lastBroadcast = -1;
     var observer = new MutationObserver(function (mutations) {
       for (var i = 0; i < mutations.length; i++) {
@@ -64,7 +78,7 @@
       observer.observe(s, { attributes: true, attributeFilter: ['class'] });
     });
 
-    // Show room indicator on audience page — toggle with E key
+    // Room badge — hidden by default, toggle with E
     var badge = document.createElement('div');
     badge.textContent = 'ROOM: ' + room;
     badge.style.cssText = 'position:fixed;top:8px;left:50%;transform:translateX(-50%);background:rgba(61,215,108,.15);color:#3dd76c;font-family:Poppins,sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:20px;z-index:9999;pointer-events:none;opacity:0;transition:opacity .3s';

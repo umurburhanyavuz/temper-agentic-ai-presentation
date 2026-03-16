@@ -596,16 +596,45 @@ if (!urlParams.get('room')) {
 }
 document.getElementById('room-badge').textContent = ROOM;
 
+var audienceConnected = false;
+
+function writeSlideToDb() {
+  if (!sb) return;
+  sb.from('presentation_state').update({ slide: current + 1, updated_at: new Date().toISOString() }).eq('id', 1).then(function () {});
+}
+
 function sendCommand(direction) {
-  // Always advance locally so presenter works standalone
+  // Always advance locally
   var next = direction === 'next' ? current + 1 : current - 1;
   if (next >= 0 && next < TOTAL) {
     current = next;
     render();
   }
-  // Also send to audience if connected
+  // Write to DB so audience can pick up on connect/reconnect
+  writeSlideToDb();
+  // Send broadcast command to audience
   if (channel) {
     channel.send({ type: 'broadcast', event: 'command', payload: { direction: direction } });
+  }
+}
+
+function updatePresence(state) {
+  var presences = state ? Object.values(state) : [];
+  var found = false;
+  for (var i = 0; i < presences.length; i++) {
+    var list = presences[i];
+    for (var j = 0; j < list.length; j++) {
+      if (list[j].role === 'audience') { found = true; break; }
+    }
+    if (found) break;
+  }
+  audienceConnected = found;
+  if (found) {
+    elStatus.classList.add('connected');
+    elStatus.title = 'Audience connected';
+  } else {
+    elStatus.classList.remove('connected');
+    elStatus.title = 'No audience';
   }
 }
 
@@ -616,7 +645,7 @@ function initSupabase() {
     sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     channel = sb.channel('room-' + ROOM);
 
-    // Listen for slide updates from the audience page
+    // Listen for slide updates from the audience page (corrects after reveals)
     channel.on('broadcast', { event: 'slide-update' }, function(payload) {
       var slide = payload.payload.slide;
       if (slide >= 0 && slide < TOTAL) {
@@ -625,10 +654,15 @@ function initSupabase() {
       }
     });
 
+    // Watch audience presence
+    channel.on('presence', { event: 'sync' }, function() {
+      updatePresence(channel.presenceState());
+    });
+
     channel.subscribe(function(status) {
       if (status === 'SUBSCRIBED') {
-        elStatus.classList.add('connected');
-        elStatus.title = 'Connected';
+        // Track presenter presence too
+        channel.track({ role: 'presenter', room: ROOM });
       }
     });
 
