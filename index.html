@@ -943,7 +943,7 @@
         </div>
       </div>
       <div class="card-light" style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,16px)">
-        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">The goal: automate it</div>
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">The goal: <span style="color:var(--green)">automate it</span></div>
         <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
           Instead of copy-pasting every time, set up AI so it already has access to the right information — automatically, persistently, efficiently.
         </div>
@@ -1079,7 +1079,7 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE — THIS CHANGES YOUR WORK, NOT YOUR JOB       -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-gradient" data-section="how">
+<div id="slide-not-your-job" class="slide" data-bg="brand-gradient" data-section="how" style="--inner-gap-px:14">
   <div class="slide-header">
     <span></span>
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
@@ -1104,17 +1104,138 @@
         <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Strategy, creativity, relationships, decisions — the work that actually needs a human brain.</div>
       </div>
       <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,14px)">
-        <img class="icon icon-md icon-invert" src="assets/icons/growth-chart.png" alt="">
-        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">The goal is leverage</div>
-        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Same team, bigger impact. Not fewer people — more output per person.</div>
+        <img class="icon icon-md icon-invert" src="assets/icons/lightning.png" alt="">
+        <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">You ship faster</div>
+        <div class="t-body" style="color:rgba(255,255,255,.75);font-size:clamp(17px,1.8vw,24px)">Same quality, less time. What took a day now takes an hour. What took a week ships in two days.</div>
       </div>
     </div>
-    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(16px,2.5vh,28px);text-align:left;max-width:1000px">
-      "People who use AI will replace people who don't."<br>
-      <span style="font-size:clamp(15px,1.5vw,19px);color:rgba(255,255,255,.55)">— Karim Lakhani, Harvard Business School</span>
+    <div style="width:100%;max-width:1100px;background:rgba(61,215,108,.08);border:2px solid var(--green);border-radius:18px;padding:clamp(18px,2.5vw,36px) clamp(28px,4vw,56px);margin-top:clamp(6px,1vh,14px);display:flex;align-items:center;gap:clamp(24px,3vw,48px)">
+      <div style="flex-shrink:0;text-align:center">
+        <div style="color:var(--green);font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(48px,6vw,80px);line-height:1">10x</div>
+        <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.2vw,17px);margin-top:4px;font-weight:600">output per person</div>
+      </div>
+      <div style="height:60px;width:2px;background:rgba(61,215,108,.25);flex-shrink:0"></div>
+      <div>
+        <div class="t-title" style="color:#fff;font-size:clamp(22px,2.6vw,32px)">The goal is <span style="color:var(--green)">speed</span>, not replacement</div>
+        <div class="t-body" style="color:rgba(255,255,255,.65);font-size:clamp(16px,1.6vw,22px);margin-top:8px;line-height:1.5">Same team. Same roles. Radically more throughput. AI doesn't do your job for you — it multiplies what you can deliver.</div>
+      </div>
+    </div>
+    <div id="nyj-quote" class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);margin-top:clamp(4px,1vh,12px);text-align:left;max-width:1000px">
+      "The purpose of AI is to <strong class="nyj-highlight" style="color:var(--green)">amplify</strong> human ingenuity, <strong class="nyj-highlight" style="color:var(--green)">not replace</strong> it."<br>
+      <span style="font-size:clamp(15px,1.5vw,19px);color:rgba(255,255,255,.55)">— Satya Nadella, CEO of Microsoft</span>
     </div>
   </div>
 </div>
+<script>
+(function() {
+  var slide = document.getElementById('slide-not-your-job');
+  var quote = document.getElementById('nyj-quote');
+  if (!slide || !quote) return;
+
+  var inner = slide.querySelector('.inner');
+  var highlights = quote.querySelectorAll('.nyj-highlight');
+  var heroMode = false;
+
+  function getSiblings() {
+    return Array.from(inner.children).filter(function(el) { return el !== quote; });
+  }
+
+  function enterHero() {
+    heroMode = true;
+
+    // Hide all siblings instantly
+    getSiblings().forEach(function(el) {
+      el.style.transition = 'none';
+      el.style.opacity = '0';
+    });
+
+    // Measure where quote sits in normal flow, then compute offset to slide center
+    quote.style.transition = 'none';
+    quote.style.transform = 'none';
+    void quote.offsetHeight; // force layout
+
+    var slideRect = slide.getBoundingClientRect();
+    var quoteRect = quote.getBoundingClientRect();
+    var dx = (slideRect.left + slideRect.width / 2) - (quoteRect.left + quoteRect.width / 2);
+    var dy = (slideRect.top + slideRect.height / 2) - (quoteRect.top + quoteRect.height / 2);
+
+    quote.style.opacity = '0';
+    quote.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(1.3)';
+    quote.style.borderLeftColor = 'transparent';
+    quote.style.color = '#fff';
+    highlights.forEach(function(el) { el.style.fontSize = '1.3em'; el.style.transition = 'none'; });
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        quote.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1)';
+        quote.style.opacity = '1';
+        quote.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(1.6)';
+      });
+    });
+  }
+
+  function exitHero() {
+    heroMode = false;
+
+    // Animate quote back to its flow position
+    quote.style.transition = 'transform 0.8s cubic-bezier(.22,1,.36,1), border-left-color 0.6s ease 0.3s, color 0.6s ease';
+    quote.style.transform = 'none';
+    quote.style.borderLeftColor = '';
+    quote.style.color = '';
+    highlights.forEach(function(el) { el.style.transition = 'font-size 0.6s ease'; el.style.fontSize = ''; });
+
+    // Fade in siblings with stagger
+    getSiblings().forEach(function(el, i) {
+      el.style.transition = 'opacity 0.5s ease ' + (0.3 + i * 0.08).toFixed(2) + 's';
+      el.style.opacity = '1';
+    });
+  }
+
+  function resetSlide() {
+    heroMode = false;
+    quote.style.transition = 'none';
+    quote.style.transform = '';
+    quote.style.borderLeftColor = '';
+    quote.style.color = '';
+    highlights.forEach(function(el) { el.style.transition = 'none'; el.style.fontSize = ''; });
+    getSiblings().forEach(function(el) {
+      el.style.transition = 'none';
+      el.style.opacity = '';
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (document.body.classList.contains('edit-mode')) return;
+    if (!slide.classList.contains('active') || !heroMode) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      exitHero();
+    }
+  }, { capture: true });
+
+  document.getElementById('deck').addEventListener('click', function(e) {
+    if (document.body.classList.contains('edit-mode')) return;
+    if (!slide.classList.contains('active') || !heroMode) return;
+    if (e.target.closest('#sidenav') || e.target.closest('a') || e.target.closest('button')) return;
+    if (e.clientX / window.innerWidth > 0.7) {
+      e.stopImmediatePropagation();
+      exitHero();
+    }
+  }, { capture: true });
+
+  var obs = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName !== 'class') return;
+      if (slide.classList.contains('active')) enterHero();
+      else resetSlide();
+    });
+  });
+  obs.observe(slide, { attributes: true, attributeFilter: ['class'] });
+
+  if (slide.classList.contains('active')) enterHero();
+})();
+</script>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE — EVERYONE CAN BUILD NOW                      -->
@@ -1192,27 +1313,27 @@
         <img class="icon icon-lg icon-invert" src="assets/icons/clipboard.png" alt="" style="margin-bottom:4px">
         <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Reporting</div>
         <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
-          Auto-generate status reports from Jira data. AI drafts, you review and send in 2 minutes.
+          Auto-generate status updates from your tools. AI drafts, you review and send in 2 minutes.
         </div>
-        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">40 min</div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(36px,4.5vw,56px)">40 min</div>
         <div class="stat-label" style="color:rgba(255,255,255,.75)">saved per report</div>
       </div>
       <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px);padding:clamp(24px,3vw,44px)">
         <img class="icon icon-lg icon-invert" src="assets/icons/headset.png" alt="" style="margin-bottom:4px">
         <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Support Triage</div>
         <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
-          AI categorizes incoming tickets, suggests responses, routes to the right team. Humans approve.
+          AI categorizes incoming requests, drafts responses, routes to the right person. You approve.
         </div>
-        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">70%</div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(36px,4.5vw,56px)">70%</div>
         <div class="stat-label" style="color:rgba(255,255,255,.75)">faster first response</div>
       </div>
       <div class="card-light" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1vh,16px);padding:clamp(24px,3vw,44px)">
         <img class="icon icon-lg icon-invert" src="assets/icons/calendar.png" alt="" style="margin-bottom:4px">
         <div class="t-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px)">Meeting Follow-ups</div>
         <div class="t-body" style="color:rgba(255,255,255,.8);font-size:clamp(17px,1.9vw,24px)">
-          From meeting notes to action items, Jira tickets, and Slack updates — automatically.
+          From meeting notes to action items, task assignments, and team updates — automatically.
         </div>
-        <div class="stat-big" data-a="stat" style="font-size:clamp(28px,3.5vw,44px)">20 min</div>
+        <div class="stat-big" data-a="stat" style="font-size:clamp(36px,4.5vw,56px)">20 min</div>
         <div class="stat-label" style="color:rgba(255,255,255,.75)">saved per meeting</div>
       </div>
     </div>
@@ -1234,14 +1355,14 @@
         <img class="icon icon-invert" src="assets/icons/search.png" alt="" style="width:64px;height:64px;flex-shrink:0">
         <div>
           <div class="t-title" style="color:var(--green);font-size:34px">Data Analysis</div>
-          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">AI queries Mixpanel & Sheets, surfaces insights, generates weekly dashboards with narrative summaries.</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">AI pulls data from your tools, surfaces patterns, and generates summaries — so you spend time on decisions, not data gathering.</div>
         </div>
       </div>
       <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
         <img class="icon icon-invert" src="assets/icons/document-check.png" alt="" style="width:64px;height:64px;flex-shrink:0">
         <div>
           <div class="t-title" style="color:var(--green);font-size:34px">Documentation</div>
-          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">Keep Notion up to date automatically. Agent monitors changes in code/Jira and updates relevant docs.</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">Keep Notion & Slack knowledge current. Agent watches decisions, workflows, and updates — then keeps your team's docs in sync automatically.</div>
         </div>
       </div>
       <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
@@ -1254,8 +1375,8 @@
       <div class="card-ghost" style="display:flex;gap:24px;align-items:center;padding:32px 36px">
         <img class="icon icon-invert" src="assets/icons/growth-chart.png" alt="" style="width:64px;height:64px;flex-shrink:0">
         <div>
-          <div class="t-title" style="color:var(--green);font-size:34px">Sprint Planning</div>
-          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">AI analyzes velocity, backlog, and priorities — drafts sprint scope recommendations for the team to discuss.</div>
+          <div class="t-title" style="color:var(--green);font-size:34px">Project Kickoffs</div>
+          <div style="color:rgba(255,255,255,.7);font-size:26px;margin-top:6px;line-height:1.5">Starting a pilot or new initiative? AI reviews past projects, gathers context, and drafts a structured plan for your team to refine.</div>
         </div>
       </div>
     </div>
@@ -1323,6 +1444,124 @@
         <div style="display:flex;gap:6px;margin-top:auto">
           <div class="pill pill-green" style="font-size:clamp(12px,1.2vw,15px)">Approved</div>
           <div class="pill pill-dark" style="font-size:clamp(12px,1.2vw,15px)">Developers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 20 — GEMINI: START RIGHT NOW                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="temper">
+  <div class="slide-header">
+    <span class="section-tag t-label" style="color:var(--soft)">Start Today</span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center">
+    <div class="pill pill-green" style="margin-bottom:clamp(4px,1vh,10px)">Zero Setup</div>
+    <h2 class="t-display" style="color:#fff">Gemini Already Knows<br>Our Workspace</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      Log in with your Temper Google account and Gemini can instantly read, search, and work with your data — no configuration, no API keys, no setup.
+    </p>
+    <div class="grid-4" style="margin-top:16px">
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/google-docs-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Google Docs</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Read & draft documents</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/google-keep-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Google Keep</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Access & search notes</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/google-tasks-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Google Tasks</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Manage & create tasks</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="assets/logos/google-calendar-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Calendar</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Check schedule & availability</div>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:12px">
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/gmail-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Gmail</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Search & draft emails</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/google-meet-logo.svg" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Google Meet</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Read meeting summaries</div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 24px;text-align:center">
+        <img src="images/logos/google-drive-logo.png" alt="" style="width:40px;height:40px;object-fit:contain">
+        <div class="t-title" style="color:#fff;font-size:24px">Google Drive</div>
+        <div style="font-size:18px;color:rgba(255,255,255,.6)">Find & reference files</div>
+      </div>
+    </div>
+    <div class="card-accent" style="margin-top:16px;padding:18px 32px;font-size:24px;text-align:center;font-weight:700">
+      Open gemini.google.com with your Temper account — that's it
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE 21 — GOOGLE WORKSPACE STUDIO                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="dark" data-section="temper">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <!-- QR code top-left -->
+  <div style="position:absolute;top:clamp(30px,5vh,80px);left:clamp(30px,4vw,70px);display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 24px;z-index:2">
+    <div id="qr-workspace-studio" style="width:88px;height:88px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:5px"></div>
+    <div style="color:#fff;font-size:20px;font-weight:600;line-height:1.3">Scan to<br>try it now</div>
+  </div>
+  <div class="inner center" style="padding-top:clamp(20px,4vh,50px)">
+    <div class="pill pill-green" style="margin-bottom:8px">No Code Required</div>
+    <h2 class="t-display" style="color:#fff">Google Workspace Studio</h2>
+    <p class="t-desc" style="color:rgba(255,255,255,.7)">
+      Describe what you want automated — Gemini builds an AI agent that runs across your Workspace.
+    </p>
+
+    <div class="split" style="grid-template-columns:3fr 2fr;align-items:center;gap:40px;margin-top:16px">
+      <!-- Left: screenshot -->
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)">
+        <img src="images/workspace-studio-main-ui.png" alt="Workspace Studio" style="width:100%;display:block">
+      </div>
+      <!-- Right: triggers + CTA -->
+      <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
+        <div>
+          <div style="color:rgba(255,255,255,.4);font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Triggers from</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/gmail-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Email</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/google-meet-logo.svg" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Meeting transcript</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="assets/logos/google-sheets-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Sheet changes</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <img src="images/logos/google-drive-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
+              <span style="color:rgba(255,255,255,.75);font-size:20px">Drive files</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
+              <span style="color:rgba(255,255,255,.5);font-size:20px">+ schedule, forms, chat…</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-accent" style="padding:16px 28px;font-size:24px;text-align:center;font-weight:700">
+          Available on all Temper accounts
         </div>
       </div>
     </div>
@@ -1407,138 +1646,6 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- SLIDE 20 — GEMINI: START RIGHT NOW                  -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-gradient" data-section="temper">
-  <div class="slide-header">
-    <span class="section-tag t-label" style="color:var(--soft)">Start Today</span>
-    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
-  </div>
-  <div class="inner center">
-    <div class="pill pill-green" style="margin-bottom:clamp(4px,1vh,10px)">Zero Setup</div>
-    <h2 class="t-display" style="color:#fff">Gemini Already Knows<br>Our Workspace</h2>
-    <p class="t-desc" style="color:rgba(255,255,255,.7)">
-      Log in with your Temper Google account and Gemini can instantly read, search, and work with your data — no configuration, no API keys, no setup.
-    </p>
-    <div class="grid-4" style="margin-top:16px">
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/google-docs-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Google Docs</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Read & draft documents</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/google-keep-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Google Keep</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Access & search notes</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/google-tasks-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Google Tasks</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Manage & create tasks</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="assets/logos/google-calendar-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Calendar</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Check schedule & availability</div>
-        </div>
-      </div>
-    </div>
-    <div class="grid-3" style="margin-top:12px">
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/gmail-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Gmail</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Search & draft emails</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/google-meet-logo.svg" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Google Meet</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Read meeting summaries</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;align-items:center;gap:14px;padding:20px 24px">
-        <img src="images/logos/google-drive-logo.png" alt="" style="width:40px;height:40px;object-fit:contain;flex-shrink:0">
-        <div style="text-align:left">
-          <div class="t-title" style="color:#fff;font-size:24px">Google Drive</div>
-          <div style="font-size:18px;color:rgba(255,255,255,.6)">Find & reference files</div>
-        </div>
-      </div>
-    </div>
-    <div class="card-accent" style="margin-top:16px;padding:18px 32px;font-size:24px;text-align:center;font-weight:700">
-      Open gemini.google.com with your Temper account — that's it
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- SLIDE 21 — GOOGLE WORKSPACE STUDIO                 -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="dark" data-section="temper">
-  <div class="slide-header">
-    <span></span>
-    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
-  </div>
-  <!-- QR code top-left -->
-  <div style="position:absolute;top:clamp(30px,5vh,80px);left:clamp(30px,4vw,70px);display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 24px;z-index:2">
-    <div id="qr-workspace-studio" style="width:88px;height:88px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;padding:5px"></div>
-    <div style="color:#fff;font-size:20px;font-weight:600;line-height:1.3">Scan to<br>try it now</div>
-  </div>
-  <div class="inner center" style="padding-top:clamp(20px,4vh,50px)">
-    <div class="pill pill-green" style="margin-bottom:8px">No Code Required</div>
-    <h2 class="t-display" style="color:#fff">Google Workspace Studio</h2>
-    <p class="t-desc" style="color:rgba(255,255,255,.7)">
-      Describe what you want automated — Gemini builds an AI agent that runs across your Workspace.
-    </p>
-
-    <div class="split" style="grid-template-columns:3fr 2fr;align-items:center;gap:40px;margin-top:16px">
-      <!-- Left: screenshot -->
-      <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)">
-        <img src="images/workspace-studio-main-ui.png" alt="Workspace Studio" style="width:100%;display:block">
-      </div>
-      <!-- Right: triggers + CTA -->
-      <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
-        <div>
-          <div style="color:rgba(255,255,255,.4);font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Triggers from</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
-              <img src="images/logos/gmail-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
-              <span style="color:rgba(255,255,255,.75);font-size:20px">Email</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
-              <img src="images/logos/google-meet-logo.svg" alt="" style="width:22px;height:22px;object-fit:contain">
-              <span style="color:rgba(255,255,255,.75);font-size:20px">Meeting transcript</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
-              <img src="assets/logos/google-sheets-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
-              <span style="color:rgba(255,255,255,.75);font-size:20px">Sheet changes</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
-              <img src="images/logos/google-drive-logo.png" alt="" style="width:22px;height:22px;object-fit:contain">
-              <span style="color:rgba(255,255,255,.75);font-size:20px">Drive files</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:10px 18px">
-              <span style="color:rgba(255,255,255,.5);font-size:20px">+ schedule, forms, chat…</span>
-            </div>
-          </div>
-        </div>
-        <div class="card-accent" style="padding:16px 28px;font-size:24px;text-align:center;font-weight:700">
-          Available on all Temper accounts
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE — THE HIDDEN DANGERS                         -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="slide" data-bg="brand-subtle" data-section="temper">
@@ -1587,8 +1694,20 @@
         <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(17px,1.9vw,24px);margin-top:6px">See not just the answer, but every step the agent took to get there</div>
       </div>
     </div>
-    <div class="quote-block" style="color:rgba(255,255,255,.75);border-left-color:var(--green);text-align:left;font-size:clamp(18px,2vw,26px)">
-      "At Temper, we give people freedom. But if our AI agents are 'too free' with our data, we lose the trust that makes our marketplace work. Agentic AI isn't just a new tool — it's a new team member that needs a background check and clear boundaries."
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SLIDE — DATA SAFETY QUOTE                           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="slide" data-bg="brand-gradient" data-section="temper">
+  <div class="slide-header">
+    <span></span>
+    <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
+  </div>
+  <div class="inner center" style="justify-content:center">
+    <div class="quote-block" style="color:#fff;border-left:4px solid var(--green);text-align:left;font-size:clamp(24px,3vw,40px);max-width:1400px;padding-left:clamp(20px,2.5vw,36px);line-height:1.5">
+      "At Temper, we give people <span class="reveal-underline" style="position:relative;display:inline-block;min-width:4em"><strong style="color:var(--green)">freedom</strong></span>. But if our AI agents are 'too free' with our data, we lose the <span class="reveal-underline" style="position:relative;display:inline-block;min-width:2.5em"><strong style="color:var(--green)">trust</strong></span> that makes our marketplace work. Agentic AI isn't just a new tool — it's a new team member that needs a <span class="reveal-underline" style="position:relative;display:inline-block;min-width:8em"><strong style="color:var(--green)">background check</strong></span> and <span class="reveal-underline" style="position:relative;display:inline-block;min-width:8em"><strong style="color:var(--green)">clear boundaries</strong></span>."
     </div>
   </div>
 </div>
@@ -1667,44 +1786,52 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- SLIDE — VETTING NEW TOOLS                          -->
+<!-- SLIDE — DISCOVERING NEW TOOLS                       -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="slide" data-bg="brand-subtle" data-section="temper">
   <div class="slide-header">
-    <span class="section-tag t-label" style="color:var(--soft)">Data Safety</span>
+    <span class="section-tag t-label" style="color:var(--soft)">Growing Together</span>
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
   </div>
   <div class="inner center">
-    <h2 class="t-display" style="color:#fff">Vetting New Tools</h2>
+    <h2 class="t-display" style="color:#fff">Discovering New Tools</h2>
     <p class="t-desc" style="color:rgba(255,255,255,.75);margin-bottom:clamp(16px,2.5vh,28px)">
-      Found a shiny new AI tool that promises to do your job in 30 seconds?<br>Before you give it access to your Temper Google/Slack account:
+      We're all learning. Here's how we do it safely — together.
     </p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.5vw,24px);width:100%;max-width:1200px">
       <div class="card-light" style="padding:clamp(20px,2.5vw,36px);border-top:4px solid var(--green)">
-        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">SOC2 / ISO Status</div>
+        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">Try it personally first</div>
         <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
-          Does the vendor have security certifications?
+          Start with your own projects — no company data. Get a feel for what the tool can do and document what you learn.
         </div>
       </div>
       <div class="card-light" style="padding:clamp(20px,2.5vw,36px);border-top:4px solid var(--green)">
-        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">Data Residency</div>
-        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
-          Does the data stay in the EU/EEA? Crucial for our GDPR compliance.
+        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">Document how you'd use it</div>
+        <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(15px,1.4vw,20px);line-height:1.7;text-align:left">
+          A short note covering:<br>
+          <span style="color:var(--green);margin-right:4px">&#8226;</span> What's the tool?<br>
+          <span style="color:var(--green);margin-right:4px">&#8226;</span> What problem does it solve?<br>
+          <span style="color:var(--green);margin-right:4px">&#8226;</span> How would you use it at Temper?
         </div>
       </div>
       <div class="card-light" style="padding:clamp(20px,2.5vw,36px);border-top:4px solid var(--green)">
-        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">The Quick-Check</div>
+        <div class="t-title" style="color:var(--green);font-size:clamp(18px,2vw,26px);margin-bottom:8px">Ping before connecting company data</div>
         <div class="t-body" style="color:rgba(255,255,255,.7);font-size:clamp(15px,1.4vw,20px);line-height:1.5">
-          Send a 2-sentence Slack message to <strong style="color:#fff">Radu</strong>, <strong style="color:#fff">William</strong> or <strong style="color:#fff">Anabel</strong>. We're not "The Department of No" — just "The Department of Not-That-One."
+          Send a quick Slack message to <strong style="color:#fff">Radu</strong>, <strong style="color:#fff">William</strong> or <strong style="color:#fff">Annabel</strong>. Not a gate — just a conversation.
         </div>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(20px,3vh,36px);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:clamp(16px,2vw,28px)">
-      <div id="qr-ai-policy" style="flex-shrink:0;background:#fff;padding:6px;border-radius:8px;width:100px;height:100px"></div>
-      <div>
-        <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(16px,1.6vw,22px)">Temper AI Policy</div>
-        <div style="color:rgba(255,255,255,.5);font-size:clamp(13px,1.2vw,17px);margin-top:4px">Full guidelines on Notion — scan or copy the link</div>
-        <div style="color:var(--green);font-size:clamp(11px,1vw,14px);margin-top:6px;word-break:break-all;font-family:monospace;opacity:.7">notion.so/temper/Temper-AI-Policy-2be42960c8038092bc37d022975ddf23</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.5vw,24px);width:100%;max-width:1200px">
+      <div class="card-light" style="display:flex;align-items:center;padding:clamp(18px,2vw,28px) clamp(24px,3vw,36px)">
+        <p style="color:rgba(255,255,255,.65);font-size:clamp(15px,1.5vw,20px);line-height:1.5;font-style:italic">Our policies <strong style="color:#4afa8b">grow as we discover</strong>. Every tool you explore <strong style="color:#4afa8b">makes the next decision easier</strong> for everyone.</p>
+      </div>
+      <div class="card-light" style="display:flex;align-items:center;gap:clamp(16px,2vw,24px);padding:clamp(18px,2vw,28px) clamp(24px,3vw,36px)">
+        <div id="qr-ai-policy" style="flex-shrink:0;background:#fff;padding:6px;border-radius:8px;width:100px;height:100px;overflow:hidden"></div>
+        <div>
+          <div style="color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(16px,1.6vw,22px)">Temper AI Policy</div>
+          <div style="color:rgba(255,255,255,.45);font-size:clamp(11px,1vw,14px);margin-top:3px">Current guidelines on Notion</div>
+          <div style="color:var(--green);font-size:clamp(10px,.9vw,13px);margin-top:4px;word-break:break-all;font-family:monospace;opacity:.6">notion.so/temper/Temper-AI-Policy-2be42960c8038092bc37d022975ddf23</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1713,7 +1840,7 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE 23 — PLOT TWIST                              -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="slide" data-bg="brand-aurora" data-section="temper">
+<div id="slide-plot-twist" class="slide" data-bg="brand-aurora" data-section="temper">
   <div class="slide-header">
     <span></span>
     <img class="logo" src="assets/logos/temper-logo-green.png" alt="Temper">
@@ -1725,10 +1852,10 @@
     <div class="split" style="grid-template-columns:4fr 5fr;align-items:center;gap:clamp(30px,4vw,60px);flex:1">
       <!-- Left: Text content -->
       <div style="display:flex;flex-direction:column;gap:clamp(12px,2vh,24px)">
-        <div class="t-label" style="color:rgba(255,255,255,.5);letter-spacing:6px">Wait For It...</div>
+        <div id="pt-label" style="color:rgba(255,255,255,.5);letter-spacing:6px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(12px,1.2vw,16px);width:fit-content">Wait For It<span id="pt-dots"><span class="pt-dot">.</span><span class="pt-dot">.</span><span class="pt-dot">.</span></span></div>
         <h2 class="t-hero" style="color:#fff;font-size:clamp(44px,6vw,76px)">Plot Twist</h2>
         <p class="t-display" style="color:var(--green);font-size:clamp(26px,3.5vw,44px)">
-          This Entire Presentation Was Built by an <span style="background:linear-gradient(135deg,#a855f7,#7c3aed,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI Agent</span>
+          This Entire Presentation Was Built by an <span style="background:linear-gradient(var(--gradient-angle),#a855f7,#c084fc,#e879f9,#818cf8,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient-swirl 6s linear infinite">AI Agent</span>
         </p>
         <p class="t-body" style="color:rgba(255,255,255,.55)">
           Not PowerPoint. Not hand-coded.<br>
@@ -1747,6 +1874,127 @@
     </div>
   </div>
 </div>
+<script>
+(function() {
+  var slide = document.getElementById('slide-plot-twist');
+  var label = document.getElementById('pt-label');
+  if (!slide || !label) return;
+
+  var heroMode = false;
+  var dotEls = document.querySelectorAll('.pt-dot');
+  var dotInterval = null;
+
+  // Hideables: label siblings + terminal
+  var hideEls = [];
+  var p = label.parentElement;
+  for (var i = 0; i < p.children.length; i++) {
+    if (p.children[i] !== label) hideEls.push(p.children[i]);
+  }
+  var term = document.getElementById('plot-terminal');
+  if (term) hideEls.push(term);
+
+  // Set transform-origin center permanently — no effect when transform:none
+  label.style.transformOrigin = 'center center';
+
+  function startDots() {
+    var s = -1;
+    dotEls.forEach(function(d) { d.style.opacity = '0.15'; d.style.transition = 'opacity 0.3s'; });
+    dotInterval = setInterval(function() {
+      s = (s + 1) % 4;
+      dotEls.forEach(function(d, i) { d.style.opacity = i === s ? '1' : '0.15'; });
+    }, 400);
+  }
+  function stopDots() {
+    clearInterval(dotInterval); dotInterval = null;
+    dotEls.forEach(function(d) { d.style.opacity = '1'; d.style.transition = 'opacity 0.3s'; });
+  }
+
+  function enterHero() {
+    heroMode = true;
+
+    // Hide siblings
+    hideEls.forEach(function(el) { el.style.transition = 'none'; el.style.opacity = '0'; });
+
+    // Measure label flow position, compute offset to slide center
+    label.style.transition = 'none';
+    label.style.transform = 'none';
+    void label.offsetHeight;
+
+    var sr = slide.getBoundingClientRect();
+    var lr = label.getBoundingClientRect();
+    var dx = (sr.left + sr.width / 2) - (lr.left + lr.width / 2);
+    var dy = (sr.top + sr.height / 2) - (lr.top + lr.height / 2);
+
+    label.style.opacity = '0';
+    label.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(4.5)';
+    label.style.color = '#fff';
+
+    startDots();
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        label.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1)';
+        label.style.opacity = '1';
+        label.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(4.5)';
+      });
+    });
+  }
+
+  function exitHero() {
+    heroMode = false;
+    stopDots();
+
+    label.style.transition = 'transform 0.8s cubic-bezier(.22,1,.36,1), color 0.6s ease';
+    label.style.transform = 'none';
+    label.style.color = 'rgba(255,255,255,.5)';
+
+    hideEls.forEach(function(el, i) {
+      el.style.transition = 'opacity 0.5s ease ' + (0.3 + i * 0.1).toFixed(2) + 's';
+      el.style.opacity = '1';
+    });
+
+    // Start typewriter after transition settles
+    setTimeout(function() {
+      if (window.triggerPlotTypewriter) window.triggerPlotTypewriter();
+    }, 800);
+  }
+
+  function resetSlide() {
+    heroMode = false;
+    if (dotInterval) { clearInterval(dotInterval); dotInterval = null; }
+    dotEls.forEach(function(d) { d.style.opacity = ''; d.style.transition = ''; });
+    label.style.transition = 'none';
+    label.style.transform = '';
+    label.style.color = '';
+    label.style.opacity = '';
+    hideEls.forEach(function(el) { el.style.transition = ''; el.style.opacity = ''; });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (document.body.classList.contains('edit-mode')) return;
+    if (!slide.classList.contains('active') || !heroMode) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault(); e.stopImmediatePropagation(); exitHero();
+    }
+  }, { capture: true });
+
+  document.getElementById('deck').addEventListener('click', function(e) {
+    if (document.body.classList.contains('edit-mode')) return;
+    if (!slide.classList.contains('active') || !heroMode) return;
+    if (e.target.closest('#sidenav') || e.target.closest('a') || e.target.closest('button')) return;
+    if (e.clientX / window.innerWidth > 0.7) { e.stopImmediatePropagation(); exitHero(); }
+  }, { capture: true });
+
+  var obs = new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      if (m.attributeName !== 'class') return;
+      if (slide.classList.contains('active')) enterHero(); else resetSlide();
+    });
+  });
+  obs.observe(slide, { attributes: true, attributeFilter: ['class'] });
+  if (slide.classList.contains('active')) enterHero();
+})();
+</script>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- SLIDE 23 — HOW THIS WAS MADE                       -->

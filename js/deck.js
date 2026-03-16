@@ -315,7 +315,7 @@
   var twLines = [
     { type: 'cmd', text: '$ claude "Build a presentation about agentic AI for Temper Summit"' },
     { type: 'dim', text: '  Creating slides... Applying brand assets... Writing animations...' },
-    { type: 'result', text: '✓ 23 slides generated — dark mode, staggered animations, research data' },
+    { type: 'result', text: '✓ 38 slides generated — dark mode, staggered animations, research data' },
     { type: 'blank' },
     { type: 'cmd', text: '$ claude "Now add a plot twist revealing how this was made"' },
     { type: 'result', text: '✓ Done — you\'re looking at it right now' }
@@ -333,9 +333,9 @@
     cursor.style.cssText = 'display:inline-block;width:8px;height:1.1em;background:var(--green);vertical-align:text-bottom;animation:blink-cursor .7s step-end infinite;margin-left:2px';
 
     function getColor(type) {
-      if (type === 'cmd') return 'var(--green)';
-      if (type === 'dim') return 'rgba(255,255,255,.25)';
-      return 'rgba(255,255,255,.75)';
+      if (type === 'cmd') return '#4afa8b';
+      if (type === 'dim') return 'rgba(255,255,255,.45)';
+      return 'rgba(255,255,255,.9)';
     }
 
     function typeNext() {
@@ -391,14 +391,14 @@
     slides.forEach(function(s, i) { if (s === plotSlide) plotSlideIdx = i; });
   }
 
-  // Patch goTo to trigger typewriter
+  // Expose typewriter for hero script to trigger after exit
+  window.triggerPlotTypewriter = typewriterRun;
+
+  // Patch goTo — typewriter is triggered by hero script, not by goTo
   var _goToTW = goTo;
   goTo = function(n) {
     _goToTW(n);
-    if (n === plotSlideIdx) typewriterRun();
   };
-  // If starting on that slide
-  if (current === plotSlideIdx) typewriterRun();
 
   // === Auto-fit: shrink-only safety net ===
 

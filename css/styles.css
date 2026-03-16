@@ -502,6 +502,17 @@ html, body {
   0%, 100% { box-shadow: 0 0 12px rgba(61,215,108,.3); }
   50% { box-shadow: 0 0 22px rgba(61,215,108,.6); }
 }
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+/* Reveal underline placeholder — disabled */
+
+@keyframes gradient-swirl {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
 #progress { animation: glow-pulse 3s ease-in-out infinite; }
 
 /* Card hover lift — works on interactive cards */

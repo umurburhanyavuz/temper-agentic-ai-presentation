@@ -375,6 +375,87 @@
     "label": "div (\"This isn't the futu)"
   },
   {
+    "slide": 13,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-2 > card #1 (Without connections )"
+  },
+  {
+    "slide": 13,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-2 > card #2 (With connections )"
+  },
+  {
+    "slide": 13,
+    "path": [
+      1,
+      3
+    ],
+    "step": 2,
+    "label": "card-accent (The question isn't \")"
+  },
+  {
+    "slide": 14,
+    "path": [
+      1,
+      1
+    ],
+    "step": 1,
+    "label": "t-desc (Model Context Protoc)"
+  },
+  {
+    "slide": 14,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 2,
+    "label": "split > card (Think USB-C for AI )"
+  },
+  {
+    "slide": 14,
+    "path": [
+      1,
+      2,
+      1,
+      0
+    ],
+    "step": 3,
+    "label": "card #1 (Open standard )"
+  },
+  {
+    "slide": 14,
+    "path": [
+      1,
+      2,
+      1,
+      1
+    ],
+    "step": 4,
+    "label": "card #2 (One protocol, 100+ t)"
+  },
+  {
+    "slide": 14,
+    "path": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "step": 5,
+    "label": "card #3 (Read & write )"
+  },
+  {
     "slide": 17,
     "path": [
       1,
@@ -451,7 +532,7 @@
       3
     ],
     "step": 5,
-    "label": "reveal-visible #1 (Manual ← Swe)"
+    "label": "div (Manual ← Swe)"
   },
   {
     "slide": 17,
@@ -484,7 +565,7 @@
       1
     ],
     "step": 1,
-    "label": "td (Fully autonomous1)"
+    "label": "td (Fully autonomous)"
   },
   {
     "slide": 18,
@@ -520,7 +601,7 @@
       1
     ],
     "step": 2,
-    "label": "td (Mostly autonomous2)"
+    "label": "td (Mostly autonomous)"
   },
   {
     "slide": 18,
@@ -556,7 +637,7 @@
       1
     ],
     "step": 3,
-    "label": "td (Human reviews3)"
+    "label": "td (Human reviews)"
   },
   {
     "slide": 18,
@@ -568,7 +649,7 @@
       2
     ],
     "step": 3,
-    "label": "td (Reputation risk3)"
+    "label": "td (Reputation risk)"
   },
   {
     "slide": 18,
@@ -580,7 +661,7 @@
       0
     ],
     "step": 4,
-    "label": "td (Financial decisions4)"
+    "label": "td (Financial decisions)"
   },
   {
     "slide": 18,
@@ -592,7 +673,7 @@
       1
     ],
     "step": 4,
-    "label": "td (Human approves4)"
+    "label": "td (Human approves)"
   },
   {
     "slide": 18,
@@ -616,7 +697,7 @@
       0
     ],
     "step": 4,
-    "label": "td (Code deployment5)"
+    "label": "td (Code deployment)"
   },
   {
     "slide": 18,
@@ -628,7 +709,7 @@
       1
     ],
     "step": 4,
-    "label": "td (Human approves4)"
+    "label": "td (Human approves)"
   },
   {
     "slide": 18,
@@ -640,6 +721,221 @@
       2
     ],
     "step": 4,
-    "label": "td (Production risk4)"
+    "label": "td (Production risk)"
+  },
+  {
+    "slide": 20,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-2 > card-light #1 (You're already doing)"
+  },
+  {
+    "slide": 20,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-2 > card-light #2 (The goal: automate i)"
+  },
+  {
+    "slide": 20,
+    "path": [
+      1,
+      2,
+      1,
+      0,
+      0
+    ],
+    "step": 3,
+    "label": "t-title > span (automate it)"
+  },
+  {
+    "slide": 20,
+    "path": [
+      1,
+      2,
+      1,
+      1
+    ],
+    "step": 3,
+    "label": "card-light > t-body (Instead of copy-past)"
+  },
+  {
+    "slide": 20,
+    "path": [
+      1,
+      3
+    ],
+    "step": 4,
+    "label": "grid-3 (It has a limit )"
+  },
+  {
+    "slide": 22,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "layer-stack > layer-row #1 (Tools )"
+  },
+  {
+    "slide": 22,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "layer-stack > layer-row #2 (Memory )"
+  },
+  {
+    "slide": 22,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "layer-stack > layer-row #3 (Knowledge )"
+  },
+  {
+    "slide": 22,
+    "path": [
+      1,
+      2,
+      3
+    ],
+    "step": 4,
+    "label": "layer-stack > layer-row #4 (Instructions )"
+  },
+  {
+    "slide": 22,
+    "path": [
+      1,
+      3,
+      0
+    ],
+    "step": 4,
+    "label": "card (Tools vs Knowledge? )"
+  },
+  {
+    "slide": 23,
+    "path": [
+      2,
+      2,
+      2
+    ],
+    "step": 1,
+    "label": "grid-3 > card-light #3 (You ship faster )"
+  },
+  {
+    "slide": 23,
+    "path": [
+      2,
+      3
+    ],
+    "step": 1,
+    "label": "div (10x output p)"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-2 > card-light #1 (Proprietary Data \"Sp)"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-2 > card-light #2 (PII Cascading )"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      3,
+      0
+    ],
+    "step": 3,
+    "label": "grid-3 > card #1 (Least Privilege )"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      3,
+      1
+    ],
+    "step": 3,
+    "label": "grid-3 > card #2 (Human-in-the-Loop )"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      3,
+      2
+    ],
+    "step": 3,
+    "label": "grid-3 > card #3 (Audit Trails )"
+  },
+  {
+    "slide": 33,
+    "path": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "step": 1,
+    "label": "reveal-underline > strong (freedom)"
+  },
+  {
+    "slide": 33,
+    "path": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "step": 2,
+    "label": "reveal-underline > strong (trust)"
+  },
+  {
+    "slide": 33,
+    "path": [
+      1,
+      0,
+      2,
+      0
+    ],
+    "step": 3,
+    "label": "reveal-underline > strong (background check)"
+  },
+  {
+    "slide": 33,
+    "path": [
+      1,
+      0,
+      3,
+      0
+    ],
+    "step": 3,
+    "label": "reveal-underline > strong (clear boundaries)"
   }
 ]
