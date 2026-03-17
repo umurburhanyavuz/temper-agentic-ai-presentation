@@ -289,7 +289,7 @@
   var qrEl = document.getElementById('qr-workspace-studio');
   if (qrEl && typeof QRCode !== 'undefined') {
     new QRCode(qrEl, {
-      text: 'https://workspace.google.com/studio/',
+      text: 'https://studio.workspace.google.com/',
       width: 88,
       height: 88,
       colorDark: '#0a2421',
