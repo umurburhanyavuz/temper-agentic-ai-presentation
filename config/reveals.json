@@ -280,19 +280,9 @@
     "path": [
       1,
       2,
-      0
-    ],
-    "step": 1,
-    "label": "div (Klarna )"
-  },
-  {
-    "slide": 9,
-    "path": [
-      1,
-      2,
       1
     ],
-    "step": 2,
+    "step": 1,
     "label": "div (Google )"
   },
   {
@@ -302,7 +292,7 @@
       2,
       2
     ],
-    "step": 3,
+    "step": 2,
     "label": "div (Microsoft )"
   },
   {
@@ -312,7 +302,7 @@
       2,
       3
     ],
-    "step": 4,
+    "step": 3,
     "label": "div (Reddit )"
   },
   {
@@ -322,7 +312,7 @@
       2,
       4
     ],
-    "step": 5,
+    "step": 4,
     "label": "div (ING NL )"
   },
   {
@@ -332,8 +322,27 @@
       2,
       5
     ],
-    "step": 6,
+    "step": 5,
     "label": "div (Booking.com )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 6,
+    "label": "div (Klarna )"
+  },
+  {
+    "slide": 9,
+    "path": [
+      1,
+      3
+    ],
+    "step": 6,
+    "label": "quote-block (\"The question isn't )"
   },
   {
     "slide": 10,
@@ -540,7 +549,7 @@
       1,
       4
     ],
-    "step": 5,
+    "step": 6,
     "label": "card-accent (Start supervised. Au)"
   },
   {
@@ -783,7 +792,7 @@
       0
     ],
     "step": 1,
-    "label": "t-desc > strong (prompt engineering1)"
+    "label": "t-desc > strong (prompt engineering)"
   },
   {
     "slide": 21,
@@ -793,7 +802,7 @@
       2
     ],
     "step": 2,
-    "label": "t-desc > strong (context engineering2)"
+    "label": "t-desc > strong (context engineering)"
   },
   {
     "slide": 21,
@@ -804,7 +813,7 @@
       0
     ],
     "step": 3,
-    "label": "t-title (Where you are now )"
+    "label": "t-title (Where you are now)"
   },
   {
     "slide": 21,
@@ -851,7 +860,7 @@
       2
     ],
     "step": 4,
-    "label": "card > pill (Prompt Engineering4)"
+    "label": "card > pill (Prompt Engineering)"
   },
   {
     "slide": 21,
@@ -862,7 +871,7 @@
       0
     ],
     "step": 5,
-    "label": "t-title (Where we're going )"
+    "label": "t-title (Where we're going)"
   },
   {
     "slide": 21,
@@ -909,7 +918,7 @@
       2
     ],
     "step": 6,
-    "label": "card > pill (Context Engineering6)"
+    "label": "card > pill (Context Engineering)"
   },
   {
     "slide": 21,
@@ -975,9 +984,19 @@
     "path": [
       2,
       2,
-      2
+      1
     ],
     "step": 1,
+    "label": "grid-3 > card-light #2 (You focus on judgmen)"
+  },
+  {
+    "slide": 23,
+    "path": [
+      2,
+      2,
+      2
+    ],
+    "step": 2,
     "label": "grid-3 > card-light #3 (You ship faster )"
   },
   {
@@ -986,8 +1005,48 @@
       2,
       3
     ],
-    "step": 1,
+    "step": 2,
     "label": "div (10x output p)"
+  },
+  {
+    "slide": 24,
+    "path": [
+      1,
+      2,
+      0
+    ],
+    "step": 1,
+    "label": "grid-3 > card #1 (You know the problem)"
+  },
+  {
+    "slide": 24,
+    "path": [
+      1,
+      2,
+      1
+    ],
+    "step": 2,
+    "label": "grid-3 > card #2 (You describe the sol)"
+  },
+  {
+    "slide": 24,
+    "path": [
+      1,
+      2,
+      2
+    ],
+    "step": 3,
+    "label": "grid-3 > card #3 (AI handles the rest )"
+  },
+  {
+    "slide": 32,
+    "path": [
+      2,
+      1,
+      1
+    ],
+    "step": 1,
+    "label": "t-desc > strong (super-leakers)"
   },
   {
     "slide": 32,
@@ -1082,5 +1141,104 @@
     ],
     "step": 3,
     "label": "reveal-underline > strong (clear boundaries)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "step": 1,
+    "label": "div (PII Redaction Layer )"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "step": 2,
+    "label": "div (2)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      2
+    ],
+    "step": 2,
+    "label": "div (Principle of Least P)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      3
+    ],
+    "step": 3,
+    "label": "div (3)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      4
+    ],
+    "step": 3,
+    "label": "div (Human-in-the-Loop (H)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      5
+    ],
+    "step": 4,
+    "label": "div (4)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      6
+    ],
+    "step": 4,
+    "label": "div (Zero-Retention & Pri)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      7
+    ],
+    "step": 5,
+    "label": "div (5)"
+  },
+  {
+    "slide": 34,
+    "path": [
+      1,
+      0,
+      1,
+      8
+    ],
+    "step": 5,
+    "label": "div (Step-by-Step Audit T)"
   }
 ]
